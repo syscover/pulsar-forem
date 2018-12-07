@@ -20,6 +20,8 @@ class ForemCreateTableInscription extends Migration
 				$table->increments('id')->unsigned();
                 $table->integer('student_id')->unsigned()->nullable();
                 $table->integer('certification_id');
+                $table->integer('expertise_id');
+                $table->integer('work_situation_id');
 				$table->string('name');
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
@@ -28,6 +30,7 @@ class ForemCreateTableInscription extends Migration
                 $table->string('phone')->nullable();
                 $table->date('birth_date')->nullable();
                 $table->string('tin')->nullable();
+                $table->string('ssn')->nullable();
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();
@@ -40,9 +43,12 @@ class ForemCreateTableInscription extends Migration
                 $table->decimal('latitude', 17, 14)->nullable();
                 $table->decimal('longitude', 17, 14)->nullable();
 
+                // company
+                $table->string('company')->nullable();
+                $table->integer('sector_id')->nullable();
 
-				$table->boolean('active')->default(false);
-				$table->text('description')->nullable();
+                $table->text('observations')->nullable();
+                $table->boolean('authorization')->default(false);
 
                 $table->timestamps();
                 $table->softDeletes();
@@ -50,6 +56,11 @@ class ForemCreateTableInscription extends Migration
                 $table->foreign('certification_id', 'fk01_forem_inscription')
                     ->references('id')
                     ->on('forem_certification')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('sector_id', 'fk02_forem_inscription')
+                    ->references('id')
+                    ->on('forem_sector')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
 			});

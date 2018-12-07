@@ -24,6 +24,9 @@ class ForemCreateTableStudent extends Migration
                 $table->tinyInteger('gender')->nullable();
                 $table->date('birth_date')->nullable();
                 $table->string('tin')->nullable();
+                $table->string('ssn')->nullable();
+
+                $table->text('observations')->nullable();
 
                 $table->timestamps();
                 $table->softDeletes();
