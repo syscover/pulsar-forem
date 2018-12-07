@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ForemCreateTableTrainer extends Migration
+class ForemCreateTableEmploymentOffice extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -12,20 +12,15 @@ class ForemCreateTableTrainer extends Migration
 	 */
 	public function up()
 	{
-		if (! Schema::hasTable('forem_trainer'))
+		if (! Schema::hasTable('forem_employment_office'))
 		{
-			Schema::create('forem_trainer', function (Blueprint $table) {
+			Schema::create('forem_employment_office', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id')->unsigned();
+                $table->string('cod');
 				$table->string('name');
-                $table->string('surname_1')->nullable();
-                $table->string('surname_2')->nullable();
-                $table->tinyInteger('gender')->nullable();
-                $table->string('email')->nullable();
-                $table->string('phone')->nullable();
-                $table->date('birth_date')->nullable();
-                $table->string('tin')->nullable();
+				$table->string('slug');
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();
@@ -38,12 +33,10 @@ class ForemCreateTableTrainer extends Migration
                 $table->decimal('latitude', 17, 14)->nullable();
                 $table->decimal('longitude', 17, 14)->nullable();
 
-
-				$table->boolean('active')->default(false);
-				$table->text('description')->nullable();
-
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->index('slug', 'ix01_forem_employment_office');
 			});
 		}
 	}
@@ -55,6 +48,6 @@ class ForemCreateTableTrainer extends Migration
 	 */
 	public function down()
 	{
-	    Schema::dropIfExists('forem_trainer');
+	    Schema::dropIfExists('forem_employment_office');
 	}
 }

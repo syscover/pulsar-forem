@@ -18,6 +18,7 @@ class ForemCreateTableGroup extends Migration
 				$table->engine = 'InnoDB';
 
 				$table->increments('id')->unsigned();
+                $table->tinyInteger('expedient_id');
 
 			});
 		}
