@@ -19,6 +19,7 @@ class ForemCreateTableInscription extends Migration
 				
 				$table->increments('id')->unsigned();
                 $table->integer('student_id')->unsigned()->nullable();
+                $table->integer('certification_id');
 				$table->string('name');
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
@@ -45,6 +46,12 @@ class ForemCreateTableInscription extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->foreign('certification_id', 'fk01_forem_inscription')
+                    ->references('id')
+                    ->on('forem_certification')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 			});
 		}
 	}

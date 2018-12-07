@@ -18,7 +18,8 @@ class ForemCreateTableTrainer extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id')->unsigned();
-                $table->tinyInteger('profile_id')->nullable();
+                $table->tinyInteger('profile_id');
+                $table->integer('certification_id');                        // titulación
 				$table->string('name');
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
@@ -45,6 +46,12 @@ class ForemCreateTableTrainer extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->foreign('certification_id', 'fk01_forem_trainer')
+                    ->references('id')
+                    ->on('forem_certification')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 			});
 		}
 	}
