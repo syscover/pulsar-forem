@@ -18,7 +18,7 @@ class ForemCreateTableInscription extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id')->unsigned();
-                $table->integer('student_id')->unsigned()->nullable();
+                $table->integer('student_id')->unsigned()->nullable();                  // if is student registered
                 $table->integer('certification_id');
                 $table->integer('expertise_id');
                 $table->integer('work_situation_id');
