@@ -18,7 +18,7 @@ class ForemCreateTableEmploymentOffice extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id')->unsigned();
-                $table->integer('profile_id');
+                $table->integer('profile_id')->unsigned()->nullable();
                 $table->string('cod');
 				$table->string('name');
 				$table->string('slug');

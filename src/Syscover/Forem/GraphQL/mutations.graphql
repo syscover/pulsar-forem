@@ -1,0 +1,4 @@
+# EmploymentOffice
+foremCreateEmploymentOffice(payload: ForemEmploymentOfficeInput!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@create")
+foremUpdateEmploymentOffice(payload: ForemEmploymentOfficeInput!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@update")
+foremDeleteEmploymentOffice(id:Int!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@delete")

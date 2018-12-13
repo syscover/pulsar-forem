@@ -1,0 +1,16 @@
+type ForemEmploymentOffice {
+    id: Int!
+    profile_id: Int
+    cod: String!
+    name: String!
+    slug: String!
+    country_id: String
+    territorial_area_1_id: String
+    territorial_area_2_id: String
+    territorial_area_3_id: String
+    zip: String
+    locality: String
+    address: String
+    latitude: String
+    longitude: String
+}

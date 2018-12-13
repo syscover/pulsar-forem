@@ -1,0 +1,7 @@
+# EmploymentOffice
+""" Query to get employment office list """
+foremEmploymentOffices(sql:[CoreSQLInput]): [ForemEmploymentOffice!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@get")
+""" Query to get employment offices """
+foremEmploymentOffice(sql:[CoreSQLInput]): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@find")
+""" Query to get employment offices paginated """
+foremEmploymentOfficesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@paginate")
