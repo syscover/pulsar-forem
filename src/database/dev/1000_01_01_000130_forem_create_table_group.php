@@ -47,6 +47,8 @@ class ForemCreateTableGroup extends Migration
                 //
                 $table->timestamp('starts_at')->nullable();
                 $table->timestamp('ends_at')->nullable();
+                $table->timestamp('selection_date')->nullable();
+                $table->boolean('open')->default(false);    // if is open the registration
 
                 $table->boolean('is_free')->default(false);
                 $table->decimal('price',10, 2);

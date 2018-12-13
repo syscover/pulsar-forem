@@ -28,7 +28,7 @@ class ForemCreateTableTrainer extends Migration
                 $table->string('phone')->nullable();
                 $table->date('birth_date')->nullable();
                 $table->string('tin')->nullable();
-                $table->json('availability')->nullable();                       // related with pulsar-forem.availabilities ?? o tabla???
+                $table->json('availability')->nullable();                       // related with pulsar-forem.availabilities
                 $table->boolean('authorization')->default(false);         // authorization RGPD
 
                 // geolocation data

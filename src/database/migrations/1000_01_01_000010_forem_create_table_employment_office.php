@@ -18,6 +18,7 @@ class ForemCreateTableEmploymentOffice extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id')->unsigned();
+                $table->integer('profile_id');
                 $table->string('cod');
 				$table->string('name');
 				$table->string('slug');
@@ -37,6 +38,32 @@ class ForemCreateTableEmploymentOffice extends Migration
                 $table->softDeletes();
 
                 $table->index('slug', 'ix01_forem_employment_office');
+
+                $table->foreign('country_id', 'fk01_forem_employment_office')
+                    ->references('id')
+                    ->on('admin_country')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('territorial_area_1_id', 'fk02_forem_employment_office')
+                    ->references('id')
+                    ->on('admin_territorial_area_1')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('territorial_area_2_id', 'fk03_forem_employment_office')
+                    ->references('id')
+                    ->on('admin_territorial_area_2')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('territorial_area_3_id', 'fk04_forem_employment_office')
+                    ->references('id')
+                    ->on('admin_territorial_area_3')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('profile_id', 'fk05_forem_employment_office')
+                    ->references('id')
+                    ->on('admin_profile')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 			});
 		}
 	}
