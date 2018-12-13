@@ -30,7 +30,7 @@ class EmploymentOfficeService
         {
             $object = $object->only([
                 'profile_id',
-                'cod',
+                'code',
                 'name',
                 'slug',
                 'country_id',
@@ -50,7 +50,7 @@ class EmploymentOfficeService
 
     private static function checkCreate($object)
     {
-        if(empty($object['cod']))   throw new \Exception('You have to define a cod field to create a employment office');
+        if(empty($object['code']))  throw new \Exception('You have to define a code field to create a employment office');
         if(empty($object['name']))  throw new \Exception('You have to define a name field to create a employment office');
         if(empty($object['slug']))  throw new \Exception('You have to define a slug field to create a employment office');
     }

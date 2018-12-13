@@ -1,7 +1,7 @@
 input ForemEmploymentOfficeInput {
     id: Int
     profile_id: Int
-    cod: String!
+    code: String!
     name: String!
     slug: String!
     country_id: String

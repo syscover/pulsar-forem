@@ -10,6 +10,7 @@ class ForemTableSeeder extends Seeder
         Model::unguard();
 
         $this->call(ForemPackageSeeder::class);
+        $this->call(ForemEmploymentOfficeSeeder::class);
 
         Model::reguard();
     }

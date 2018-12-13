@@ -19,7 +19,7 @@ class ForemCreateTableEmploymentOffice extends Migration
 				
 				$table->increments('id')->unsigned();
                 $table->integer('profile_id')->unsigned()->nullable();
-                $table->string('cod');
+                $table->string('code');
 				$table->string('name');
 				$table->string('slug');
 
