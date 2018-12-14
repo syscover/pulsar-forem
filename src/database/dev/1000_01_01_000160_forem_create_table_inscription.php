@@ -49,6 +49,7 @@ class ForemCreateTableInscription extends Migration
 
                 $table->text('observations')->nullable();
                 $table->boolean('authorization')->default(false);
+                $table->boolean('exported')->default(false);                    // check if this inscription have been exported to FOCO
 
                 $table->timestamps();
                 $table->softDeletes();

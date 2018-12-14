@@ -18,6 +18,7 @@ class ForemCreateTableGroup extends Migration
 				$table->engine = 'InnoDB';
 
 				$table->increments('id')->unsigned();
+                $table->integer('modality_id');                 // modalidad de curso en caso de ser subvencionado
                 $table->string('cod');
                 $table->integer('action_id');
                 $table->integer('expedient_id');
