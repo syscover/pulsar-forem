@@ -21,10 +21,10 @@ class ForemCreateTableCourse extends Migration
                 $table->string('cod');
                 $table->string('name');
                 $table->string('slug');
-                $table->integer('category_id')->unsigned();     //
-                $table->integer('target_id')->unsigned();       // Desempleado, Empleado
-                $table->integer('modality_id')->unsigned();     // Presencial, Teleformación, etc.
-                $table->integer('type_id')->unsigned();         // Oposiciones, Formacion subvencionada, etc.
+                $table->integer('category_id')->unsigned();         //
+                $table->integer('target_id')->unsigned();           // Desempleado, Empleado
+                $table->integer('assistance_id')->unsigned();       // Presencial, Teleformación, etc.
+                $table->integer('type_id')->unsigned();             // Oposiciones, Formacion subvencionada, etc.
 
                 $table->smallInteger('hours');
 

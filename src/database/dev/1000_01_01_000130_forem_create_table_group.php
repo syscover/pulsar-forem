@@ -27,7 +27,7 @@ class ForemCreateTableGroup extends Migration
 
                 $table->integer('sector_id')->unsigned();       //
                 $table->integer('target_id')->unsigned();       // Desempleado, Empleado
-                $table->integer('modality_id')->unsigned();     // Presencial, Teleformación, etc.
+                $table->integer('assistance_id')->unsigned();     // Presencial, Teleformación, etc.
                 $table->integer('type_id')->unsigned();         // Oposiciones, Formacion subvencionada, etc.
 
                 $table->smallInteger('hours');

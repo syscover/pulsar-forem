@@ -19,7 +19,7 @@ class ForemCreateTableTrainer extends Migration
 				
 				$table->increments('id')->unsigned();
                 $table->tinyInteger('profile_id');
-                $table->integer('certification_id');                        // titulación
+                $table->integer('certification_id');                            // titulación
 				$table->string('name');
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
