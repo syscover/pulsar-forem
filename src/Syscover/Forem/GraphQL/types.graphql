@@ -1,6 +1,13 @@
+type ForemCategory {
+    id: Int!
+    name: String!
+    slug: String!
+}
+
 type ForemEmploymentOffice {
     id: Int!
     profile_id: Int
+    profile: AdminProfile
     code: String!
     name: String!
     slug: String!

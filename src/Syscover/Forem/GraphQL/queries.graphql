@@ -1,7 +1,15 @@
+# Category
+""" Query to get category list """
+foremCategories(sql:[CoreSQLInput]): [ForemCategory!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@get")
+""" Query to get employment offices """
+foremCategory(sql:[CoreSQLInput]): ForemCategory @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@find")
+""" Query to get employment offices paginated """
+foremCategoriesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@paginate")
+
 # EmploymentOffice
 """ Query to get employment office list """
-foremEmploymentOffices(sql:[CoreSQLInput]): [ForemEmploymentOffice!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@get")
+foremEmploymentOffices(sql:[CoreSQLInput]): [ForemEmploymentOffice!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@get")
 """ Query to get employment offices """
-foremEmploymentOffice(sql:[CoreSQLInput]): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@find")
+foremEmploymentOffice(sql:[CoreSQLInput]): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@find")
 """ Query to get employment offices paginated """
-foremEmploymentOfficesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@paginate")
+foremEmploymentOfficesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@paginate")

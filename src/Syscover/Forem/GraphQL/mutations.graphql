@@ -1,4 +1,9 @@
+# Category
+foremCreateCategory(payload: ForemCategoryInput!): ForemCategory @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@create")
+foremUpdateCategory(payload: ForemCategoryInput!): ForemCategory @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@update")
+foremDeleteCategory(id:Int!): ForemCategory @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@delete")
+
 # EmploymentOffice
-foremCreateEmploymentOffice(payload: ForemEmploymentOfficeInput!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@create")
-foremUpdateEmploymentOffice(payload: ForemEmploymentOfficeInput!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@update")
-foremDeleteEmploymentOffice(id:Int!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ForemEmploymentOfficeGraphQLService@delete")
+foremCreateEmploymentOffice(payload: ForemEmploymentOfficeInput!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@create")
+foremUpdateEmploymentOffice(payload: ForemEmploymentOfficeInput!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@update")
+foremDeleteEmploymentOffice(id:Int!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@delete")
