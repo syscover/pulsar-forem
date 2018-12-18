@@ -1,3 +1,11 @@
+# Action
+""" Query to get action list """
+foremActions(sql:[CoreSQLInput]): [ForemAction!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ActionGraphQLService@get")
+""" Query to get employment offices """
+foremAction(sql:[CoreSQLInput]): ForemAction @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ActionGraphQLService@find")
+""" Query to get employment offices paginated """
+foremActionsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ActionGraphQLService@paginate")
+
 # Category
 """ Query to get category list """
 foremCategories(sql:[CoreSQLInput]): [ForemCategory!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@get")

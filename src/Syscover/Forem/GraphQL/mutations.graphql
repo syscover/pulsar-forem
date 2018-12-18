@@ -1,3 +1,8 @@
+# Action
+foremCreateAction(payload: ForemActionInput!): ForemAction @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ActionGraphQLService@create")
+foremUpdateAction(payload: ForemActionInput!): ForemAction @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ActionGraphQLService@update")
+foremDeleteAction(id:Int!): ForemAction @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ActionGraphQLService@delete")
+
 # Category
 foremCreateCategory(payload: ForemCategoryInput!): ForemCategory @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@create")
 foremUpdateCategory(payload: ForemCategoryInput!): ForemCategory @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@update")

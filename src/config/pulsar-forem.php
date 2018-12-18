@@ -49,6 +49,36 @@ return [
         (object)['id' => 16,    'code' => 'CS',   'name' => 'Caserío'],
         (object)['id' => 17,    'code' => 'CT',   'name' => 'Cuesta'],
         (object)['id' => 18,    'code' => 'ED',   'name' => 'Edificio'],
+        (object)['id' => 19,    'code' => 'GL',   'name' => 'Glorieta'],
+        (object)['id' => 20,    'code' => 'GR',   'name' => 'Grupo'],
+        (object)['id' => 21,    'code' => 'LU',   'name' => 'Lugar'],
+        (object)['id' => 22,    'code' => 'ME',   'name' => 'Mercado'],
+        (object)['id' => 23,    'code' => 'MU',   'name' => 'Municipio'],
+        (object)['id' => 24,    'code' => 'MZ',   'name' => 'Manzana'],
+        (object)['id' => 25,    'code' => 'PA',   'name' => 'Paseo alto'],
+        (object)['id' => 26,    'code' => 'PB',   'name' => 'Poblado'],
+        (object)['id' => 27,    'code' => 'PG',   'name' => 'Poligono'],
+        (object)['id' => 28,    'code' => 'PJ',   'name' => 'Pasaje'],
+        (object)['id' => 29,    'code' => 'PQ',   'name' => 'Parque'],
+        (object)['id' => 30,    'code' => 'PZ',   'name' => 'Plaza'],
+        (object)['id' => 31,    'code' => 'PR',   'name' => 'Prolongación'],
+        (object)['id' => 32,    'code' => 'PS',   'name' => 'Paseo'],
+        (object)['id' => 33,    'code' => 'RB',   'name' => 'Rambla'],
+        (object)['id' => 34,    'code' => 'RD',   'name' => 'Ronda'],
+        (object)['id' => 35,    'code' => 'TR',   'name' => 'Travesía'],
+        (object)['id' => 36,    'code' => 'UR',   'name' => 'Urbanización']
+    ],
+    'sectors' => [
+        (object)['id' => 1, 'name' => 'Industrias de captación, elevación, conducción, tratamiento, depuración y distribución de agua'],
+        (object)['id' => 2, 'name' => 'Industrias de alimentación y bebidas'],
+        (object)['id' => 3, 'name' => 'Artes gráficas, manipulados de papel y cartón, editoriales e industrias afines'],
+        (object)['id' => 4, 'name' => 'Banca'],
+        (object)['id' => 5, 'name' => 'Comercio'],
+        (object)['id' => 6, 'name' => 'Construccion'],
+    ],
+    'gender' => [
+        (object)['id' => 0, 'name' => 'Hombre'],
+        (object)['id' => 1, 'name' => 'Mujer']
     ],
 
     //******************************************************************************************************************
@@ -58,16 +88,16 @@ return [
         (object)['id' => 1, 'name' => 'Desempleado'],
         (object)['id' => 2, 'name' => 'Empleado']
     ],
+    'assists' => [
+        (object)['id' => 1, 'name' => 'Presencial'],
+        (object)['id' => 2, 'name' => 'Teleformación'],
+        (object)['id' => 3, 'name' => 'Mixta'],
+    ],
     'types' => [
         (object)['id' => 1, 'name' => 'Certificados de profesionalidad'],
         (object)['id' => 2, 'name' => 'Formacion no subvencionada'],
         (object)['id' => 3, 'name' => 'Formacion subvencionada'],
         (object)['id' => 4, 'name' => 'Oposiciones'],
-    ],
-    'assists' => [
-        (object)['id' => 1, 'name' => 'Presencial'],
-        (object)['id' => 2, 'name' => 'Teleformación'],
-        (object)['id' => 3, 'name' => 'Mixta'],
     ],
     'genders' => [
         (object)['id' => 1, 'name' => 'Varón'],

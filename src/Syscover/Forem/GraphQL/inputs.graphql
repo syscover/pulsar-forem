@@ -1,3 +1,22 @@
+input ForemActionInput {
+    id: Int
+    code: String!
+    name: String!
+    slug: String!
+    category_id: Int!
+    target_id: Int!
+    assistance_id: Int!
+    type_id: Int!
+    hours: Int!
+    online: Boolean!
+    subsidized: Boolean!
+    price: Float
+    price_hour: Float
+    contents: String
+    requirements: String
+    observations: String
+}
+
 input ForemCategoryInput {
     id: Int
     name: String!
