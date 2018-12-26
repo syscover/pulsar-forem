@@ -41,7 +41,8 @@ class ForemCreateTableAction extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
-                $table->index('slug', 'ix01_forem_action');
+                $table->index('code', 'ix01_forem_action');
+                $table->index('slug', 'ix02_forem_action');
 
                 $table->foreign('category_id', 'fk01_forem_action')
                     ->references('id')

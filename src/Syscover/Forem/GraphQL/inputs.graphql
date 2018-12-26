@@ -39,3 +39,12 @@ input ForemEmploymentOfficeInput {
     latitude: String
     longitude: String
 }
+
+input ForemExpedientInput {
+    id: Int
+    cod: String!
+    name: String!
+    year: Int!
+    starts_at: String
+    ends_at: String
+}

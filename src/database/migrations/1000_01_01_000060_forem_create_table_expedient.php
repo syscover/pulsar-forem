@@ -18,7 +18,7 @@ class ForemCreateTableExpedient extends Migration
 				$table->engine = 'InnoDB';
 
 				$table->increments('id')->unsigned();
-                $table->string('cod');
+                $table->string('code');
                 $table->string('name');
                 $table->smallInteger('year');
                 $table->timestamp('starts_at')->nullable();
@@ -27,7 +27,7 @@ class ForemCreateTableExpedient extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
-                $table->index('cod', 'ix01_forem_expedient');
+                $table->index('code', 'ix01_forem_expedient');
 			});
 		}
 	}

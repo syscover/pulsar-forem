@@ -21,3 +21,11 @@ foremEmploymentOffices(sql:[CoreSQLInput]): [ForemEmploymentOffice!]! @field(res
 foremEmploymentOffice(sql:[CoreSQLInput]): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@find")
 """ Query to get employment offices paginated """
 foremEmploymentOfficesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@paginate")
+
+# Expedient
+""" Query to get expedient list """
+foremExpedients(sql:[CoreSQLInput]): [ForemExpedient!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@get")
+""" Query to get expedients """
+foremExpedient(sql:[CoreSQLInput]): ForemExpedient @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@find")
+""" Query to get expedients paginated """
+foremExpedientsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@paginate")
