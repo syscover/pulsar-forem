@@ -88,7 +88,7 @@ return [
         (object)['id' => 1, 'name' => 'Desempleado'],
         (object)['id' => 2, 'name' => 'Empleado']
     ],
-    'assists' => [
+    'assistances' => [
         (object)['id' => 1, 'name' => 'Presencial'],
         (object)['id' => 2, 'name' => 'Teleformación'],
         (object)['id' => 3, 'name' => 'Mixta'],
