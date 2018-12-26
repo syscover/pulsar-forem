@@ -10,5 +10,5 @@ use Syscover\Core\Models\CoreModel;
 class Expedient extends CoreModel
 {
     protected $table        = 'forem_expedient';
-    protected $fillable     = ['id', 'cod', 'name', 'year', 'starts_at', 'ends_at'];
+    protected $fillable     = ['id', 'code', 'name', 'year', 'starts_at', 'ends_at'];
 }

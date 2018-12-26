@@ -43,7 +43,7 @@ type ForemEmploymentOffice {
 
 type ForemExpedient {
     id: Int!
-    cod: String!
+    code: String!
     name: String!
     year: Int!
     starts_at: String

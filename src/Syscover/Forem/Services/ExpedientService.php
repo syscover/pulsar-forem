@@ -37,6 +37,9 @@ class ExpedientService
             ]);
         }
 
+        if($object->has('starts_at'))   $object['starts_at']    = date_time_string($object->get('starts_at'));
+        if($object->has('ends_at'))     $object['ends_at']      = date_time_string($object->get('ends_at'));
+
         return $object->toArray();
     }
 

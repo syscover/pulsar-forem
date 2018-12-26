@@ -42,7 +42,7 @@ input ForemEmploymentOfficeInput {
 
 input ForemExpedientInput {
     id: Int
-    cod: String!
+    code: String!
     name: String!
     year: Int!
     starts_at: String
