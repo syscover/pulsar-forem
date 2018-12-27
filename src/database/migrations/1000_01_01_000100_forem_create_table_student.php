@@ -21,10 +21,13 @@ class ForemCreateTableStudent extends Migration
 				$table->string('name');
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
-                $table->tinyInteger('gender')->nullable();
+                $table->tinyInteger('gender_id')->nullable();
                 $table->date('birth_date')->nullable();
                 $table->string('tin')->nullable();
                 $table->string('ssn')->nullable();
+                $table->string('email')->nullable();
+                $table->string('phone')->nullable();
+                $table->string('mobile')->nullable();
 
                 $table->text('observations')->nullable();
 

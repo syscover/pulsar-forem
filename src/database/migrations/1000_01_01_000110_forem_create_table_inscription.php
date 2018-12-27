@@ -18,19 +18,44 @@ class ForemCreateTableInscription extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id')->unsigned();
-                $table->integer('student_id')->unsigned()->nullable();                  // if is student registered
+                $table->integer('student_id')->unsigned()->nullable();                // if is student registered
+                $table->string('name');                                               // <nombre></nombre>
+                $table->string('surname')->nullable();                                // <primer_apellido></primer_apellido>
+                $table->string('surname2')->nullable();                               // <segundo_apellido></segundo_apellido>
+                $table->tinyInteger('gender_id')->unsigned()->nullable();             // <sexo></sexo>
+                $table->date('birth_date')->nullable();                               // <fecha_nacimiento></fecha_nacimiento>
+                $table->string('tin')->nullable();                                    // <nif></nif>
+                $table->string('ssn')->nullable();
+                $table->string('email')->nullable();                                  // <email></email>
+                $table->string('phone')->nullable();                                  // <telefono></telefono>
+                $table->string('mobile')->nullable();                                 // <movil></movil>
+
+
+                // foco
+                $table->string('code')->nullable();                                   // <expediente_grupo></expediente_grupo>
+                $table->boolean('has_registry')->default(false);                // <tiene_registro_clm></tiene_registro_clm>
+                $table->string('registry_number')->nullable();                        // <num_registro_clm></num_registro_clm>
+                $table->timestamp('registry_date')->nullable();                       // <fecha_registro_clm></fecha_registro_clm>
+                $table->tinyInteger('document_type_id')->unsigned()->nullable();      // <id_tipo_documento_alumno></id_tipo_documento_alumno>
+                $table->string('document_number')->nullable();                        // <numero_documento_alumno></numero_documento_alumno>
+                $table->tinyInteger('road_type_id')->unsigned()->nullable();          // <id_tipo_via></id_tipo_via>
+
+
+
+
+
+
+
+
+                // inscription
                 $table->integer('certification_id');
                 $table->integer('expertise_id');
                 $table->integer('work_situation_id');
-				$table->string('name');
-                $table->string('surname')->nullable();
-                $table->string('surname2')->nullable();
-                $table->tinyInteger('gender')->nullable();
-                $table->string('email')->nullable();
-                $table->string('phone')->nullable();
-                $table->date('birth_date')->nullable();
-                $table->string('tin')->nullable();
-                $table->string('ssn')->nullable();
+
+                $table->json('driving_licenses')->nullable();
+
+
+
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();

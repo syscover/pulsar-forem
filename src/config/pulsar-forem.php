@@ -30,7 +30,7 @@ return [
         (object)['id' => 5, 'name' => 'Modalidad V',    'code' => 'FPFP',   'inscription_type' => null],
         (object)['id' => 6, 'name' => 'Modalidad VI',   'code' => 'FPPE',   'inscription_type' => null],
     ],
-    'type_road' => [
+    'type_roads' => [
         (object)['id' => 1,     'code' => 'AD',   'name' => 'Aldea'],
         (object)['id' => 2,     'code' => 'AL',   'name' => 'Alameda'],
         (object)['id' => 3,     'code' => 'AP',   'name' => 'Apartamento'],
@@ -76,10 +76,23 @@ return [
         (object)['id' => 5, 'name' => 'Comercio'],
         (object)['id' => 6, 'name' => 'Construccion'],
     ],
-    'gender' => [
+    'genders' => [
         (object)['id' => 0, 'name' => 'Hombre'],
         (object)['id' => 1, 'name' => 'Mujer']
     ],
+    'document_types' => [
+        (object)['id' => 1, 'name' => 'NAF'],
+        (object)['id' => 2, 'name' => 'ISFAS'],
+        (object)['id' => 3, 'name' => 'MUTUALISTA']
+    ],
+    'academic_levels' => [
+        (object)['id' => 1, 'academic_id' => 1, 'modality_id' => 3, 'name' => 'Sin estudios',       'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 2, 'academic_id' => 2, 'modality_id' => 3, 'name' => 'Estudios primarios', 'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 3, 'academic_id' => 3, 'modality_id' => 3, 'name' => 'Graduado escolar',   'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 4, 'academic_id' => 4, 'modality_id' => 3, 'name' => 'ESO',                'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
+    ],
+
+
 
     //******************************************************************************************************************
     //***   FOREM
