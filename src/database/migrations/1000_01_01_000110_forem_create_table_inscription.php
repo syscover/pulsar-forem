@@ -39,6 +39,13 @@ class ForemCreateTableInscription extends Migration
                 $table->tinyInteger('document_type_id')->unsigned()->nullable();      // <id_tipo_documento_alumno></id_tipo_documento_alumno>
                 $table->string('document_number')->nullable();                        // <numero_documento_alumno></numero_documento_alumno>
                 $table->tinyInteger('road_type_id')->unsigned()->nullable();          // <id_tipo_via></id_tipo_via>
+                $table->string('zip')->nullable();                                    // <cod_postal></cod_postal>
+                $table->string('address')->nullable();                                // <direccion></direccion>
+
+                $table->boolean('has_driving_license')->default(false);         // <tiene_carnet_conducir></tiene_carnet_conducir>
+                $table->json('driving_licenses')->nullable();                         // <id_carnet_conducir></id_carnet_conducir>
+
+
 
 
 
@@ -52,7 +59,7 @@ class ForemCreateTableInscription extends Migration
                 $table->integer('expertise_id');
                 $table->integer('work_situation_id');
 
-                $table->json('driving_licenses')->nullable();
+
 
 
 
@@ -62,9 +69,9 @@ class ForemCreateTableInscription extends Migration
                 $table->string('territorial_area_1_id', 6)->nullable();
                 $table->string('territorial_area_2_id', 10)->nullable();
                 $table->string('territorial_area_3_id', 10)->nullable();
-                $table->string('zip')->nullable();
+
                 $table->string('locality')->nullable();
-                $table->string('address')->nullable();
+
                 $table->decimal('latitude', 17, 14)->nullable();
                 $table->decimal('longitude', 17, 14)->nullable();
 
@@ -78,17 +85,6 @@ class ForemCreateTableInscription extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
-
-                $table->foreign('certification_id', 'fk01_forem_inscription')
-                    ->references('id')
-                    ->on('forem_certification')
-                    ->onDelete('restrict')
-                    ->onUpdate('cascade');
-                $table->foreign('sector_id', 'fk02_forem_inscription')
-                    ->references('id')
-                    ->on('forem_sector')
-                    ->onDelete('restrict')
-                    ->onUpdate('cascade');
 			});
 		}
 	}
