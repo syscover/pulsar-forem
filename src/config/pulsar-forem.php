@@ -19,8 +19,8 @@ return [
         (object)['id' => 11, 'name' => 'C+E'],
         (object)['id' => 12, 'name' => 'D1'],
         (object)['id' => 13, 'name' => 'D1+E'],
-        (object)['id' => 13, 'name' => 'D'],
-        (object)['id' => 14, 'name' => 'D+E'],
+        (object)['id' => 14, 'name' => 'D'],
+        (object)['id' => 15, 'name' => 'D+E'],
     ],
     'modalities' => [
         (object)['id' => 1, 'name' => 'Modalidad I',    'code' => 'FPTO',   'inscription_type' => 3],

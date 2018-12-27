@@ -1,5 +1,6 @@
 <?php namespace Syscover\Forem\Models;
 
+use Carbon\Carbon;
 use Syscover\Core\Models\CoreModel;
 
 /**
@@ -11,4 +12,19 @@ class Expedient extends CoreModel
 {
     protected $table        = 'forem_expedient';
     protected $fillable     = ['id', 'code', 'name', 'year', 'starts_at', 'ends_at'];
+
+    // Accessors
+    public function getStartsAtAttribute($value)
+    {
+        // https://es.wikipedia.org/wiki/ISO_8601
+        // return (new Carbon($value))->toW3cString();
+        return (new Carbon($value))->format('Y-m-d\TH:i:s');
+    }
+
+    public function getEndsAtAttribute($value)
+    {
+        // https://es.wikipedia.org/wiki/ISO_8601
+        // return (new Carbon($value))->toW3cString();
+        return (new Carbon($value))->format('Y-m-d\TH:i:s');
+    }
 }
