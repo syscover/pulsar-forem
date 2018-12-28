@@ -18,32 +18,42 @@ class ForemCreateTableInscription extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id')->unsigned();
-                $table->integer('student_id')->unsigned()->nullable();                // if is student registered
-                $table->string('name');                                               // <nombre></nombre>
-                $table->string('surname')->nullable();                                // <primer_apellido></primer_apellido>
-                $table->string('surname2')->nullable();                               // <segundo_apellido></segundo_apellido>
-                $table->tinyInteger('gender_id')->unsigned()->nullable();             // <sexo></sexo>
-                $table->date('birth_date')->nullable();                               // <fecha_nacimiento></fecha_nacimiento>
-                $table->string('tin')->nullable();                                    // <nif></nif>
+                $table->integer('student_id')->unsigned()->nullable();                  // if is student registered
+                $table->string('name');                                                 // <nombre></nombre>
+                $table->string('surname')->nullable();                                  // <primer_apellido></primer_apellido>
+                $table->string('surname2')->nullable();                                 // <segundo_apellido></segundo_apellido>
+                $table->tinyInteger('gender_id')->unsigned()->nullable();               // <sexo></sexo>
+                $table->date('birth_date')->nullable();                                 // <fecha_nacimiento></fecha_nacimiento>
+                $table->string('tin')->nullable();                                      // <nif></nif>
                 $table->string('ssn')->nullable();
-                $table->string('email')->nullable();                                  // <email></email>
-                $table->string('phone')->nullable();                                  // <telefono></telefono>
-                $table->string('mobile')->nullable();                                 // <movil></movil>
+                $table->string('email')->nullable();                                    // <email></email>
+                $table->string('phone')->nullable();                                    // <telefono></telefono>
+                $table->string('mobile')->nullable();                                   // <movil></movil>
 
 
                 // foco
-                $table->string('code')->nullable();                                   // <expediente_grupo></expediente_grupo>
-                $table->boolean('has_registry')->default(false);                // <tiene_registro_clm></tiene_registro_clm>
-                $table->string('registry_number')->nullable();                        // <num_registro_clm></num_registro_clm>
-                $table->timestamp('registry_date')->nullable();                       // <fecha_registro_clm></fecha_registro_clm>
-                $table->tinyInteger('document_type_id')->unsigned()->nullable();      // <id_tipo_documento_alumno></id_tipo_documento_alumno>
-                $table->string('document_number')->nullable();                        // <numero_documento_alumno></numero_documento_alumno>
-                $table->tinyInteger('road_type_id')->unsigned()->nullable();          // <id_tipo_via></id_tipo_via>
-                $table->string('zip')->nullable();                                    // <cod_postal></cod_postal>
-                $table->string('address')->nullable();                                // <direccion></direccion>
+                $table->string('code')->nullable();                                     // <expediente_grupo></expediente_grupo>
+                $table->boolean('has_registry')->default(false);                  // <tiene_registro_clm></tiene_registro_clm>
+                $table->string('registry_number')->nullable();                          // <num_registro_clm></num_registro_clm>
+                $table->timestamp('registry_date')->nullable();                         // <fecha_registro_clm></fecha_registro_clm>
+                $table->tinyInteger('document_type_id')->unsigned()->nullable();        // <id_tipo_documento_alumno></id_tipo_documento_alumno>
+                $table->string('document_number')->nullable();                          // <numero_documento_alumno></numero_documento_alumno>
+                $table->tinyInteger('road_type_id')->unsigned()->nullable();            // <id_tipo_via></id_tipo_via>
+                $table->string('zip')->nullable();                                      // <cod_postal></cod_postal>
+                $table->string('address')->nullable();                                  // <direccion></direccion>
 
-                $table->boolean('has_driving_license')->default(false);         // <tiene_carnet_conducir></tiene_carnet_conducir>
-                $table->json('driving_licenses')->nullable();                         // <id_carnet_conducir></id_carnet_conducir>
+                $table->boolean('has_driving_license')->default(false);                       // <tiene_carnet_conducir></tiene_carnet_conducir>
+                $table->json('driving_licenses')->nullable();                                       // <id_carnet_conducir></id_carnet_conducir>
+
+                $table->smallInteger('employment_situation_id')->unsigned()->nullable();            // <id_situacion_laboral></id_situacion_laboral>
+
+                $table->timestamp('registration_date')->default(DB::raw('CURRENT_TIMESTAMP'));      // <fecha_inscripcion></fecha_inscripcion>
+                $table->integer('employment_office_id')->unsigned()->nullable();                    // <id_oficina_empleo></id_oficina_empleo>
+                $table->tinyInteger('unemployed_situation_id')->unsigned()->nullable();             // <id_situacion_desempleo></id_situacion_desempleo>
+
+                $table->tinyInteger('professional_category_id')->unsigned()->nullable();            // <id_categoria_profesional></id_categoria_profesional>
+
+
 
 
 
@@ -58,10 +68,6 @@ class ForemCreateTableInscription extends Migration
                 $table->integer('certification_id');
                 $table->integer('expertise_id');
                 $table->integer('work_situation_id');
-
-
-
-
 
 
                 // geolocation data
@@ -85,6 +91,12 @@ class ForemCreateTableInscription extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->foreign('employment_office_id', 'fk01_forem_inscription')
+                    ->references('id')
+                    ->on('forem_employment_office')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 			});
 		}
 	}

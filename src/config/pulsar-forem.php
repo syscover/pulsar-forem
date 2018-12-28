@@ -91,6 +91,25 @@ return [
         (object)['id' => 3, 'academic_id' => 3, 'modality_id' => 3, 'name' => 'Graduado escolar',   'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
         (object)['id' => 4, 'academic_id' => 4, 'modality_id' => 3, 'name' => 'ESO',                'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
     ],
+    'employment_situations' => [
+        (object)['id' => 0, 'name' => 'Desempleado'],
+        (object)['id' => 1, 'name' => 'Ocupado'],
+        (object)['id' => 2, 'name' => 'Otra']
+    ],
+    'unemployed_situations' => [
+        (object)['id' => 67,    'name' => 'Percibe prestación por desempleo'],
+        (object)['id' => 68,    'name' => 'Percibe subsidio por desempleo'],
+        (object)['id' => 69,    'name' => 'En paro sin prestación de subsidio'],
+        (object)['id' => 70,    'name' => 'Demandante del primer empleo'],
+        (object)['id' => 144,   'name' => 'Otros no parados'],
+    ],
+    'professional_categories' => [
+        (object)['id' => 1, 'name' => 'Directivos/as'],
+        (object)['id' => 2, 'name' => 'Mandos intermedios'],
+        (object)['id' => 3, 'name' => 'Técnicos/as'],
+        (object)['id' => 4, 'name' => 'Trabajadores cualificados/as'],
+        (object)['id' => 5, 'name' => 'Trabajadores no cualificados/as'],
+    ],
 
 
 
@@ -112,23 +131,12 @@ return [
         (object)['id' => 3, 'name' => 'Formacion subvencionada'],
         (object)['id' => 4, 'name' => 'Oposiciones'],
     ],
-    'genders' => [
-        (object)['id' => 1, 'name' => 'Varón'],
-        (object)['id' => 2, 'name' => 'Mujer'],
-    ],
     'work_situations' => [
         (object)['id' => 1, 'name' => 'Desempleado/a'],
         (object)['id' => 2, 'name' => 'Trabajador/a área pública'],
         (object)['id' => 3, 'name' => 'Trabajador/a ERE (Expediente de Regulación de Empleo)'],
         (object)['id' => 4, 'name' => 'Trabajador/a no PYME (Más de 250 trabajadores)'],
         (object)['id' => 5, 'name' => 'Trabajador/a PYME (Menos de 250 trabajadores)'],
-    ],
-    'unemployed_situations' => [
-        (object)['id' => 1, 'name' => 'Otros no parados'],
-        (object)['id' => 2, 'name' => 'Demandante del primer empleo'],
-        (object)['id' => 3, 'name' => 'En paro sin prestación de subsidio'],
-        (object)['id' => 4, 'name' => 'Percibe prestación por desempleo'],
-        (object)['id' => 5, 'name' => 'Percibe subsidio por desempleo'],
     ],
     'availabilities' => [
         (object)['id' => 1, 'name' => 'Albacete'],
