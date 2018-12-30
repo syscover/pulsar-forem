@@ -18,13 +18,14 @@ class ForemCreateTableGroup extends Migration
 				$table->engine = 'InnoDB';
 
 				$table->increments('id')->unsigned();
-                $table->string('code');                             //
+                $table->string('code');                                 //
                 $table->string('name');
                 $table->string('slug');
-                $table->integer('category_id')->unsigned();         // Categoría del curso
-                $table->integer('target_id')->unsigned();           // Desempleado, Empleado
-                $table->integer('assistance_id')->unsigned();       // Presencial, Teleformación, etc.
-                $table->integer('type_id')->unsigned();             // Oposiciones, Formacion subvencionada, etc.
+                $table->integer('employment_office_id')->unsigned();    // oficina de empleo que asignará los alumnos
+                $table->integer('category_id')->unsigned();             // Categoría del curso
+                $table->integer('target_id')->unsigned();               // Desempleado, Empleado
+                $table->integer('assistance_id')->unsigned();           // Presencial, Teleformación, etc.
+                $table->integer('type_id')->unsigned();                 // Oposiciones, Formacion subvencionada, etc.
 
                 $table->smallInteger('hours');
 
@@ -90,17 +91,22 @@ class ForemCreateTableGroup extends Migration
                     ->on('admin_territorial_area_3')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('category_id', 'fk05_forem_group')
+                $table->foreign('employment_office_id', 'fk05_forem_group')
+                    ->references('id')
+                    ->on('forem_employment_office')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('category_id', 'fk06_forem_group')
                     ->references('id')
                     ->on('forem_category')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('action_id', 'fk06_forem_group')
+                $table->foreign('action_id', 'fk07_forem_group')
                     ->references('id')
                     ->on('forem_action')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('expedient_id', 'fk07_forem_group')
+                $table->foreign('expedient_id', 'fk08_forem_group')
                     ->references('id')
                     ->on('forem_expedient')
                     ->onDelete('restrict')

@@ -110,15 +110,21 @@ return [
         (object)['id' => 4, 'name' => 'Trabajadores cualificados/as'],
         (object)['id' => 5, 'name' => 'Trabajadores no cualificados/as'],
     ],
-    'functional_area' => [
+    'functional_areas' => [
         (object)['id' => 1, 'name' => 'Dirección'],
         (object)['id' => 2, 'name' => 'Administración'],
         (object)['id' => 3, 'name' => 'Comercial'],
         (object)['id' => 4, 'name' => 'Mantenimiento'],
         (object)['id' => 5, 'name' => 'Producción'],
     ],
-
-
+    'reason_requests' => [
+        (object)['id' => 1, 'name' => 'Interés'],
+        (object)['id' => 2, 'name' => 'No perder prestaciones'],
+        (object)['id' => 3, 'name' => 'Mejorar la cualificación'],
+        (object)['id' => 4, 'name' => 'Para encontrar trabajo'],
+        (object)['id' => 5, 'name' => 'Cambio de sector o actividad'],
+        (object)['id' => 6, 'name' => 'Otros'],
+    ],
 
 
     //******************************************************************************************************************
