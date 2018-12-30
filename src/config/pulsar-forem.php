@@ -110,6 +110,14 @@ return [
         (object)['id' => 4, 'name' => 'Trabajadores cualificados/as'],
         (object)['id' => 5, 'name' => 'Trabajadores no cualificados/as'],
     ],
+    'functional_area' => [
+        (object)['id' => 1, 'name' => 'Dirección'],
+        (object)['id' => 2, 'name' => 'Administración'],
+        (object)['id' => 3, 'name' => 'Comercial'],
+        (object)['id' => 4, 'name' => 'Mantenimiento'],
+        (object)['id' => 5, 'name' => 'Producción'],
+    ],
+
 
 
 
