@@ -17,7 +17,7 @@ class ForemCreateTableInscription extends Migration
 			Schema::create('forem_inscription', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
-				$table->increments('id')->unsigned();
+				$table->increments('id');
                 $table->integer('student_id')->unsigned()->nullable();                              // if is student registered
                 $table->string('name');                                                             // <nombre></nombre>
                 $table->string('surname')->nullable();                                              // <primer_apellido></primer_apellido>

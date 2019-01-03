@@ -17,7 +17,7 @@ class ForemCreateTableCertification extends Migration
 			Schema::create('forem_certification', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
-				$table->increments('id')->unsigned();
+				$table->increments('id');
 				$table->string('name');
 
                 $table->timestamps();

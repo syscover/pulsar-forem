@@ -17,7 +17,7 @@ class ForemCreateTableTrainer extends Migration
 			Schema::create('forem_trainer', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
-				$table->increments('id')->unsigned();
+				$table->increments('id');
                 $table->tinyInteger('profile_id');
                 $table->integer('certification_id');                            // titulación
 				$table->string('name');

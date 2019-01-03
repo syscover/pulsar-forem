@@ -17,7 +17,7 @@ class ForemCreateTableCategory extends Migration
 			Schema::create('forem_category', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
-				$table->increments('id')->unsigned();
+				$table->increments('id');
 				$table->string('name');
 				$table->string('slug');
 

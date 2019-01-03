@@ -17,7 +17,7 @@ class ForemCreateTableEmploymentOffice extends Migration
 			Schema::create('forem_employment_office', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
-				$table->increments('id')->unsigned();
+				$table->increments('id');
                 $table->integer('profile_id')->unsigned()->nullable();
                 $table->string('code');
 				$table->string('name');

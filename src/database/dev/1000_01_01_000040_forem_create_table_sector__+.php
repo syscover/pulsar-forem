@@ -17,7 +17,7 @@ class ForemCreateTableSector extends Migration
 			Schema::create('forem_sector', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
-				$table->increments('id')->unsigned();
+				$table->increments('id');
 				$table->string('name');
 				$table->string('slug');
 

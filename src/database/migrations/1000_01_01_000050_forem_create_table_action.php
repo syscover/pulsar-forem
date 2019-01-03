@@ -17,7 +17,7 @@ class ForemCreateTableAction extends Migration
 			Schema::create('forem_action', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 
-				$table->increments('id')->unsigned();
+				$table->increments('id');
                 $table->string('code');
                 $table->string('name');
                 $table->string('slug');

@@ -17,7 +17,7 @@ class ForemCreateTableStudent extends Migration
 			Schema::create('forem_student', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
-				$table->increments('id')->unsigned();
+				$table->increments('id');
 				$table->string('name');
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
