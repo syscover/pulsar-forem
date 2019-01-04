@@ -40,6 +40,8 @@ class ForemCreateTableInscription extends Migration
                 $table->tinyInteger('road_type_id')->unsigned()->nullable();                        // <id_tipo_via></id_tipo_via>
                 $table->string('zip')->nullable();                                                  // <cod_postal></cod_postal>
                 $table->string('address')->nullable();                                              // <direccion></direccion>
+                $table->integer('province_id')->unsigned()->nullable();                             // <id_provincia></id_provincia>
+                $table->integer('locality_id')->unsigned()->nullable();                             // <id_localidad></id_localidad>
 
                 $table->boolean('has_driving_license')->default(false);                       // <tiene_carnet_conducir></tiene_carnet_conducir>
                 $table->json('driving_licenses')->nullable();                                       // <id_carnet_conducir></id_carnet_conducir>
@@ -73,8 +75,15 @@ class ForemCreateTableInscription extends Migration
                 $table->boolean('data_authorization')->default(false)->nullable();            // <autorizacion_datos></autorizacion_datos>>
 
 
-
-
+                $table->boolean('has_agent')->default(false);                                 // <actua_representante></actua_representante>
+                $table->string('agent_tin')->nullable();                                            // <num_documento_representante></num_documento_representante>
+                $table->string('agent_name')->nullable();                                           // <nombre_representante></nombre_representante>
+                $table->string('agent_surname')->nullable();                                        // <primer_apellido_representante></primer_apellido_representante>
+                $table->string('agent_surname2')->nullable();                                       // <segundo_apellido_representante></segundo_apellido_representante>
+                $table->string('agent_address')->nullable();                                        // <domicilio_representante></domicilio_representante>
+                $table->integer('agent_province_id')->unsigned()->nullable();                       // <provincia_representante></provincia_representante>
+                $table->integer('agent_locality_id')->unsigned()->nullable();                       // <localidad_representante></localidad_representante>
+                $table->string('agent_zip')->nullable();                                            // <codigo_postal_representante></codigo_postal_representante>
 
 
 

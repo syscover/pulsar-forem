@@ -21,7 +21,6 @@ class ForemCreateTableGroup extends Migration
                 $table->string('code');                                 //
                 $table->string('name');
                 $table->string('slug');
-                $table->integer('employment_office_id')->unsigned();    // oficina de empleo que asignará los alumnos
                 $table->integer('category_id')->unsigned();             // Categoría del curso
                 $table->integer('target_id')->unsigned();               // Desempleado, Empleado
                 $table->integer('assistance_id')->unsigned();           // Presencial, Teleformación, etc.
@@ -43,7 +42,20 @@ class ForemCreateTableGroup extends Migration
                 // course fields
                 $table->integer('action_id');
                 $table->integer('expedient_id');
-                $table->integer('modality_id');                     // modalidad de curso en caso de ser subvencionado
+                $table->integer('modality_id');                         // modalidad de curso en caso de ser subvencionado
+                $table->integer('employment_office_id')->unsigned();    // oficina de empleo que asignará los alumnos
+
+                // data to create web course sheet
+                $table->timestamp('starts_at')->nullable();
+                $table->timestamp('ends_at')->nullable();
+                $table->timestamp('selection_date')->nullable();
+                $table->boolean('open')->default(false);           // if is open the registration
+                $table->string('schedule')->nullable();
+                $table->boolean('publish')->default(false);
+
+                // marketable
+                $table->boolean('is_product')->default(false);
+                $table->integer('product_id')->unsigned()->nullable();
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();
@@ -56,57 +68,52 @@ class ForemCreateTableGroup extends Migration
                 $table->decimal('latitude', 17, 14)->nullable();
                 $table->decimal('longitude', 17, 14)->nullable();
 
-                //
-                $table->timestamp('starts_at')->nullable();
-                $table->timestamp('ends_at')->nullable();
-                $table->timestamp('selection_date')->nullable();
-                $table->boolean('open')->default(false);        // if is open the registration
-
-                $table->string('schedule')->nullable();
-
-                $table->boolean('publish')->default(false);
-
                 $table->timestamps();
                 $table->softDeletes();
 
                 $table->index('slug', 'ix01_forem_group');
 
-                $table->foreign('country_id', 'fk01_forem_group')
+                $table->foreign('product_id', 'fk01_forem_group')
+                    ->references('id')
+                    ->on('market_product')
+                    ->onDelete('set null')
+                    ->onUpdate('cascade');
+                $table->foreign('country_id', 'fk02_forem_group')
                     ->references('id')
                     ->on('admin_country')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_1_id', 'fk02_forem_group')
+                $table->foreign('territorial_area_1_id', 'fk03_forem_group')
                     ->references('id')
                     ->on('admin_territorial_area_1')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_2_id', 'fk03_forem_group')
+                $table->foreign('territorial_area_2_id', 'fk04_forem_group')
                     ->references('id')
                     ->on('admin_territorial_area_2')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('territorial_area_3_id', 'fk04_forem_group')
+                $table->foreign('territorial_area_3_id', 'fk05_forem_group')
                     ->references('id')
                     ->on('admin_territorial_area_3')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('employment_office_id', 'fk05_forem_group')
+                $table->foreign('employment_office_id', 'fk06_forem_group')
                     ->references('id')
                     ->on('forem_employment_office')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('category_id', 'fk06_forem_group')
+                $table->foreign('category_id', 'fk07_forem_group')
                     ->references('id')
                     ->on('forem_category')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('action_id', 'fk07_forem_group')
+                $table->foreign('action_id', 'fk08_forem_group')
                     ->references('id')
                     ->on('forem_action')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-                $table->foreign('expedient_id', 'fk08_forem_group')
+                $table->foreign('expedient_id', 'fk09_forem_group')
                     ->references('id')
                     ->on('forem_expedient')
                     ->onDelete('restrict')
