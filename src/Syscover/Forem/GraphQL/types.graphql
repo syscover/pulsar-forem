@@ -49,3 +49,26 @@ type ForemExpedient {
     starts_at: String
     ends_at: String
 }
+
+type ForemGroup {
+    id: Int!
+    code: String!
+    name: String!
+    slug: String!
+    category_id: Int!
+    target_id: Int!
+    assistance_id: Int!
+    type_id: Int!
+    hours: Int!
+    online: Boolean!
+    subsidized: Boolean!
+    price: Float
+    price_hour: Float
+    contents: String
+    requirements: String
+    observations: String
+    action_id: Int!
+    action: ForemAction!
+    expedient_id: Int!
+    expedient: ForemExpedient!
+}
