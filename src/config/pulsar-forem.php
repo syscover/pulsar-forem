@@ -5,6 +5,17 @@ return [
     //******************************************************************************************************************
     //***   FOCO
     //******************************************************************************************************************
+    'modalities' => [
+        (object)['id' => 1, 'name' => 'Modalidad I',    'code' => 'FPTO',   'inscription_type' => 3],
+        (object)['id' => 2, 'name' => 'Modalidad II',   'code' => 'FPTD',   'inscription_type' => 4],
+        (object)['id' => 3, 'name' => 'Modalidad III',  'code' => 'FPCI',   'inscription_type' => 5],
+        (object)['id' => 4, 'name' => 'Modalidad IV',   'code' => 'FPDR',   'inscription_type' => 6],
+        (object)['id' => 5, 'name' => 'Modalidad V',    'code' => 'FPFP',   'inscription_type' => null],
+        (object)['id' => 6, 'name' => 'Modalidad VI',   'code' => 'FPPE',   'inscription_type' => null],
+    ],
+
+    // Tables:
+    // - forem_inscription.driving_licenses :: <id_carnet_conducir></id_carnet_conducir>
     'driving_licenses' => [
         (object)['id' => 1, 'name' => 'AM'],
         (object)['id' => 2, 'name' => 'A1'],
@@ -22,14 +33,9 @@ return [
         (object)['id' => 14, 'name' => 'D'],
         (object)['id' => 15, 'name' => 'D+E'],
     ],
-    'modalities' => [
-        (object)['id' => 1, 'name' => 'Modalidad I',    'code' => 'FPTO',   'inscription_type' => 3],
-        (object)['id' => 2, 'name' => 'Modalidad II',   'code' => 'FPTD',   'inscription_type' => 4],
-        (object)['id' => 3, 'name' => 'Modalidad III',  'code' => 'FPCI',   'inscription_type' => 5],
-        (object)['id' => 4, 'name' => 'Modalidad IV',   'code' => 'FPDR',   'inscription_type' => 6],
-        (object)['id' => 5, 'name' => 'Modalidad V',    'code' => 'FPFP',   'inscription_type' => null],
-        (object)['id' => 6, 'name' => 'Modalidad VI',   'code' => 'FPPE',   'inscription_type' => null],
-    ],
+
+    // Tables:
+    // - forem_inscription.road_type_id :: <id_tipo_via></id_tipo_via>
     'type_roads' => [
         (object)['id' => 1,     'code' => 'AD',   'name' => 'Aldea'],
         (object)['id' => 2,     'code' => 'AL',   'name' => 'Alameda'],
@@ -68,34 +74,43 @@ return [
         (object)['id' => 35,    'code' => 'TR',   'name' => 'Travesía'],
         (object)['id' => 36,    'code' => 'UR',   'name' => 'Urbanización']
     ],
-    'sectors' => [
-        (object)['id' => 1, 'name' => 'Industrias de captación, elevación, conducción, tratamiento, depuración y distribución de agua'],
-        (object)['id' => 2, 'name' => 'Industrias de alimentación y bebidas'],
-        (object)['id' => 3, 'name' => 'Artes gráficas, manipulados de papel y cartón, editoriales e industrias afines'],
-        (object)['id' => 4, 'name' => 'Banca'],
-        (object)['id' => 5, 'name' => 'Comercio'],
-        (object)['id' => 6, 'name' => 'Construccion'],
-    ],
+
+    // Tables:
+    // - forem_inscription.gender_id :: <sexo></sexo>
     'genders' => [
         (object)['id' => 0, 'name' => 'Hombre'],
         (object)['id' => 1, 'name' => 'Mujer']
     ],
+
+    // Tables:
+    // - forem_inscription.document_type_id :: <id_tipo_documento_alumno></id_tipo_documento_alumno>
     'document_types' => [
         (object)['id' => 1, 'name' => 'NAF'],
         (object)['id' => 2, 'name' => 'ISFAS'],
         (object)['id' => 3, 'name' => 'MUTUALISTA']
     ],
+
+    // Tables:
+    // - forem_inscription.academic_level_id :: <id_nivel_academico></id_nivel_academico>
     'academic_levels' => [
-        (object)['id' => 1, 'academic_id' => 1, 'modality_id' => 3, 'name' => 'Sin estudios',       'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
-        (object)['id' => 2, 'academic_id' => 2, 'modality_id' => 3, 'name' => 'Estudios primarios', 'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
-        (object)['id' => 3, 'academic_id' => 3, 'modality_id' => 3, 'name' => 'Graduado escolar',   'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
-        (object)['id' => 4, 'academic_id' => 4, 'modality_id' => 3, 'name' => 'ESO',                'specialty' => false, 'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 1, 'academic_id' => 1, 'modality_id' => 3, 'name' => 'Sin estudios',           'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 2, 'academic_id' => 2, 'modality_id' => 3, 'name' => 'Estudios primarios',     'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 3, 'academic_id' => 3, 'modality_id' => 3, 'name' => 'Graduado escolar',       'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 4, 'academic_id' => 4, 'modality_id' => 3, 'name' => 'ESO',                    'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 5, 'academic_id' => 5, 'modality_id' => 3, 'name' => 'FP I',                   'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => ''],
+        (object)['id' => 7, 'academic_id' => 7, 'modality_id' => 3, 'name' => 'Ciclo grado superior',   'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => ''],
     ],
+
+    // Tables:
+    // - forem_inscription.employment_situation_id :: <id_situacion_laboral></id_situacion_laboral>
     'employment_situations' => [
         (object)['id' => 0, 'name' => 'Desempleado'],
         (object)['id' => 1, 'name' => 'Ocupado'],
         (object)['id' => 2, 'name' => 'Otra']
     ],
+
+    // Tables:
+    // - forem_inscription.unemployed_situation_id :: <id_situacion_desempleo></id_situacion_desempleo>
     'unemployed_situations' => [
         (object)['id' => 67,    'name' => 'Percibe prestación por desempleo'],
         (object)['id' => 68,    'name' => 'Percibe subsidio por desempleo'],
@@ -103,6 +118,9 @@ return [
         (object)['id' => 70,    'name' => 'Demandante del primer empleo'],
         (object)['id' => 144,   'name' => 'Otros no parados'],
     ],
+
+    // Tables:
+    // - forem_inscription.professional_category_id :: <id_categoria_profesional></id_categoria_profesional>
     'professional_categories' => [
         (object)['id' => 1, 'name' => 'Directivos/as'],
         (object)['id' => 2, 'name' => 'Mandos intermedios'],
@@ -110,6 +128,9 @@ return [
         (object)['id' => 4, 'name' => 'Trabajadores cualificados/as'],
         (object)['id' => 5, 'name' => 'Trabajadores no cualificados/as'],
     ],
+
+    // Tables:
+    // - forem_inscription.id_area_funcional :: <id_area_funcional></id_area_funcional>
     'functional_areas' => [
         (object)['id' => 1, 'name' => 'Dirección'],
         (object)['id' => 2, 'name' => 'Administración'],
@@ -117,6 +138,9 @@ return [
         (object)['id' => 4, 'name' => 'Mantenimiento'],
         (object)['id' => 5, 'name' => 'Producción'],
     ],
+
+    // Tables:
+    // - forem_inscription.reason_request_id :: <id_motivo_solicitud></id_motivo_solicitud>
     'reason_requests' => [
         (object)['id' => 1, 'name' => 'Interés'],
         (object)['id' => 2, 'name' => 'No perder prestaciones'],
@@ -126,40 +150,53 @@ return [
         (object)['id' => 6, 'name' => 'Otros'],
     ],
 
+    'sectors' => [
+        (object)['id' => 1, 'name' => 'Industrias de captación, elevación, conducción, tratamiento, depuración y distribución de agua'],
+        (object)['id' => 2, 'name' => 'Industrias de alimentación y bebidas'],
+        (object)['id' => 3, 'name' => 'Artes gráficas, manipulados de papel y cartón, editoriales e industrias afines'],
+        (object)['id' => 4, 'name' => 'Banca'],
+        (object)['id' => 5, 'name' => 'Comercio'],
+        (object)['id' => 6, 'name' => 'Construccion'],
+    ],
+
 
     //******************************************************************************************************************
     //***   FOREM
     //******************************************************************************************************************
+
+    // Tables:
+    // - forem_action.target_id
+    // - forem_group.target_id
     'targets' => [
         (object)['id' => 1, 'name' => 'Desempleado'],
         (object)['id' => 2, 'name' => 'Empleado']
     ],
+
+    // Tables:
+    // - forem_action.assistance_id
+    // - forem_group.assistance_id
     'assistances' => [
         (object)['id' => 1, 'name' => 'Presencial'],
         (object)['id' => 2, 'name' => 'Teleformación'],
         (object)['id' => 3, 'name' => 'Mixta'],
     ],
+
+    // Tables:
+    // - forem_action.type_id
+    // - forem_group.type_id
     'types' => [
         (object)['id' => 1, 'name' => 'Certificados de profesionalidad'],
         (object)['id' => 2, 'name' => 'Formacion no subvencionada'],
         (object)['id' => 3, 'name' => 'Formacion subvencionada'],
         (object)['id' => 4, 'name' => 'Oposiciones'],
     ],
+
     'work_situations' => [
         (object)['id' => 1, 'name' => 'Desempleado/a'],
         (object)['id' => 2, 'name' => 'Trabajador/a área pública'],
         (object)['id' => 3, 'name' => 'Trabajador/a ERE (Expediente de Regulación de Empleo)'],
         (object)['id' => 4, 'name' => 'Trabajador/a no PYME (Más de 250 trabajadores)'],
         (object)['id' => 5, 'name' => 'Trabajador/a PYME (Menos de 250 trabajadores)'],
-    ],
-    'availabilities' => [
-        (object)['id' => 1, 'name' => 'Albacete'],
-        (object)['id' => 2, 'name' => 'Castilla la Mancha'],
-        (object)['id' => 3, 'name' => 'Ciudad Real'],
-        (object)['id' => 4, 'name' => 'Cuenca'],
-        (object)['id' => 5, 'name' => 'Formación Online'],
-        (object)['id' => 6, 'name' => 'Guadalajara'],
-        (object)['id' => 7, 'name' => 'Toledo'],
     ],
     'expertises' => [
         (object)['id' => 1, 'name' => '3 Años trabajando o más'],
@@ -173,8 +210,21 @@ return [
         (object)['id' => 3, 'name' => 'De 100 a 300 horas'],
         (object)['id' => 4, 'name' => '300 horas o más']
     ],
+
+    //******************************************************************************************************************
+    //***   FORMADORES
+    //******************************************************************************************************************
     'profiles' => [
         (object)['id' => 1, 'name' => 'Formador/a'],
         (object)['id' => 2, 'name' => 'Proyectos'],
+    ],
+    'availabilities' => [
+        (object)['id' => 1, 'name' => 'Formación Online'],
+        (object)['id' => 2, 'name' => 'Albacete'],
+        (object)['id' => 3, 'name' => 'Castilla la Mancha'],
+        (object)['id' => 4, 'name' => 'Ciudad Real'],
+        (object)['id' => 5, 'name' => 'Cuenca'],
+        (object)['id' => 6, 'name' => 'Guadalajara'],
+        (object)['id' => 7, 'name' => 'Toledo'],
     ],
 ];

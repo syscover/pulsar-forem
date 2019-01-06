@@ -21,10 +21,10 @@ class ForemCreateTableGroup extends Migration
                 $table->string('code');                                 //
                 $table->string('name');
                 $table->string('slug');
-                $table->integer('category_id')->unsigned();             // Categoría del curso
-                $table->integer('target_id')->unsigned();               // Desempleado, Empleado
-                $table->integer('assistance_id')->unsigned();           // Presencial, Teleformación, etc.
-                $table->integer('type_id')->unsigned();                 // Oposiciones, Formacion subvencionada, etc.
+                $table->integer('category_id')->unsigned();             // forem_category :: Categoría del curso
+                $table->integer('target_id')->unsigned();               // pulsar-forem.targets :: Desempleado/Empleado
+                $table->integer('assistance_id')->unsigned();           // pulsar-forem.assistances :: Presencial, Teleformación, etc.
+                $table->integer('type_id')->unsigned();                 // pulsar-forem.types :: Oposiciones, Formacion subvencionada, etc.
 
                 $table->smallInteger('hours');
 
@@ -40,7 +40,7 @@ class ForemCreateTableGroup extends Migration
 
 
                 // course fields
-                $table->integer('action_id');
+                $table->integer('action_id');                           // forem_action
                 $table->integer('expedient_id');
                 $table->integer('modality_id');                         // modalidad de curso en caso de ser subvencionado
                 $table->integer('employment_office_id')->unsigned();    // oficina de empleo que asignará los alumnos

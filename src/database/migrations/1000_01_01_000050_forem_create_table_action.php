@@ -21,10 +21,10 @@ class ForemCreateTableAction extends Migration
                 $table->string('code');
                 $table->string('name');
                 $table->string('slug');
-                $table->integer('category_id')->unsigned();         // Categoría del curso
-                $table->integer('target_id')->unsigned();           // Desempleado, Empleado
-                $table->integer('assistance_id')->unsigned();       // Presencial, Teleformación, etc.
-                $table->integer('type_id')->unsigned();             // Oposiciones, Formacion subvencionada, etc.
+                $table->integer('category_id')->unsigned();         // forem_category :: Categoría del curso
+                $table->integer('target_id')->unsigned();           // pulsar-forem.targets :: Desempleado/Empleado
+                $table->integer('assistance_id')->unsigned();       // pulsar-forem.assistances :: Presencial, Teleformación, etc.
+                $table->integer('type_id')->unsigned();             // pulsar-forem.types :: Oposiciones, Formacion subvencionada, etc.
 
                 $table->smallInteger('hours');
 
