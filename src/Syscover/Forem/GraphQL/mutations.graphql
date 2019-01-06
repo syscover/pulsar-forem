@@ -17,3 +17,8 @@ foremDeleteEmploymentOffice(id:Int!): ForemEmploymentOffice @field(resolver: "Sy
 foremCreateExpedient(payload: ForemExpedientInput!): ForemExpedient @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@create")
 foremUpdateExpedient(payload: ForemExpedientInput!): ForemExpedient @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@update")
 foremDeleteExpedient(id:Int!): ForemExpedient @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@delete")
+
+# Group
+foremCreateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@create")
+foremUpdateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@update")
+foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@delete")

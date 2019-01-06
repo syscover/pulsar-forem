@@ -71,4 +71,24 @@ type ForemGroup {
     action: ForemAction!
     expedient_id: Int!
     expedient: ForemExpedient!
+    modality_id: Int!
+    employment_office_id: Int!
+    employment_office: ForemEmploymentOffice!
+    starts_at: String!
+    ends_at: String!
+    selection_date: String!
+    open: Boolean!
+    schedule: String!
+    publish: Boolean!
+    is_product: Boolean!
+    product_id: Int
+    country_id: String
+    territorial_area_1_id: String
+    territorial_area_2_id: String
+    territorial_area_3_id: String
+    zip: String
+    locality: String
+    address: String
+    latitude: String
+    longitude: String
 }

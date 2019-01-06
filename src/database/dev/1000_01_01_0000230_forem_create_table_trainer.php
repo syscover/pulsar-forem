@@ -26,6 +26,7 @@ class ForemCreateTableTrainer extends Migration
                 $table->tinyInteger('gender')->nullable();
                 $table->string('email')->nullable();
                 $table->string('phone')->nullable();
+                $table->string('mobile')->nullable();
                 $table->date('birth_date')->nullable();
                 $table->string('tin')->nullable();
                 $table->json('availability')->nullable();                               // related with pulsar-forem.availabilities
