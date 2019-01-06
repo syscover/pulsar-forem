@@ -15,6 +15,33 @@ return [
     ],
 
     // Tables:
+    // - forem_inscription.academic_level_id :: <id_nivel_academico></id_nivel_academico>
+    'academic_levels' => [
+        (object)['id' => 1,     'academic_id' => 1,     'modality_id' => [3,4,5,6,7], 'name' => 'Sin estudios',                           'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 2,     'academic_id' => 2,     'modality_id' => [3,4,5,6,7], 'name' => 'Estudios primarios',                     'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 3,     'academic_id' => 3,     'modality_id' => [3,4,5,6,7], 'name' => 'Graduado escolar',                       'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 4,     'academic_id' => 4,     'modality_id' => [3,4,5,6,7], 'name' => 'ESO',                                    'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 5,     'academic_id' => 5,     'modality_id' => [3,4,5,6,7], 'name' => 'FP I',                                   'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 7,     'academic_id' => 7,     'modality_id' => [3,4,5,6,7], 'name' => 'Ciclo grado superior',                   'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 8,     'academic_id' => 8,     'modality_id' => [3,4,5,6,7], 'name' => 'BUP/COU/Bachillerato',                   'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => '02/06/2014'],
+        (object)['id' => 9,     'academic_id' => 9,     'modality_id' => [3,4,5,6,7], 'name' => 'Diplomatura',                            'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 10,    'academic_id' => 10,    'modality_id' => [3,4,5,6,7], 'name' => 'Licenciatura',                           'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 31,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Doctor',                                 'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 32,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Otros',                                  'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 33,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Certificado de profesionalidad nivel 1', 'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 34,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Certificado de profesionalidad nivel 2', 'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 35,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Certificado de profesionalidad nivel 3', 'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 36,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Certificado de escolaridad',             'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 37,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'FP II',                                  'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 38,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Ciclo grado medio',                      'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 39,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Grado',                                  'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => null],
+        (object)['id' => 40,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'BUP (1º y 2º curso)',                    'specialty' => false,   'date_from' => '03/06/2014', 'date_to' => null],
+        (object)['id' => 41,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'BUP (1º, 2º y 3º curso)',                'specialty' => false,   'date_from' => '03/06/2014', 'date_to' => null],
+        (object)['id' => 42,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'COU',                                    'specialty' => false,   'date_from' => '03/06/2014', 'date_to' => null],
+        (object)['id' => 43,    'academic_id' => null,  'modality_id' => [3,4,5,6,7], 'name' => 'Bachiller',                              'specialty' => false,   'date_from' => '03/06/2014', 'date_to' => null],
+    ],
+
+    // Tables:
     // - forem_inscription.driving_licenses :: <id_carnet_conducir></id_carnet_conducir>
     'driving_licenses' => [
         (object)['id' => 1, 'name' => 'AM'],
@@ -88,17 +115,6 @@ return [
         (object)['id' => 1, 'name' => 'NAF'],
         (object)['id' => 2, 'name' => 'ISFAS'],
         (object)['id' => 3, 'name' => 'MUTUALISTA']
-    ],
-
-    // Tables:
-    // - forem_inscription.academic_level_id :: <id_nivel_academico></id_nivel_academico>
-    'academic_levels' => [
-        (object)['id' => 1, 'academic_id' => 1, 'modality_id' => 3, 'name' => 'Sin estudios',           'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => ''],
-        (object)['id' => 2, 'academic_id' => 2, 'modality_id' => 3, 'name' => 'Estudios primarios',     'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => ''],
-        (object)['id' => 3, 'academic_id' => 3, 'modality_id' => 3, 'name' => 'Graduado escolar',       'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => ''],
-        (object)['id' => 4, 'academic_id' => 4, 'modality_id' => 3, 'name' => 'ESO',                    'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => ''],
-        (object)['id' => 5, 'academic_id' => 5, 'modality_id' => 3, 'name' => 'FP I',                   'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => ''],
-        (object)['id' => 7, 'academic_id' => 7, 'modality_id' => 3, 'name' => 'Ciclo grado superior',   'specialty' => true,    'date_from' => '01/01/2004', 'date_to' => ''],
     ],
 
     // Tables:

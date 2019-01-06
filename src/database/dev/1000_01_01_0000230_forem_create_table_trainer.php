@@ -18,8 +18,8 @@ class ForemCreateTableTrainer extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
-                $table->tinyInteger('profile_id');
-                $table->integer('certification_id');                            // titulación
+                $table->tinyInteger('profile_id');                                      // pulsar-forem.profiles
+                $table->smallInteger('academic_level_id')->unsigned()->nullable();      // pulsar-forem.academic_levels
 				$table->string('name');
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
@@ -28,8 +28,8 @@ class ForemCreateTableTrainer extends Migration
                 $table->string('phone')->nullable();
                 $table->date('birth_date')->nullable();
                 $table->string('tin')->nullable();
-                $table->json('availability')->nullable();                       // related with pulsar-forem.availabilities
-                $table->boolean('authorization')->default(false);         // authorization RGPD
+                $table->json('availability')->nullable();                               // related with pulsar-forem.availabilities
+                $table->boolean('authorization')->default(false);                 // authorization RGPD
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();

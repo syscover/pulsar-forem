@@ -18,8 +18,14 @@ class ForemCreateTableInscription extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
+                $table->integer('group_id')->unsigned();                                            // group that belong this inscription
                 $table->integer('student_id')->unsigned()->nullable();                              // if is student registered
                 $table->boolean('exported')->default(false);                                  // check if this inscription have been exported to FOCO
+
+                // approved process
+                $table->integer('approved_user')->unsigned()->nullable();                           // user who approved this inscription
+                $table->timestamp('approved_date')->nullable();                                     // date when was approved this inscription
+                $table->boolean('approved')->default(false);                                  // check if this inscription is approved
 
                 // data student
                 $table->string('name');                                                             // <nombre></nombre>
@@ -52,7 +58,7 @@ class ForemCreateTableInscription extends Migration
                 $table->smallInteger('employment_situation_id')->unsigned()->nullable();            // <id_situacion_laboral></id_situacion_laboral> :: pulsar-forem.employment_situations
 
                 // unemployment data
-                $table->timestamp('unemployed_registration_date')->default()->nullable();           // <fecha_inscripcion></fecha_inscripcion>
+                $table->timestamp('unemployed_registration_date')->nullable();                      // <fecha_inscripcion></fecha_inscripcion>
                 $table->tinyInteger('unemployed_situation_id')->unsigned()->nullable();             // <id_situacion_desempleo></id_situacion_desempleo> :: pulsar-forem.unemployed_situations
                 $table->integer('employment_office_id')->unsigned()->nullable();                    // <id_oficina_empleo></id_oficina_empleo> :: forem_employment_office
 
@@ -75,9 +81,9 @@ class ForemCreateTableInscription extends Migration
                 $table->string('other_reason_request')->nullable();                                 // <motivo_otros></motivo_otros>
 
                 // authorizations
-                $table->boolean('ssn_authorization')->default(false)->nullable();;            // <autorizacion_seg_social></autorizacion_seg_social>
-                $table->boolean('certification_authorization')->default(false)->nullable();   // <autorizacion_titulacion></autorizacion_titulacion>
-                $table->boolean('data_authorization')->default(false)->nullable();            // <autorizacion_datos></autorizacion_datos>
+                $table->boolean('ssn_authorization')->default(false);                         // <autorizacion_seg_social></autorizacion_seg_social>
+                $table->boolean('certification_authorization')->default(false);               // <autorizacion_titulacion></autorizacion_titulacion>
+                $table->boolean('data_authorization')->default(false);                        // <autorizacion_datos></autorizacion_datos>
                 $table->boolean('marketing_authorization')->default(false);
 
 
@@ -105,10 +111,11 @@ class ForemCreateTableInscription extends Migration
 
 
 
+
+
                 // inscription
-                $table->integer('certification_id');
-                $table->integer('expertise_id');
-                $table->integer('work_situation_id');
+                $table->integer('expertise_id')->unsigned();
+                $table->integer('work_situation_id')->unsigned();
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();
@@ -119,9 +126,8 @@ class ForemCreateTableInscription extends Migration
                 $table->decimal('latitude', 17, 14)->nullable();
                 $table->decimal('longitude', 17, 14)->nullable();
 
-                // company
-                $table->string('company')->nullable();
-                $table->integer('sector_id')->nullable();
+                // sector_id poner también en los datos de la compañía no solo en experiencias??
+                $table->integer('sector_id')->unsigned()->nullable();
 
                 $table->text('observations')->nullable();
 

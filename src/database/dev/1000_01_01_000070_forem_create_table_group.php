@@ -42,7 +42,7 @@ class ForemCreateTableGroup extends Migration
                 // course fields
                 $table->integer('action_id');                           // forem_action
                 $table->integer('expedient_id');
-                $table->integer('modality_id');                         // modalidad de curso en caso de ser subvencionado
+                $table->integer('modality_id');                         // pulsar-forem.modalities :: modalidad de curso en caso de ser subvencionado
                 $table->integer('employment_office_id')->unsigned();    // oficina de empleo que asignará los alumnos
 
                 // data to create web course sheet
