@@ -5,7 +5,8 @@ return [
     //******************************************************************************************************************
     //***   FOCO
     //******************************************************************************************************************
-    'modalities' => [
+    '
+    ' => [
         (object)['id' => 1, 'name' => 'Modalidad I',    'code' => 'FPTO',   'inscription_type' => 3],
         (object)['id' => 2, 'name' => 'Modalidad II',   'code' => 'FPTD',   'inscription_type' => 4],
         (object)['id' => 3, 'name' => 'Modalidad III',  'code' => 'FPCI',   'inscription_type' => 5],

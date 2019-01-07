@@ -45,9 +45,9 @@ class ExpedientService
 
     private static function checkCreate($object)
     {
-        if(empty($object['code']))  throw new \Exception('You have to define a code field to create a expedient');
-        if(empty($object['name']))  throw new \Exception('You have to define a name field to create a expedient');
+        if(empty($object['modality_id']))  throw new \Exception('You have to define a code field to create a expedient');
         if(empty($object['year']))  throw new \Exception('You have to define a year field to create a expedient');
+        if(empty($object['name']))  throw new \Exception('You have to define a name field to create a expedient');
     }
 
     private static function checkUpdate($object)

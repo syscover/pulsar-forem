@@ -18,7 +18,6 @@ class ForemCreateTableExpedient extends Migration
 				$table->engine = 'InnoDB';
 
 				$table->increments('id');
-                $table->string('code');                         // 8 characters
                 $table->integer('modality_id')->unsigned();             // pulsar-forem.modalities :: modalidad de curso en caso de ser subvencionado
                 $table->smallInteger('year');
                 $table->string('name');
@@ -27,8 +26,6 @@ class ForemCreateTableExpedient extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
-
-                $table->index('code', 'ix01_forem_expedient');
 			});
 		}
 	}
