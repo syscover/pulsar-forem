@@ -42,9 +42,9 @@ input ForemEmploymentOfficeInput {
 
 input ForemExpedientInput {
     id: Int
-    code: String!
-    name: String!
+    modality_id: Int!
     year: Int!
+    name: String!
     starts_at: String
     ends_at: String
 }
@@ -70,7 +70,6 @@ input ForemGroupInput {
     action: ForemAction!
     expedient_id: Int!
     expedient: ForemExpedient!
-    modality_id: Int!
     employment_office_id: Int!
     employment_office: ForemEmploymentOffice!
     starts_at: String!

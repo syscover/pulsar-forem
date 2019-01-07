@@ -43,9 +43,9 @@ type ForemEmploymentOffice {
 
 type ForemExpedient {
     id: Int!
-    code: String!
-    name: String!
+    modality_id: Int!
     year: Int!
+    name: String!
     starts_at: String
     ends_at: String
 }
@@ -71,7 +71,6 @@ type ForemGroup {
     action: ForemAction!
     expedient_id: Int!
     expedient: ForemExpedient!
-    modality_id: Int!
     employment_office_id: Int!
     employment_office: ForemEmploymentOffice!
     starts_at: String!

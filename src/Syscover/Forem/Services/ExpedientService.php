@@ -29,9 +29,9 @@ class ExpedientService
         else
         {
             $object = $object->only([
-                'code',
-                'name',
+                'modality_id',
                 'year',
+                'name',
                 'starts_at',
                 'ends_at'
             ]);
