@@ -28,9 +28,6 @@ class ForemCreateTableGroup extends Migration
 
                 $table->smallInteger('hours');
 
-                $table->boolean('online')->default(false);
-
-                $table->boolean('subsidized')->default(false);
                 $table->decimal('price',10, 2)->nullable();
                 $table->decimal('price_hour',10, 2)->nullable();
 
@@ -40,9 +37,9 @@ class ForemCreateTableGroup extends Migration
 
 
                 // course fields
+                $table->integer('employment_office_id')->unsigned();    // forem_employment_office :: oficina de empleo que asignará los alumnos
                 $table->integer('action_id')->unsigned();               // forem_action
                 $table->integer('expedient_id')->unsigned();
-                $table->integer('employment_office_id')->unsigned();    // forem_employment_office :: oficina de empleo que asignará los alumnos
 
                 // data to create web course sheet
                 $table->timestamp('starts_at')->nullable();

@@ -8,8 +8,6 @@ type ForemAction {
     assistance_id: Int!
     type_id: Int!
     hours: Int!
-    online: Boolean!
-    subsidized: Boolean!
     price: Float
     price_hour: Float
     contents: String
@@ -60,19 +58,18 @@ type ForemGroup {
     assistance_id: Int!
     type_id: Int!
     hours: Int!
-    online: Boolean!
-    subsidized: Boolean!
     price: Float
     price_hour: Float
     contents: String
     requirements: String
     observations: String
+
+    employment_office_id: Int!
+    employment_office: ForemEmploymentOffice!
     action_id: Int!
     action: ForemAction!
     expedient_id: Int!
     expedient: ForemExpedient!
-    employment_office_id: Int!
-    employment_office: ForemEmploymentOffice!
     starts_at: String!
     ends_at: String!
     selection_date: String!

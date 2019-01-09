@@ -8,8 +8,6 @@ input ForemActionInput {
     assistance_id: Int!
     type_id: Int!
     hours: Int!
-    online: Boolean!
-    subsidized: Boolean!
     price: Float
     price_hour: Float
     contents: String
@@ -59,13 +57,12 @@ input ForemGroupInput {
     assistance_id: Int!
     type_id: Int!
     hours: Int!
-    online: Boolean!
-    subsidized: Boolean!
     price: Float
     price_hour: Float
     contents: String
     requirements: String
     observations: String
+
     action_id: Int!
     action: ForemAction!
     expedient_id: Int!

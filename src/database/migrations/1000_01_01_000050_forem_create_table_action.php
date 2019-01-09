@@ -28,9 +28,6 @@ class ForemCreateTableAction extends Migration
 
                 $table->smallInteger('hours');
 
-                $table->boolean('online')->default(false);
-
-                $table->boolean('subsidized')->default(false);
                 $table->decimal('price',10, 2)->nullable();
                 $table->decimal('price_hour',10, 2)->nullable();
 

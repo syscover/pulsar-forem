@@ -37,8 +37,6 @@ class GroupService
                 'assistance_id',
                 'type_id',
                 'hours',
-                'online',
-                'subsidized',
                 'price',
                 'price_hour',
                 'contents',
@@ -80,8 +78,6 @@ class GroupService
         if(empty($object['assistance_id'])) throw new \Exception('You have to define a assistance_id field to create a group');
         if(empty($object['type_id']))       throw new \Exception('You have to define a type_id field to create a group');
         if(empty($object['hours']))         throw new \Exception('You have to define a hours field to create a group');
-        if(empty($object['online']))        throw new \Exception('You have to define a online field to create a group');
-        if(empty($object['subsidized']))    throw new \Exception('You have to define a subsidized field to create a group');
     }
 
     private static function checkUpdate($object)

@@ -37,8 +37,6 @@ class ActionService
                 'assistance_id',
                 'type_id',
                 'hours',
-                'online',
-                'subsidized',
                 'price',
                 'price_hour',
                 'contents',
@@ -60,8 +58,6 @@ class ActionService
         if(empty($object['assistance_id'])) throw new \Exception('You have to define a assistance_id field to create a action');
         if(empty($object['type_id']))       throw new \Exception('You have to define a type_id field to create a action');
         if(empty($object['hours']))         throw new \Exception('You have to define a hours field to create a action');
-        if(!isset($object['online']))       throw new \Exception('You have to define a online field to create a action');
-        if(!isset($object['subsidized']))   throw new \Exception('You have to define a subsidized field to create a action');
     }
 
     private static function checkUpdate($object)
