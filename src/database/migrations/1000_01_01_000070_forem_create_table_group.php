@@ -35,11 +35,11 @@ class ForemCreateTableGroup extends Migration
                 $table->text('requirements')->nullable();
                 $table->text('observations')->nullable();
 
-
                 // course fields
                 $table->integer('employment_office_id')->unsigned();    // forem_employment_office :: oficina de empleo que asignará los alumnos
                 $table->integer('action_id')->unsigned();               // forem_action
                 $table->integer('expedient_id')->unsigned();
+
 
                 // data to create web course sheet
                 $table->timestamp('starts_at')->nullable();
