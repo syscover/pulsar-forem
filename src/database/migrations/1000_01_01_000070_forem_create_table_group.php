@@ -49,10 +49,6 @@ class ForemCreateTableGroup extends Migration
                 $table->string('schedule')->nullable();
                 $table->boolean('publish')->default(false);
 
-                // marketable
-                $table->boolean('is_product')->default(false);
-                $table->integer('product_id')->unsigned()->nullable();
-
                 // geolocation data
                 $table->string('country_id', 2)->nullable();
                 $table->string('territorial_area_1_id', 6)->nullable();
@@ -63,6 +59,10 @@ class ForemCreateTableGroup extends Migration
                 $table->string('address')->nullable();
                 $table->decimal('latitude', 17, 14)->nullable();
                 $table->decimal('longitude', 17, 14)->nullable();
+
+                // marketable
+                $table->boolean('is_product')->default(false);
+                $table->integer('product_id')->unsigned()->nullable();
 
                 $table->timestamps();
                 $table->softDeletes();
