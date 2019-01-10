@@ -1,13 +1,29 @@
 <?php namespace Syscover\Forem\Services;
 
+use Syscover\Admin\Traits\Attachable;
 use Syscover\Forem\Models\Group;
 
 class GroupService
 {
+    use Attachable;
+
     public static function create($object)
     {
         self::checkCreate($object);
-        return Group::create(self::builder($object));
+
+        $group = Group::create(self::builder($object));
+
+        // set attachments
+        self::createAttachments(
+            $object['attachments'],
+            'storage/app/public/forem/groups',
+            'storage/forem/groups',
+            Group::class,
+            $group->id,
+            $group->lang_id
+        );
+
+        return $group;
     }
 
     public static function update($object)
@@ -15,7 +31,19 @@ class GroupService
         self::checkUpdate($object);
         Group::where('id', $object['id'])->update(self::builder($object));
 
-        return  Group::builder()->find($object['id']);
+        $group = Group::builder()->find($object['id']);
+
+        // update attachments
+        self::updateAttachments(
+            $object['attachments'],
+            'storage/app/public/forem/groups',
+            'storage/forem/groups',
+            Group::class,
+            $group->id,
+            $group->lang_id
+        );
+
+        return  $group;
     }
 
     private static function builder($object, $filterKeys = null)

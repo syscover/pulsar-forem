@@ -86,4 +86,6 @@ input ForemGroupInput {
     address: String
     latitude: String
     longitude: String
+
+    attachments: [AdminAttachment]
 }

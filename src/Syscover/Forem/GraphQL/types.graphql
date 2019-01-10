@@ -87,4 +87,6 @@ type ForemGroup {
     address: String
     latitude: String
     longitude: String
+
+    attachments: [AdminAttachment]
 }
