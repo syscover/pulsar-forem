@@ -44,10 +44,10 @@ class ForemCreateTableGroup extends Migration
                 // data to create web course sheet
                 $table->timestamp('starts_at')->nullable();
                 $table->timestamp('ends_at')->nullable();
-                $table->timestamp('selection_date')->nullable();
-                $table->boolean('open')->default(false);           // if is open the registration
                 $table->string('schedule')->nullable();
+                $table->timestamp('selection_date')->nullable();
                 $table->boolean('publish')->default(false);
+                $table->boolean('open')->default(false);           // if is open the registration
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();

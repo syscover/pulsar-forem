@@ -70,11 +70,11 @@ type ForemGroup {
     action: ForemAction!
     expedient_id: Int!
     expedient: ForemExpedient!
-    starts_at: String!
-    ends_at: String!
-    selection_date: String!
+    starts_at: String
+    ends_at: String
+    selection_date: String
     open: Boolean!
-    schedule: String!
+    schedule: String
     publish: Boolean!
     is_product: Boolean!
     product_id: Int
@@ -89,4 +89,29 @@ type ForemGroup {
     longitude: String
 
     attachments: [AdminAttachment]
+
+    # Marketable columns
+    # Marketable fields cann't to be required if is marketable is optional
+    active: Boolean
+    categories: [MarketCategory]
+    class_id: Int
+    cost: Float
+    cost_per_sale: Float
+    enable_from: String
+    enable_to: String
+    ends_at: String
+    fixed_cost: Float
+    lang_id: String
+    limited_capacity: Int
+    name: String
+    parent_id: Int
+    price_type_id: Int
+    product_class_tax_id: Int
+    sections: [MarketSection]
+    sku: String
+    slug: String
+    sort: Int
+    starts_at: String
+    subtotal: Float
+    weight: Float
 }
