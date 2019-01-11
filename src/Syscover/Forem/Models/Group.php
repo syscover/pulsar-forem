@@ -1,5 +1,6 @@
 <?php namespace Syscover\Forem\Models;
 
+use Carbon\Carbon;
 use Syscover\Admin\Models\Attachment;
 use Syscover\Core\Models\CoreModel;
 use Syscover\Market\Traits\Marketable;
@@ -34,5 +35,20 @@ class Group extends CoreModel
             'id'
         )
             ->orderBy('sort', 'asc');
+    }
+
+    // Accessors
+    public function getStartsAtAttribute($value)
+    {
+        // https://es.wikipedia.org/wiki/ISO_8601
+        // return (new Carbon($value))->toW3cString();
+        return (new Carbon($value))->format('Y-m-d\TH:i:s');
+    }
+
+    public function getEndsAtAttribute($value)
+    {
+        // https://es.wikipedia.org/wiki/ISO_8601
+        // return (new Carbon($value))->toW3cString();
+        return (new Carbon($value))->format('Y-m-d\TH:i:s');
     }
 }
