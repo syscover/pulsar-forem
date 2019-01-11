@@ -84,7 +84,7 @@ input ForemGroupInput {
     latitude: String
     longitude: String
 
-    attachments: [AdminAttachment]
+    attachments: [AdminAttachmentInput]
 
     # Marketable columns
     active: Boolean
