@@ -1,5 +1,6 @@
 <?php namespace Syscover\Forem\Services;
 
+use Illuminate\Support\Facades\Log;
 use Syscover\Forem\Models\Expedient;
 
 class ExpedientService
