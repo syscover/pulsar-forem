@@ -19,6 +19,9 @@ class Group extends CoreModel
     public $with            = [
         'category'
     ];
+    protected $casts        = [
+        'price' => 'float'
+    ];
 
     /**
      * Is not possible add 'attachments' to $with parameter, it need to be instantiated to get lang parameter
