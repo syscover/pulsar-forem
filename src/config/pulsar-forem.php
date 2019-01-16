@@ -201,10 +201,10 @@ return [
     // - forem_action.type_id
     // - forem_group.type_id
     'types' => [
-        (object)['id' => 1, 'name' => 'Certificados de profesionalidad'],
-        (object)['id' => 2, 'name' => 'Formacion no subvencionada'],
-        (object)['id' => 3, 'name' => 'Formacion subvencionada'],
-        (object)['id' => 4, 'name' => 'Oposiciones'],
+        (object)['id' => 1, 'name' => 'Certificados de profesionalidad',    'slug' => 'certificados-de-profesionalidad'],
+        (object)['id' => 2, 'name' => 'Formacion no subvencionada',         'slug' => 'formacion-no-subvencionada'],
+        (object)['id' => 3, 'name' => 'Formacion subvencionada',            'slug' => 'formacion-subvencionada'],
+        (object)['id' => 4, 'name' => 'Oposiciones',                        'slug' => 'oposiciones'],
     ],
 
     'work_situations' => [
