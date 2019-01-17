@@ -10,6 +10,7 @@ type ForemAction {
     hours: Int!
     price: Float
     price_hour: Float
+    contents_excerpt: String
     contents: String
     requirements: String
     observations: String
@@ -60,6 +61,7 @@ type ForemGroup {
     hours: Int!
     price: Float
     price_hour: Float
+    contents_excerpt: String
     contents: String
     requirements: String
     observations: String

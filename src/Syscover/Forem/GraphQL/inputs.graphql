@@ -10,6 +10,7 @@ input ForemActionInput {
     hours: Int!
     price: Float
     price_hour: Float
+    contents_excerpt: String
     contents: String
     requirements: String
     observations: String
@@ -59,6 +60,7 @@ input ForemGroupInput {
     hours: Int!
     price: Float
     price_hour: Float
+    contents_excerpt: String
     contents: String
     requirements: String
     observations: String

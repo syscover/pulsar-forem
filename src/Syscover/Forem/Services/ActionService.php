@@ -39,6 +39,7 @@ class ActionService
                 'hours',
                 'price',
                 'price_hour',
+                'contents_excerpt',
                 'contents',
                 'requirements',
                 'observations'

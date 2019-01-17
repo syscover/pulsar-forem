@@ -31,6 +31,7 @@ class ForemCreateTableAction extends Migration
                 $table->decimal('price',10, 2)->nullable();
                 $table->decimal('price_hour',10, 2)->nullable();
 
+                $table->text('contents_excerpt')->nullable();
                 $table->text('contents')->nullable();
                 $table->text('requirements')->nullable();
                 $table->text('observations')->nullable();
