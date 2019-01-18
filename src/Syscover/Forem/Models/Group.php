@@ -79,26 +79,9 @@ class Group extends CoreModel
             'contents_excerpt'  => $this->contents_excerpt,
             'contents'          => $this->contents,
             'attachments'       => $this->attachments->map(function ($item, $key) {
-                                        return $item->only([
-                                            'ix',
-                                            'id',
-                                            'lang_id',
-                                            'family_id',
-                                            'sort',
-                                            'alt',
-                                            'title',
-                                            'base_path',
-                                            'file_name',
-                                            'url',
-                                            'mime',
-                                            'extension',
-                                            'size',
-                                            'width',
-                                            'height',
-                                            'data',
-                                            'family'
-                                        ]);
-                                   })
+                $item['data'] = collect($item['data']);
+                return $item->only(['ix', 'id', 'lang_id', 'family_id', 'sort', 'alt', 'title', 'base_path', 'file_name', 'url', 'mime', 'extension', 'size', 'width', 'height', 'data', 'family']);
+            })
         ];
 
         return $searchable;
