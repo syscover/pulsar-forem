@@ -1,5 +1,6 @@
 <?php namespace Syscover\Forem\Models;
 
+use Laravel\Scout\Searchable;
 use Carbon\Carbon;
 use Syscover\Admin\Models\Attachment;
 use Syscover\Core\Models\CoreModel;
@@ -12,7 +13,7 @@ use Syscover\Market\Traits\Marketable;
 
 class Group extends CoreModel
 {
-    use Marketable;
+    use Marketable, Searchable;
 
     protected $table        = 'forem_group';
     protected $fillable     = ['id', 'code', 'name', 'slug', 'category_id', 'target_id', 'assistance_id', 'type_id', 'hours', 'price', 'price_hour', 'contents_excerpt', 'contents', 'requirements', 'observations', 'action_id', 'expedient_id', 'employment_office_id', 'starts_at', 'ends_at', 'selection_date', 'open', 'schedule', 'publish', 'is_product', 'product_id', 'country_id', 'territorial_area_1_id', 'territorial_area_2_id', 'territorial_area_3_id', 'zip', 'locality', 'address', 'latitude', 'longitude'];
@@ -61,5 +62,25 @@ class Group extends CoreModel
         // https://es.wikipedia.org/wiki/ISO_8601
         // return (new Carbon($value))->toW3cString();
         return $value ? (new Carbon($value))->format('Y-m-d\TH:i:s') : null;
+    }
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        $searchable =  [
+            'id'                => $this->id,
+            'code'              => $this->code,
+            'name'              => $this->name,
+            'category'          => $this->category->name,
+            'contents_excerpt'  => $this->contents_excerpt,
+            'contents'          => $this->contents,
+            'attachments'       => $this->attachments
+        ];
+
+        return $searchable;
     }
 }

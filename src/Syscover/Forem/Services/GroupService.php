@@ -23,6 +23,15 @@ class GroupService
             $group->lang_id
         );
 
+        // we update record if has scout search engine, for register relations
+        if (has_scout())
+        {
+            if($group->publish)
+                $group->searchable();
+            else
+                $group->unsearchable();
+        }
+
         return $group;
     }
 
@@ -42,6 +51,14 @@ class GroupService
             $group->id,
             $group->lang_id
         );
+
+        if (has_scout())
+        {
+            if($group->publish)
+                $group->searchable();
+            else
+                $group->unsearchable();
+        }
 
         return  $group;
     }

@@ -69,6 +69,9 @@ class GroupGraphQLService extends CoreGraphQLService
         // delete object
         $group = SQLService::deleteRecord($args['id'], $this->modelClassName, $args['lang_id']);
 
+        // delete record from scout
+        if (has_scout()) $group->unsearchable();
+
         // delete attachments object
         AttachmentService::deleteAttachments($args['id'], $this->modelClassName, $args['lang_id']);
 
