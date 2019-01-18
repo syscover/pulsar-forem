@@ -93,7 +93,7 @@ class Group extends CoreModel
                                             'mime',
                                             'extension',
                                             'size',
-                                            'width', 
+                                            'width',
                                             'height',
                                             'data',
                                             'family'
