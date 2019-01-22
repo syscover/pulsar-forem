@@ -75,6 +75,7 @@ class Group extends CoreModel
             'id'                => $this->id,
             'code'              => $this->code,
             'name'              => $this->name,
+            'slug'              => $this->slug,
             'category'          => $this->category->name,
             'contents_excerpt'  => $this->contents_excerpt,
             'contents'          => $this->contents,
