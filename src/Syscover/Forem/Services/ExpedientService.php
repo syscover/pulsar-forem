@@ -31,6 +31,7 @@ class ExpedientService
             $object = $object->only([
                 'modality_id',
                 'year',
+                'code',
                 'name',
                 'starts_at',
                 'ends_at'

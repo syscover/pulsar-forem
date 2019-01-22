@@ -24,8 +24,6 @@ type ForemCategory {
 
 type ForemEmploymentOffice {
     id: Int!
-    profile_id: Int
-    profile: AdminProfile
     code: String!
     name: String!
     slug: String!
@@ -44,6 +42,7 @@ type ForemExpedient {
     id: Int!
     modality_id: Int!
     year: Int!
+    code: String
     name: String!
     starts_at: String
     ends_at: String
@@ -66,8 +65,6 @@ type ForemGroup {
     requirements: String
     observations: String
 
-    employment_office_id: Int!
-    employment_office: ForemEmploymentOffice!
     action_id: Int!
     action: ForemAction!
     expedient_id: Int!

@@ -11,7 +11,7 @@ use Syscover\Core\Models\CoreModel;
 class Expedient extends CoreModel
 {
     protected $table        = 'forem_expedient';
-    protected $fillable     = ['id', 'modality_id', 'year', 'name', 'starts_at', 'ends_at'];
+    protected $fillable     = ['id', 'modality_id', 'year', 'code', 'name', 'starts_at', 'ends_at'];
 
     // Accessors
     public function getStartsAtAttribute($value)

@@ -18,7 +18,6 @@ class ForemCreateTableEmploymentOffice extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
-                $table->integer('profile_id')->unsigned()->nullable();
                 $table->string('code');
 				$table->string('name');
 				$table->string('slug');
@@ -57,11 +56,6 @@ class ForemCreateTableEmploymentOffice extends Migration
                 $table->foreign('territorial_area_3_id', 'fk04_forem_employment_office')
                     ->references('id')
                     ->on('admin_territorial_area_3')
-                    ->onDelete('restrict')
-                    ->onUpdate('cascade');
-                $table->foreign('profile_id', 'fk05_forem_employment_office')
-                    ->references('id')
-                    ->on('admin_profile')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
 			});

@@ -24,7 +24,6 @@ input ForemCategoryInput {
 
 input ForemEmploymentOfficeInput {
     id: Int
-    profile_id: Int
     code: String!
     name: String!
     slug: String!
@@ -43,6 +42,7 @@ input ForemExpedientInput {
     id: Int
     modality_id: Int!
     year: Int!
+    code: String
     name: String!
     starts_at: String
     ends_at: String
@@ -67,7 +67,6 @@ input ForemGroupInput {
 
     action_id: Int!
     expedient_id: Int!
-    employment_office_id: Int!
     starts_at: String
     ends_at: String
     selection_date: String

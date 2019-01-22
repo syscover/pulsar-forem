@@ -37,7 +37,6 @@ class ForemCreateTableGroup extends Migration
                 $table->text('observations')->nullable();
 
                 // course fields
-                $table->integer('employment_office_id')->unsigned();    // forem_employment_office :: oficina de empleo que asignará los alumnos
                 $table->integer('action_id')->unsigned();               // forem_action
                 $table->integer('expedient_id')->unsigned();
 
@@ -93,11 +92,6 @@ class ForemCreateTableGroup extends Migration
                 $table->foreign('territorial_area_3_id', 'fk05_forem_group')
                     ->references('id')
                     ->on('admin_territorial_area_3')
-                    ->onDelete('restrict')
-                    ->onUpdate('cascade');
-                $table->foreign('employment_office_id', 'fk06_forem_group')
-                    ->references('id')
-                    ->on('forem_employment_office')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
                 $table->foreign('category_id', 'fk07_forem_group')

@@ -90,7 +90,6 @@ class GroupService
                 'observations',
                 'action_id',
                 'expedient_id',
-                'employment_office_id',
                 'starts_at',
                 'ends_at',
                 'selection_date',

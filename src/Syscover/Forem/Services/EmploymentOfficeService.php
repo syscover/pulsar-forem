@@ -29,7 +29,6 @@ class EmploymentOfficeService
         else
         {
             $object = $object->only([
-                'profile_id',
                 'code',
                 'name',
                 'slug',
