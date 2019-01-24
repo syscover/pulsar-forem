@@ -20,12 +20,12 @@ class ForemCreateTableInscription extends Migration
 				$table->increments('id');
                 $table->integer('group_id')->unsigned();                                            // group that belong this inscription
                 $table->integer('student_id')->unsigned()->nullable();                              // if is student registered
-                $table->boolean('exported')->default(false);                                  // check if this inscription have been exported to FOCO
+                $table->boolean('exported')->default(false);                                        // check if this inscription have been exported to FOCO
 
                 // approved process
                 $table->integer('approved_user')->unsigned()->nullable();                           // user who approved this inscription
                 $table->timestamp('approved_date')->nullable();                                     // date when was approved this inscription
-                $table->boolean('approved')->default(false);                                  // check if this inscription is approved
+                $table->boolean('approved')->default(false);                                        // check if this inscription is approved
 
                 // data student
                 $table->string('name');                                                             // <nombre></nombre>
@@ -41,7 +41,7 @@ class ForemCreateTableInscription extends Migration
 
                 // FOCO
                 $table->string('code')->nullable();                                                 // <expediente_grupo></expediente_grupo>
-                $table->boolean('has_registry')->default(false);                              // <tiene_registro_clm></tiene_registro_clm>
+                $table->boolean('has_registry')->default(false);                                    // <tiene_registro_clm></tiene_registro_clm>
                 $table->string('registry_number')->nullable();                                      // <num_registro_clm></num_registro_clm>
                 $table->timestamp('registry_date')->nullable();                                     // <fecha_registro_clm></fecha_registro_clm>
                 $table->tinyInteger('document_type_id')->unsigned()->nullable();                    // <id_tipo_documento_alumno></id_tipo_documento_alumno> :: pulsar-forem.document_types
@@ -52,7 +52,7 @@ class ForemCreateTableInscription extends Migration
                 $table->integer('province_id')->unsigned()->nullable();                             // <id_provincia></id_provincia> ????
                 $table->integer('locality_id')->unsigned()->nullable();                             // <id_localidad></id_localidad> ????
 
-                $table->boolean('has_driving_license')->default(false);                       // <tiene_carnet_conducir></tiene_carnet_conducir>
+                $table->boolean('has_driving_license')->default(false);                             // <tiene_carnet_conducir></tiene_carnet_conducir>
                 $table->json('driving_licenses')->nullable();                                       // <id_carnet_conducir></id_carnet_conducir> :: pulsar-forem.driving_licenses
 
                 $table->smallInteger('employment_situation_id')->unsigned()->nullable();            // <id_situacion_laboral></id_situacion_laboral> :: pulsar-forem.employment_situations
@@ -69,25 +69,25 @@ class ForemCreateTableInscription extends Migration
                 $table->string('company')->nullable();                                              // <razon_social></razon_social>
                 $table->string('tin')->nullable();                                                  // <cif_empresa></cif_empresa>
                 $table->string('workplace')->nullable();                                            // <sector_comercio_centro_trabajo></sector_comercio_centro_trabajo>
-                $table->boolean('is_big_company')->default(false);                            // <chk_empresa_mas_250_trabajadores></chk_empresa_mas_250_trabajadores>
+                $table->boolean('is_big_company')->default(false);                                  // <chk_empresa_mas_250_trabajadores></chk_empresa_mas_250_trabajadores>
                 $table->string('workplace_address')->nullable();                                    // <domicilio_centro_trabajo></domicilio_centro_trabajo>
                 $table->string('workplace_zip')->nullable();                                        // <codigo_postal_centro_trabajo></codigo_postal_centro_trabajo>
 
                 $table->smallInteger('academic_level_id')->unsigned()->nullable();                  // <id_nivel_academico></id_nivel_academico> :: pulsar-forem.academic_levels
                 $table->string('academic_level_specialty')->nullable();                             // <especialidad_nivel_academico></especialidad_nivel_academico>
-                $table->boolean('has_other_course')->default(false);                          // <seleccionado_otro_curso></seleccionado_otro_curso>
+                $table->boolean('has_other_course')->default(false);                                // <seleccionado_otro_curso></seleccionado_otro_curso>
                 $table->string('other_course')->nullable();                                         // <otro_curso></otro_curso>
                 $table->tinyInteger('reason_request_id')->unsigned()->nullable();                   // <id_motivo_solicitud></id_motivo_solicitud> :: pulsar-forem.reason_requests
                 $table->string('other_reason_request')->nullable();                                 // <motivo_otros></motivo_otros>
 
                 // authorizations
-                $table->boolean('ssn_authorization')->default(false);                         // <autorizacion_seg_social></autorizacion_seg_social>
-                $table->boolean('certification_authorization')->default(false);               // <autorizacion_titulacion></autorizacion_titulacion>
-                $table->boolean('data_authorization')->default(false);                        // <autorizacion_datos></autorizacion_datos>
+                $table->boolean('ssn_authorization')->default(false);                               // <autorizacion_seg_social></autorizacion_seg_social>
+                $table->boolean('certification_authorization')->default(false);                     // <autorizacion_titulacion></autorizacion_titulacion>
+                $table->boolean('data_authorization')->default(false);                              // <autorizacion_datos></autorizacion_datos>
                 $table->boolean('marketing_authorization')->default(false);
 
 
-                $table->boolean('has_agent')->default(false);                                 // <actua_representante></actua_representante>
+                $table->boolean('has_agent')->default(false);                                       // <actua_representante></actua_representante>
                 $table->string('agent_tin')->nullable();                                            // <num_documento_representante></num_documento_representante>
                 $table->string('agent_name')->nullable();                                           // <nombre_representante></nombre_representante>
                 $table->string('agent_surname')->nullable();                                        // <primer_apellido_representante></primer_apellido_representante>
@@ -100,6 +100,10 @@ class ForemCreateTableInscription extends Migration
                 $table->string('agent_phone')->nullable();                                          // <telefono_representante></telefono_representante>
                 $table->string('agent_mobile')->nullable();                                         // <telefono_movil_representante></telefono_movil_representante>
                 $table->string('agent_contact_schedule')->nullable();                               // <horario_pref_llamadas_representante></horario_pref_llamadas_representante>
+
+                $table->json('languages')->nullable();                                              // <lista_idiomas>
+                $table->json('professional_certificates')->nullable();                              // <lista_formaciones_profesionales>
+                $table->json('professional_experiences')->nullable();                               // <lista_formaciones_profesionales>
 
                 // lista de idiomas
                 // lista de formaciones profesionales

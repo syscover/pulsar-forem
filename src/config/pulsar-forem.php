@@ -15,6 +15,35 @@ return [
     ],
 
     // Tables:
+    // - forem_inscription.languages :: <id_idioma></id_idioma>
+    'languages' => [
+        (object)['id' => 1, 'name' => 'Inglés'],
+        (object)['id' => 2, 'name' => 'Alemán'],
+        (object)['id' => 3, 'name' => 'Francés'],
+        (object)['id' => 4, 'name' => 'Italiano'],
+        (object)['id' => 5, 'name' => 'Otros']
+    ],
+
+    // Tables:
+    // - forem_inscription.languages :: <titulacion_idioma></titulacion_idioma>
+    'language_certificate' => [
+        (object)['id' => 1, 'name' => 'A1'],
+        (object)['id' => 2, 'name' => 'B1'],
+        (object)['id' => 3, 'name' => 'C1'],
+        (object)['id' => 4, 'name' => 'A2'],
+        (object)['id' => 5, 'name' => 'B2'],
+        (object)['id' => 6, 'name' => 'C2'],
+    ],
+
+    // Tables:
+    // - forem_inscription.languages :: <destreza_hablar_idioma></destreza_hablar_idioma>
+    'language_skill' => [
+        (object)['id' => 477, 'name' => 'Básico'],
+        (object)['id' => 478, 'name' => 'Medio'],
+        (object)['id' => 479, 'name' => 'Avanzado']
+    ],
+
+    // Tables:
     // - forem_inscription.academic_level_id :: <id_nivel_academico></id_nivel_academico>
     'academic_levels' => [
         (object)['id' => 1,     'academic_id' => 1,     'modality_id' => [3,4,5,6,7], 'name' => 'Sin estudios',                           'specialty' => false,   'date_from' => '01/01/2004', 'date_to' => null],

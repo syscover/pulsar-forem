@@ -67,19 +67,19 @@ class GroupGraphQLService extends CoreGraphQLService
     public function delete($root, array $args)
     {
         // delete object
-        $group = SQLService::deleteRecord($args['id'], $this->modelClassName, $args['lang_id']);
+        $group = SQLService::deleteRecord($args['id'], $this->modelClassName, base_lang());
 
         // delete record from scout
         if (has_scout()) $group->unsearchable();
 
         // delete attachments object
-        AttachmentService::deleteAttachments($args['id'], $this->modelClassName, $args['lang_id']);
+        AttachmentService::deleteAttachments($args['id'], $this->modelClassName, base_lang());
 
         // delete product
         $product = Product::where('object_type', $this->modelClassName)->where('object_id', $group->id)->first();
         if($product)
         {
-            SQLService::deleteRecord($product->id, Product::class, $args['lang_id'], ProductLang::class);
+            SQLService::deleteRecord($product->id, Product::class, base_lang(), ProductLang::class);
         }
 
         return $group;
