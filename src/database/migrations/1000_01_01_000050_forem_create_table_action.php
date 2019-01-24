@@ -41,6 +41,7 @@ class ForemCreateTableAction extends Migration
 
                 $table->index('code', 'ix01_forem_action');
                 $table->index('slug', 'ix02_forem_action');
+                $table->unique('slug', 'uk01_forem_action');
 
                 $table->foreign('category_id', 'fk01_forem_action')
                     ->references('id')

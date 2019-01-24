@@ -213,8 +213,8 @@ return [
     // - forem_action.target_id
     // - forem_group.target_id
     'targets' => [
-        (object)['id' => 1, 'name' => 'Desempleado'],
-        (object)['id' => 2, 'name' => 'Empleado']
+        (object)['id' => 1, 'name' => 'Desempleados/as'],
+        (object)['id' => 2, 'name' => 'Ocupados/as']
     ],
 
     // Tables:

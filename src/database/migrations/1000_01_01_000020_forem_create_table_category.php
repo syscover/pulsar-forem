@@ -25,6 +25,7 @@ class ForemCreateTableCategory extends Migration
                 $table->softDeletes();
 
                 $table->index('slug', 'ix01_forem_category');
+                $table->unique('slug', 'uk01_forem_category');
 			});
 		}
 	}

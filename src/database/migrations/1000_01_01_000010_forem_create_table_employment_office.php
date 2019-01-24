@@ -37,6 +37,7 @@ class ForemCreateTableEmploymentOffice extends Migration
                 $table->softDeletes();
 
                 $table->index('slug', 'ix01_forem_employment_office');
+                $table->unique('slug', 'uk01_forem_employment_office');
 
                 $table->foreign('country_id', 'fk01_forem_employment_office')
                     ->references('id')

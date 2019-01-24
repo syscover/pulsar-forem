@@ -68,6 +68,7 @@ class ForemCreateTableGroup extends Migration
                 $table->softDeletes();
 
                 $table->index('slug', 'ix01_forem_group');
+                $table->unique('slug', 'uk01_forem_group');
 
                 $table->foreign('product_id', 'fk01_forem_group')
                     ->references('id')
