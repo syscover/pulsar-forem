@@ -18,13 +18,15 @@ class ForemCreateTableAction extends Migration
 				$table->engine = 'InnoDB';
 
 				$table->increments('id');
-                $table->string('code');
+                $table->string('code')->nullable();
                 $table->string('name');
                 $table->string('slug');
                 $table->integer('category_id')->unsigned();         // forem_category :: Categoría del curso
                 $table->integer('target_id')->unsigned();           // pulsar-forem.targets :: Desempleado/Empleado
                 $table->integer('assistance_id')->unsigned();       // pulsar-forem.assistances :: Presencial, Teleformación, etc.
                 $table->integer('type_id')->unsigned();             // pulsar-forem.types :: Oposiciones, Formacion subvencionada, etc.
+                $table->boolean('is_certificate')->default(false);
+                $table->string('certificate_code')->nullable();
 
                 $table->smallInteger('hours');
 

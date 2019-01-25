@@ -25,9 +25,12 @@ class ForemCreateTableGroup extends Migration
                 $table->integer('target_id')->unsigned();               // pulsar-forem.targets :: Desempleado/Empleado
                 $table->integer('assistance_id')->unsigned();           // pulsar-forem.assistances :: Presencial, Teleformación, etc.
                 $table->integer('type_id')->unsigned();                 // pulsar-forem.types :: Oposiciones, Formacion subvencionada, etc.
+                $table->boolean('is_certificate')->default(false);
+                $table->string('certificate_code')->nullable();
 
                 $table->smallInteger('hours');
 
+                $table->decimal('subsidized_amount',10, 2)->nullable();
                 $table->decimal('price',10, 2)->nullable();
                 $table->decimal('price_hour',10, 2)->nullable();
 
@@ -37,7 +40,7 @@ class ForemCreateTableGroup extends Migration
                 $table->text('observations')->nullable();
 
                 // course fields
-                $table->integer('action_id')->unsigned();               // forem_action
+                $table->integer('action_id')->unsigned();                   // forem_action
                 $table->integer('expedient_id')->unsigned();
 
 
@@ -47,7 +50,8 @@ class ForemCreateTableGroup extends Migration
                 $table->string('schedule')->nullable();
                 $table->timestamp('selection_date')->nullable();
                 $table->boolean('publish')->default(false);
-                $table->boolean('open')->default(false);           // if is open the registration
+                $table->boolean('open')->default(false);                    // if is open the registration
+                $table->boolean('featured')->default(false);                // featured this course
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();
