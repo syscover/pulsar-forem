@@ -18,7 +18,8 @@ class ForemCreateTableGroup extends Migration
 				$table->engine = 'InnoDB';
 
 				$table->increments('id');
-                $table->string('code');                                 //
+                $table->string('prefix');                               //
+				$table->string('code');                                 //
                 $table->string('name');
                 $table->string('slug');
                 $table->integer('category_id')->unsigned();             // forem_category :: Categoría del curso

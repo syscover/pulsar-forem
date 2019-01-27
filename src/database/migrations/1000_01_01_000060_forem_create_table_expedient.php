@@ -19,6 +19,7 @@ class ForemCreateTableExpedient extends Migration
 
 				$table->increments('id');
                 $table->integer('modality_id')->unsigned();             // pulsar-forem.modalities :: modalidad de curso en caso de ser subvencionado
+                $table->string('ambit')->nullable();
                 $table->smallInteger('year');
                 $table->string('code')->nullable();
                 $table->string('name');

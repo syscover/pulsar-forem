@@ -14,6 +14,15 @@ return [
         (object)['id' => 6, 'name' => 'Modalidad VI',   'code' => 'FPPE',   'inscription_type' => null],
     ],
 
+    'group_prefix' => [
+        (object)['id' => 1, 'name' => 'Albacete',       'code' => '002'],
+        (object)['id' => 2, 'name' => 'Aula virtual',   'code' => ''],
+        (object)['id' => 3, 'name' => 'Ciudad Real',    'code' => '013'],
+        (object)['id' => 4, 'name' => 'Cuenca',         'code' => '016'],
+        (object)['id' => 5, 'name' => 'Guadalajara',    'code' => '019'],
+        (object)['id' => 5, 'name' => 'Toledo',         'code' => '045']
+    ],
+
     // Tables:
     // - forem_inscription.languages :: <id_idioma></id_idioma>
     'languages' => [
@@ -231,10 +240,9 @@ return [
     // - forem_action.type_id
     // - forem_group.type_id
     'types' => [
-        (object)['id' => 1, 'name' => 'Certificados de profesionalidad',    'slug' => 'certificados-de-profesionalidad'],
-        (object)['id' => 2, 'name' => 'Formacion no subvencionada',         'slug' => 'formacion-no-subvencionada'],
-        (object)['id' => 3, 'name' => 'Formacion subvencionada',            'slug' => 'formacion-subvencionada'],
-        (object)['id' => 4, 'name' => 'Oposiciones',                        'slug' => 'oposiciones'],
+        (object)['id' => 1, 'name' => 'Formacion no subvencionada',         'slug' => 'formacion-no-subvencionada'],
+        (object)['id' => 2, 'name' => 'Formacion subvencionada',            'slug' => 'formacion-subvencionada'],
+        (object)['id' => 3, 'name' => 'Oposiciones',                        'slug' => 'oposiciones'],
     ],
 
     'work_situations' => [
