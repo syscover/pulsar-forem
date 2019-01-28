@@ -81,6 +81,8 @@ class GroupService
                 'target_id',
                 'assistance_id',
                 'type_id',
+                'certificate',
+                'certificate_code',
                 'hours',
                 'price',
                 'price_hour',

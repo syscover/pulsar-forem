@@ -36,6 +36,8 @@ class ActionService
                 'target_id',
                 'assistance_id',
                 'type_id',
+                'certificate',
+                'certificate_code',
                 'hours',
                 'price',
                 'price_hour',
@@ -51,7 +53,6 @@ class ActionService
 
     private static function checkCreate($object)
     {
-        if(empty($object['code']))          throw new \Exception('You have to define a code field to create a action');
         if(empty($object['name']))          throw new \Exception('You have to define a name field to create a action');
         if(empty($object['slug']))          throw new \Exception('You have to define a slug field to create a action');
         if(empty($object['category_id']))   throw new \Exception('You have to define a category_id field to create a action');

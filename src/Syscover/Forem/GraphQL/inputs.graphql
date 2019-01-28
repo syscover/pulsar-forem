@@ -1,12 +1,14 @@
 input ForemActionInput {
     id: Int
-    code: String!
+    code: String
     name: String!
     slug: String!
     category_id: Int!
     target_id: Int!
     assistance_id: Int!
     type_id: Int!
+    certificate: Boolean!
+    certificate_code: String
     hours: Int!
     price: Float
     price_hour: Float
@@ -58,6 +60,8 @@ input ForemGroupInput {
     target_id: Int!
     assistance_id: Int!
     type_id: Int!
+    certificate: Boolean!
+    certificate_code: String
     hours: Int!
     price: Float
     price_hour: Float
