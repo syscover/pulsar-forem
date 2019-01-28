@@ -64,6 +64,7 @@ input ForemGroupInput {
     certificate: Boolean!
     certificate_code: String
     hours: Int!
+    subsidized_amount: Float
     price: Float
     price_hour: Float
     contents_excerpt: String
@@ -77,6 +78,7 @@ input ForemGroupInput {
     ends_at: String
     selection_date: String
     open: Boolean!
+    featured: Boolean!
     schedule: String
     publish: Boolean!
     is_product: Boolean!

@@ -65,6 +65,7 @@ type ForemGroup {
     certificate: Boolean!
     certificate_code: String
     hours: Int!
+    subsidized_amount: Float
     price: Float
     price_hour: Float
     contents_excerpt: String
@@ -80,6 +81,7 @@ type ForemGroup {
     ends_at: String
     selection_date: String
     open: Boolean!
+    featured: Boolean!
     schedule: String
     publish: Boolean!
     is_product: Boolean!

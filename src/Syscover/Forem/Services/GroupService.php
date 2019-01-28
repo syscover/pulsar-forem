@@ -75,6 +75,7 @@ class GroupService
         {
             $object = $object->only([
                 'profile_id',
+                'prefix_id',
                 'code',
                 'name',
                 'slug',
@@ -85,6 +86,7 @@ class GroupService
                 'certificate',
                 'certificate_code',
                 'hours',
+                'subsidized_amount',
                 'price',
                 'price_hour',
                 'contents_excerpt',
@@ -97,6 +99,7 @@ class GroupService
                 'ends_at',
                 'selection_date',
                 'open',
+                'featured',
                 'schedule',
                 'publish',
                 'is_product',
