@@ -15,12 +15,11 @@ return [
     ],
 
     'group_prefix' => [
-        (object)['id' => 1, 'name' => 'Albacete',       'code' => '002'],
-        (object)['id' => 2, 'name' => 'Aula virtual',   'code' => ''],
-        (object)['id' => 3, 'name' => 'Ciudad Real',    'code' => '013'],
-        (object)['id' => 4, 'name' => 'Cuenca',         'code' => '016'],
-        (object)['id' => 5, 'name' => 'Guadalajara',    'code' => '019'],
-        (object)['id' => 5, 'name' => 'Toledo',         'code' => '045']
+        (object)['id' => '002', 'name' => 'Albacete'],
+        (object)['id' => '013', 'name' => 'Ciudad Real'],
+        (object)['id' => '016', 'name' => 'Cuenca'],
+        (object)['id' => '019', 'name' => 'Guadalajara'],
+        (object)['id' => '045', 'name' => 'Toledo']
     ],
 
     // Tables:

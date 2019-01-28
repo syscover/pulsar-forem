@@ -18,22 +18,23 @@ class ForemCreateTableGroup extends Migration
 				$table->engine = 'InnoDB';
 
 				$table->increments('id');
-                $table->string('prefix');                               //
-				$table->string('code');                                 //
+                $table->integer('profile_id')->unsigned();
+                $table->string('prefix_id')->nullable();                    // pulsar-forem.group_prefix :: ID de centro desde el que controla el grupo
+				$table->string('code');                                     //
                 $table->string('name');
                 $table->string('slug');
-                $table->integer('category_id')->unsigned();             // forem_category :: Categoría del curso
-                $table->integer('target_id')->unsigned();               // pulsar-forem.targets :: Desempleado/Empleado
-                $table->integer('assistance_id')->unsigned();           // pulsar-forem.assistances :: Presencial, Teleformación, etc.
-                $table->integer('type_id')->unsigned();                 // pulsar-forem.types :: Oposiciones, Formacion subvencionada, etc.
-                $table->boolean('is_certificate')->default(false);
+                $table->integer('category_id')->unsigned();                 // forem_category :: Categoría del curso
+                $table->integer('target_id')->unsigned();                   // pulsar-forem.targets :: Desempleado/Empleado
+                $table->integer('assistance_id')->unsigned();               // pulsar-forem.assistances :: Presencial, Teleformación, etc.
+                $table->integer('type_id')->unsigned();                     // pulsar-forem.types :: Oposiciones, Formacion subvencionada, etc.
+                $table->boolean('certificate')->default(false);
                 $table->string('certificate_code')->nullable();
 
                 $table->smallInteger('hours');
 
-                $table->decimal('subsidized_amount',10, 2)->nullable();
-                $table->decimal('price',10, 2)->nullable();
-                $table->decimal('price_hour',10, 2)->nullable();
+                $table->decimal('subsidized_amount', 10, 2)->nullable();
+                $table->decimal('price', 10, 2)->nullable();
+                $table->decimal('price_hour', 10, 2)->nullable();
 
                 $table->text('contents_excerpt')->nullable();
                 $table->text('contents')->nullable();
@@ -113,6 +114,11 @@ class ForemCreateTableGroup extends Migration
                 $table->foreign('expedient_id', 'fk09_forem_group')
                     ->references('id')
                     ->on('forem_expedient')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('profile_id', 'fk10_forem_group')
+                    ->references('id')
+                    ->on('admin_profile')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
             });
