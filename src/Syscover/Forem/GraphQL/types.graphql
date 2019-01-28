@@ -41,6 +41,7 @@ type ForemEmploymentOffice {
 type ForemExpedient {
     id: Int!
     modality_id: Int!
+    ambit: String
     year: Int!
     code: String
     name: String!

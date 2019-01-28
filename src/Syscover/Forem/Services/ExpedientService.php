@@ -30,6 +30,7 @@ class ExpedientService
         {
             $object = $object->only([
                 'modality_id',
+                'ambit',
                 'year',
                 'code',
                 'name',
