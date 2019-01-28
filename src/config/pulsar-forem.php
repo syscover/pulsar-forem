@@ -14,7 +14,7 @@ return [
         (object)['id' => 6, 'name' => 'Modalidad VI',   'code' => 'FPPE',   'inscription_type' => null],
     ],
 
-    'group_prefix' => [
+    'group_prefixes' => [
         (object)['id' => '002', 'name' => 'Albacete'],
         (object)['id' => '013', 'name' => 'Ciudad Real'],
         (object)['id' => '016', 'name' => 'Cuenca'],
