@@ -3,6 +3,7 @@
 use Laravel\Scout\Searchable;
 use Carbon\Carbon;
 use Syscover\Admin\Models\Attachment;
+use Syscover\Admin\Models\Profile;
 use Syscover\Core\Models\CoreModel;
 use Syscover\Market\Traits\Marketable;
 
@@ -16,9 +17,10 @@ class Group extends CoreModel
     use Marketable, Searchable;
 
     protected $table        = 'forem_group';
-    protected $fillable     = ['id', 'code', 'name', 'slug', 'category_id', 'target_id', 'assistance_id', 'type_id', 'certificate', 'certificate_code', 'hours', 'price', 'price_hour', 'contents_excerpt', 'contents', 'requirements', 'observations', 'action_id', 'expedient_id', 'starts_at', 'ends_at', 'selection_date', 'open', 'schedule', 'publish', 'is_product', 'product_id', 'country_id', 'territorial_area_1_id', 'territorial_area_2_id', 'territorial_area_3_id', 'zip', 'locality', 'address', 'latitude', 'longitude'];
+    protected $fillable     = ['id', 'profile_id', 'code', 'name', 'slug', 'category_id', 'target_id', 'assistance_id', 'type_id', 'certificate', 'certificate_code', 'hours', 'price', 'price_hour', 'contents_excerpt', 'contents', 'requirements', 'observations', 'action_id', 'expedient_id', 'starts_at', 'ends_at', 'selection_date', 'open', 'schedule', 'publish', 'is_product', 'product_id', 'country_id', 'territorial_area_1_id', 'territorial_area_2_id', 'territorial_area_3_id', 'zip', 'locality', 'address', 'latitude', 'longitude'];
     public $with            = [
-        'category'
+        'category',
+        'profile'
     ];
     protected $casts        = [
         'price' => 'float'
@@ -47,6 +49,11 @@ class Group extends CoreModel
     public function category()
     {
         return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function profile()
+    {
+        return $this->belongsTo(Profile::class, 'profile_id');
     }
 
     // Accessors
