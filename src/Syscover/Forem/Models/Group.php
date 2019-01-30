@@ -79,14 +79,16 @@ class Group extends CoreModel
     public function toSearchableArray()
     {
         $searchable =  [
-            'id'                => $this->id,
-            'code'              => $this->code,
-            'name'              => $this->name,
-            'slug'              => $this->slug,
-            'category'          => $this->category->name,
-            'contents_excerpt'  => $this->contents_excerpt,
-            'contents'          => $this->contents,
-            'attachments'       => $this->attachments->map(function ($item, $key) {
+            'id'                    => $this->id,
+            'code'                  => $this->code,
+            'name'                  => $this->name,
+            'slug'                  => $this->slug,
+            'category'              => $this->category->name,
+            'contents_excerpt'      => $this->contents_excerpt,
+            'contents'              => $this->contents,
+            'assistance_id'         => $this->assistance_id,
+            'territorial_area_2_id' => $this->territorial_area_2_id,
+            'attachments'           => $this->attachments->map(function ($item, $key) {
                 $item['data'] = collect($item['data']);
                 return $item->only(['ix', 'id', 'lang_id', 'family_id', 'sort', 'alt', 'title', 'base_path', 'file_name', 'url', 'mime', 'extension', 'size', 'width', 'height', 'data', 'family']);
             })
