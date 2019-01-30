@@ -4,6 +4,7 @@ use Laravel\Scout\Searchable;
 use Carbon\Carbon;
 use Syscover\Admin\Models\Attachment;
 use Syscover\Admin\Models\Profile;
+use Syscover\Admin\Traits\Geolocalizable;
 use Syscover\Core\Models\CoreModel;
 use Syscover\Market\Traits\Marketable;
 
@@ -15,12 +16,14 @@ use Syscover\Market\Traits\Marketable;
 class Group extends CoreModel
 {
     use Marketable, Searchable;
+    use Geolocalizable;
 
     protected $table        = 'forem_group';
     protected $fillable     = ['id', 'profile_id', 'prefix_id', 'code', 'name', 'slug', 'category_id', 'target_id', 'assistance_id', 'type_id', 'certificate', 'certificate_code', 'hours', 'subsidized_amount', 'price', 'price_hour', 'contents_excerpt', 'contents', 'requirements', 'observations', 'action_id', 'expedient_id', 'starts_at', 'ends_at', 'selection_date', 'open', 'featured', 'schedule', 'publish', 'is_product', 'product_id', 'country_id', 'territorial_area_1_id', 'territorial_area_2_id', 'territorial_area_3_id', 'zip', 'locality', 'address', 'latitude', 'longitude'];
     public $with            = [
         'category',
-        'profile'
+        'profile',
+        'territorial_area_2'
     ];
     protected $casts        = [
         'price' => 'float'
@@ -78,7 +81,7 @@ class Group extends CoreModel
      */
     public function toSearchableArray()
     {
-        $searchable =  [
+        $searchable = [
             'id'                    => $this->id,
             'code'                  => $this->code,
             'name'                  => $this->name,
@@ -87,7 +90,10 @@ class Group extends CoreModel
             'contents_excerpt'      => $this->contents_excerpt,
             'contents'              => $this->contents,
             'assistance_id'         => $this->assistance_id,
-            'territorial_area_2_id' => $this->territorial_area_2_id,
+            'territorial_area_2'    => $this->territorial_area_2 ? [
+                'id'    => $this->territorial_area_2->id,
+                'name'  => $this->territorial_area_2->name
+            ] : null,
             'attachments'           => $this->attachments->map(function ($item, $key) {
                 $item['data'] = collect($item['data']);
                 return $item->only(['ix', 'id', 'lang_id', 'family_id', 'sort', 'alt', 'title', 'base_path', 'file_name', 'url', 'mime', 'extension', 'size', 'width', 'height', 'data', 'family']);
