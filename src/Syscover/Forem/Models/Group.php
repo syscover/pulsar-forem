@@ -90,6 +90,7 @@ class Group extends CoreModel
                 'id'    => $this->category->id,
                 'name'  => $this->category->name
             ] : null,
+            'certificate_code'      => $this->certificate_code,
             'contents_excerpt'      => $this->contents_excerpt,
             'contents'              => $this->contents,
             'assistance_id'         => $this->assistance_id,
