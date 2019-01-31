@@ -86,7 +86,10 @@ class Group extends CoreModel
             'code'                  => $this->code,
             'name'                  => $this->name,
             'slug'                  => $this->slug,
-            'category'              => $this->category->name,
+            'category'              => $this->category ? [
+                'id'    => $this->category->id,
+                'name'  => $this->category->name
+            ] : null,
             'contents_excerpt'      => $this->contents_excerpt,
             'contents'              => $this->contents,
             'assistance_id'         => $this->assistance_id,
