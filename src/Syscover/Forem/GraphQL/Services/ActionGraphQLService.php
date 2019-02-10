@@ -6,6 +6,6 @@ use Syscover\Forem\Services\ActionService;
 
 class ActionGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Action::class;
+    protected $model = Action::class;
     protected $serviceClassName = ActionService::class;
 }

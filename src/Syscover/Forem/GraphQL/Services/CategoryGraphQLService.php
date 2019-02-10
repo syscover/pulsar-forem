@@ -6,6 +6,6 @@ use Syscover\Forem\Models\Category;
 
 class CategoryGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Category::class;
+    protected $model = Category::class;
     protected $serviceClassName = CategoryService::class;
 }

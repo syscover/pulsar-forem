@@ -6,6 +6,6 @@ use Syscover\Forem\Services\ExpedientService;
 
 class ExpedientGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Expedient::class;
+    protected $model = Expedient::class;
     protected $serviceClassName = ExpedientService::class;
 }

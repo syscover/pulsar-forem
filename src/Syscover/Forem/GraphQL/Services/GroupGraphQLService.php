@@ -11,7 +11,7 @@ use Syscover\Market\Services\MarketableService;
 
 class GroupGraphQLService extends CoreGraphQLService
 {
-    protected $modelClassName = Group::class;
+    protected $model = Group::class;
     protected $serviceClassName = GroupService::class;
 
     public function create($root, array $args)
@@ -20,7 +20,7 @@ class GroupGraphQLService extends CoreGraphQLService
 
         if($args['payload']['is_product'])
         {
-            $args['payload']['object_type']  = $this->modelClassName;
+            $args['payload']['object_type']  = get_class($this->model);
             $args['payload']['object_id']    = $group->id;
 
             MarketableService::create($args['payload'], $group);
@@ -35,9 +35,9 @@ class GroupGraphQLService extends CoreGraphQLService
 
         if($args['payload']['is_product'])
         {
-            $product = Product::where('object_type', $this->modelClassName)->where('object_id', $group->id)->first();
+            $product = Product::where('object_type', get_class($this->model))->where('object_id', $group->id)->first();
 
-            $args['payload']['object_type']  = $this->modelClassName;
+            $args['payload']['object_type']  = get_class($this->model);
             $args['payload']['object_id']    = $group->id;
             if($product)
             {
@@ -53,7 +53,7 @@ class GroupGraphQLService extends CoreGraphQLService
         else
         {
             // delete product
-            $product = Product::where('object_type', $this->modelClassName)->where('object_id', $group->id)->first();
+            $product = Product::where('object_type', get_class($this->model))->where('object_id', $group->id)->first();
             if($product)
             {
                 // if there are any product, delete all products from all langs, set base_lang to delete all langs
@@ -67,16 +67,16 @@ class GroupGraphQLService extends CoreGraphQLService
     public function delete($root, array $args)
     {
         // delete object
-        $group = SQLService::deleteRecord($args['id'], $this->modelClassName, base_lang());
+        $group = SQLService::deleteRecord($args['id'], get_class($this->model), base_lang());
 
         // delete record from scout
         if (has_scout()) $group->unsearchable();
 
         // delete attachments object
-        AttachmentService::deleteAttachments($args['id'], $this->modelClassName, base_lang());
+        AttachmentService::deleteAttachments($args['id'], get_class($this->model), base_lang());
 
         // delete product
-        $product = Product::where('object_type', $this->modelClassName)->where('object_id', $group->id)->first();
+        $product = Product::where('object_type', get_class($this->model))->where('object_id', $group->id)->first();
         if($product)
         {
             SQLService::deleteRecord($product->id, Product::class, base_lang(), ProductLang::class);
