@@ -7,5 +7,5 @@ use Syscover\Forem\Models\EmploymentOffice;
 class EmploymentOfficeGraphQLService extends CoreGraphQLService
 {
     protected $model = EmploymentOffice::class;
-    protected $serviceClassName = EmploymentOfficeService::class;
+    protected $service = EmploymentOfficeService::class;
 }

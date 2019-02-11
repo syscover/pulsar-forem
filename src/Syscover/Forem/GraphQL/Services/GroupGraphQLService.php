@@ -12,7 +12,7 @@ use Syscover\Market\Services\MarketableService;
 class GroupGraphQLService extends CoreGraphQLService
 {
     protected $model = Group::class;
-    protected $serviceClassName = GroupService::class;
+    protected $service = GroupService::class;
 
     public function create($root, array $args)
     {
