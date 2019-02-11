@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Syscover\\Rgpd\\": "src/Syscover/Forem"
+            "Syscover\\Forem\\": "src/Syscover/Forem"
         },
         "classmap": [
             "src/Syscover/Forem"
