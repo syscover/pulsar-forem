@@ -29,6 +29,13 @@ class Group extends CoreModel
         'price' => 'float'
     ];
 
+    public function scopeBuilder($query)
+    {
+        return $query
+            ->join('admin_profile', 'forem_group.profile_id', '=', 'admin_profile.id')
+            ->addSelect('admin_profile.*', 'forem_group.*', 'admin_profile.name as admin_profile_name', 'forem_group.name as forem_group_name');
+    }
+
     /**
      * Is not possible add 'attachments' to $with parameter, it need to be instantiated to get lang parameter
      * It's possible pass lang parameter with this method
