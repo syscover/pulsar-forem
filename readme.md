@@ -33,5 +33,5 @@ php artisan db:seed --class="ForemTableSeeder"
 
 **4 - Execute command to load all updates**
 ```
-php artisan migrate --path=vendor/syscover/pulsar-crm/src/database/migrations/updates
+php artisan migrate --path=vendor/syscover/pulsar-forem/src/database/migrations/updates
 ```
