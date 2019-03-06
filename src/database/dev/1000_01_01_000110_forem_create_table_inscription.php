@@ -68,7 +68,9 @@ class ForemCreateTableInscription extends Migration
                 $table->string('worker_code')->nullable();                                          // <codigo_ocupado></codigo_ocupado>
                 $table->string('company')->nullable();                                              // <razon_social></razon_social>
                 $table->string('tin')->nullable();                                                  // <cif_empresa></cif_empresa>
-                $table->string('workplace')->nullable();                                            // <sector_comercio_centro_trabajo></sector_comercio_centro_trabajo>
+                $table->string('workplace_sector')->nullable();                                     // <sector_comercio_centro_trabajo></sector_comercio_centro_trabajo>
+                $table->integer('workplace_province_id')->nullable();                               // <id_provincia_centro_trabajo></id_provincia_centro_trabajo>
+                $table->integer('workplace_locality_id')->nullable();                               // <id_localidad_centro_trabajo></id_localidad_centro_trabajo>
                 $table->boolean('is_big_company')->default(false);                            // <chk_empresa_mas_250_trabajadores></chk_empresa_mas_250_trabajadores>
                 $table->string('workplace_address')->nullable();                                    // <domicilio_centro_trabajo></domicilio_centro_trabajo>
                 $table->string('workplace_zip')->nullable();                                        // <codigo_postal_centro_trabajo></codigo_postal_centro_trabajo>
@@ -142,8 +144,16 @@ class ForemCreateTableInscription extends Migration
                     ->on('forem_employment_office')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
-
-
+                $table->foreign('workplace_province_id', 'fk04_forem_inscription')
+                    ->references('id')
+                    ->on('forem_province')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
+                $table->foreign('workplace_locality_id', 'fk05_forem_inscription')
+                    ->references('id')
+                    ->on('forem_locality')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 			});
 		}
 	}

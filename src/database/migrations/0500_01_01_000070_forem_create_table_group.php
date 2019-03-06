@@ -42,7 +42,7 @@ class ForemCreateTableGroup extends Migration
                 $table->text('observations')->nullable();
 
                 // course fields
-                $table->integer('action_id')->unsigned();                   // forem_action
+                $table->integer('action_id')->unsigned();                     // forem_action
                 $table->integer('expedient_id')->unsigned();
 
 
@@ -52,8 +52,8 @@ class ForemCreateTableGroup extends Migration
                 $table->string('schedule')->nullable();
                 $table->timestamp('selection_date')->nullable();
                 $table->boolean('publish')->default(false);
-                $table->boolean('open')->default(false);                    // if is open the registration
-                $table->boolean('featured')->default(false);                // featured this course
+                $table->boolean('open')->default(false);                // if is open the registration
+                $table->boolean('featured')->default(false);            // featured this course
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();
