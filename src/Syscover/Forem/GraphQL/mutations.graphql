@@ -22,3 +22,8 @@ foremDeleteExpedient(id:Int!): ForemExpedient @field(resolver: "Syscover\\Forem\
 foremCreateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@create")
 foremUpdateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@update")
 foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@delete")
+
+# Province
+foremCreateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@create")
+foremUpdateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@update")
+foremDeleteProvince(id:Int!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@delete")

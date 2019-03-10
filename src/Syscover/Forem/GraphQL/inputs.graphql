@@ -121,3 +121,9 @@ input ForemGroupInput {
     subtotal: Float
     weight: Float
 }
+
+input ForemProvinceInput {
+    id: Int
+    code: Int!
+    name: String!
+}

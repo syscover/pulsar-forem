@@ -18,7 +18,7 @@ class ForemCreateTableProvince extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
-                $table->integer('foco_code')->unsigned();
+                $table->integer('code')->unsigned();
 				$table->string('name');
 
                 $table->timestamps();

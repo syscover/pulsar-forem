@@ -124,3 +124,9 @@ type ForemGroup {
     subtotal: Float
     weight: Float
 }
+
+type ForemProvince {
+    id: Int!
+    code: Int!
+    name: String!
+}
