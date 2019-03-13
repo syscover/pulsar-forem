@@ -18,7 +18,7 @@ class ForemCreateTableLocality extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
-                $table->integer('foco_code')->unsigned();
+                $table->integer('code')->unsigned();
                 $table->integer('province_id')->unsigned()->nullable();
 				$table->string('name');
 

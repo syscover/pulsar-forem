@@ -40,8 +40,8 @@ foremGroupsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Sys
 
 # Province
 """ Query to get province list """
-foremProvices(sql:[CoreSQLInput]): [ForemProvince!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@get")
+foremProvinces(sql:[CoreSQLInput]): [ForemProvince!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@get")
 """ Query to get provinces """
 foremProvince(sql:[CoreSQLInput]): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@find")
 """ Query to get provinces paginated """
-foremProvicesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@paginate")
+foremProvincesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@paginate")
