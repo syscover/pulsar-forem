@@ -125,6 +125,14 @@ type ForemGroup {
     weight: Float
 }
 
+type ForemLocality {
+    id: Int!
+    province_id: Int
+    province: ForemProvince
+    code: Int!
+    name: String!
+}
+
 type ForemProvince {
     id: Int!
     code: Int!

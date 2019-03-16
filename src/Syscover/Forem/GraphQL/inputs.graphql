@@ -122,6 +122,13 @@ input ForemGroupInput {
     weight: Float
 }
 
+input ForemLocalityInput{
+    id: Int
+    province_id: Int!
+    code: Int!
+    name: String!
+}
+
 input ForemProvinceInput {
     id: Int
     code: Int!

@@ -11,6 +11,8 @@ class ForemTableSeeder extends Seeder
 
         $this->call(ForemPackageSeeder::class);
         $this->call(ForemResourceSeeder::class);
+        $this->call(ForemProvinceSeeder::class);
+        $this->call(ForemLocalitySeeder::class);
 
         Model::reguard();
     }
