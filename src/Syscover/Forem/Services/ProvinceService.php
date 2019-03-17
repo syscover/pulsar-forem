@@ -1,9 +1,10 @@
 <?php namespace Syscover\Forem\Services;
 
 use Syscover\Core\Exceptions\ModelNotChangeException;
+use Syscover\Core\Services\Service;
 use Syscover\Forem\Models\Province;
 
-class ProvinceService
+class ProvinceService extends Service
 {
     public function store(array $data)
     {

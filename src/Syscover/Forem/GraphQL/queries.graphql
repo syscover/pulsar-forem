@@ -44,7 +44,7 @@ foremLocalities(sql:[CoreSQLInput]): [ForemLocality!]! @field(resolver: "Syscove
 """ Query to get localities """
 foremLocality(sql:[CoreSQLInput]): ForemLocality @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@find")
 """ Query to get localities paginated """
-foremLocalitysPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@paginate")
+foremLocalitiesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@paginate")
 
 # Province
 """ Query to get province list """

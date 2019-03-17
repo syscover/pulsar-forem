@@ -1,9 +1,10 @@
 <?php namespace Syscover\Forem\Services;
 
 use Syscover\Core\Exceptions\ModelNotChangeException;
+use Syscover\Core\Services\Service;
 use Syscover\Forem\Models\Locality;
 
-class LocalityService
+class LocalityService extends Service
 {
     public function store(array $data)
     {

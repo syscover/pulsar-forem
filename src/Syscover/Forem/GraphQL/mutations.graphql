@@ -24,11 +24,11 @@ foremUpdateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscov
 foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@delete")
 
 # Locality
-foremCreateLocality(payload: ForemLocalityInput!): ForemLocality @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@create")
+foremCreateLocality(payload: ForemLocalityInput!): ForemLocality @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@store")
 foremUpdateLocality(payload: ForemLocalityInput!): ForemLocality @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@update")
 foremDeleteLocality(id:Int!): ForemLocality @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@delete")
 
 # Province
-foremCreateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@create")
+foremCreateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@store")
 foremUpdateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@update")
 foremDeleteProvince(id:Int!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@delete")
