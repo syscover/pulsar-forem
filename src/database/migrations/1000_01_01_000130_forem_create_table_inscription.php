@@ -33,7 +33,7 @@ class ForemCreateTableInscription extends Migration
                 $table->string('surname2')->nullable();                                             // <segundo_apellido></segundo_apellido>
                 $table->tinyInteger('gender_id')->unsigned()->nullable();                           // <sexo></sexo> :: pulsar-forem.genders
                 $table->date('birth_date')->nullable();                                             // <fecha_nacimiento></fecha_nacimiento>
-                $table->string('tin')->nullable();                                                  // <nif></nif>
+                $table->string('id_card')->nullable();                                              // <nif></nif>
                 $table->string('ssn')->nullable();
                 $table->string('email')->nullable();                                                // <email></email>
                 $table->string('phone')->nullable();                                                // <telefono></telefono>
@@ -49,11 +49,11 @@ class ForemCreateTableInscription extends Migration
                 $table->tinyInteger('road_type_id')->unsigned()->nullable();                        // <id_tipo_via></id_tipo_via> :: pulsar-forem.type_roads
                 $table->string('zip')->nullable();                                                  // <cod_postal></cod_postal>
                 $table->string('address')->nullable();                                              // <direccion></direccion>
-                $table->integer('province_id')->unsigned()->nullable();                             // <id_provincia></id_provincia> ????
-                $table->integer('locality_id')->unsigned()->nullable();                             // <id_localidad></id_localidad> ????
+                $table->integer('province_id')->unsigned()->nullable();                             // <id_provincia></id_provincia>
+                $table->integer('locality_id')->unsigned()->nullable();                             // <id_localidad></id_localidad>
 
                 $table->boolean('has_driving_license')->default(false);                       // <tiene_carnet_conducir></tiene_carnet_conducir>
-                $table->json('driving_licenses')->nullable();                                       // <id_carnet_conducir></id_carnet_conducir> :: pulsar-forem.driving_licenses
+                $table->json('driving_licenses')->nullable();                                       // <lista_carnets_conducir></lista_carnets_conducir> :: pulsar-forem.driving_licenses
 
                 $table->smallInteger('employment_situation_id')->unsigned()->nullable();            // <id_situacion_laboral></id_situacion_laboral> :: pulsar-forem.employment_situations
 
@@ -69,8 +69,8 @@ class ForemCreateTableInscription extends Migration
                 $table->string('company')->nullable();                                              // <razon_social></razon_social>
                 $table->string('tin')->nullable();                                                  // <cif_empresa></cif_empresa>
                 $table->string('workplace_sector')->nullable();                                     // <sector_comercio_centro_trabajo></sector_comercio_centro_trabajo>
-                $table->integer('workplace_province_id')->nullable();                               // <id_provincia_centro_trabajo></id_provincia_centro_trabajo>
-                $table->integer('workplace_locality_id')->nullable();                               // <id_localidad_centro_trabajo></id_localidad_centro_trabajo>
+                $table->integer('workplace_province_id')->unsigned()->nullable();                   // <id_provincia_centro_trabajo></id_provincia_centro_trabajo>
+                $table->integer('workplace_locality_id')->unsigned()->nullable();                   // <id_localidad_centro_trabajo></id_localidad_centro_trabajo>
                 $table->boolean('is_big_company')->default(false);                            // <chk_empresa_mas_250_trabajadores></chk_empresa_mas_250_trabajadores>
                 $table->string('workplace_address')->nullable();                                    // <domicilio_centro_trabajo></domicilio_centro_trabajo>
                 $table->string('workplace_zip')->nullable();                                        // <codigo_postal_centro_trabajo></codigo_postal_centro_trabajo>
@@ -105,28 +105,20 @@ class ForemCreateTableInscription extends Migration
 
                 $table->json('languages')->nullable();                                              // <lista_idiomas>
                 $table->json('professional_certificates')->nullable();                              // <lista_formaciones_profesionales>
-                $table->json('professional_experiences')->nullable();                               // <lista_formaciones_profesionales>
-
-                // inscription
-                $table->integer('expertise_id')->unsigned();
-                $table->integer('work_situation_id')->unsigned();
-
-                // geolocation data
-                $table->string('country_id', 2)->nullable();
-                $table->string('territorial_area_1_id', 6)->nullable();
-                $table->string('territorial_area_2_id', 10)->nullable();
-                $table->string('territorial_area_3_id', 10)->nullable();
-                $table->string('locality')->nullable();
-                $table->decimal('latitude', 17, 14)->nullable();
-                $table->decimal('longitude', 17, 14)->nullable();
-
-                // sector_id poner también en los datos de la compañía no solo en experiencias??
-                $table->integer('sector_id')->unsigned()->nullable();
+                $table->json('professional_experiences')->nullable();                               // <lista_experiencias_profesionales>
 
                 $table->text('observations')->nullable();
 
                 $table->timestamps();
                 $table->softDeletes();
+
+
+                // inscription
+                //$table->integer('expertise_id')->unsigned();
+                //$table->integer('work_situation_id')->unsigned();
+
+                // sector_id poner también en los datos de la compañía no solo en experiencias??
+                //$table->integer('sector_id')->unsigned()->nullable();
 
 
                 $table->foreign('group_id', 'fk01_forem_inscription')
