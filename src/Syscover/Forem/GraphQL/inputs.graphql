@@ -122,7 +122,7 @@ input ForemGroupInput {
     weight: Float
 }
 
-input ForemInscriptonInput {
+input ForemInscriptionInput {
     id: Int
     group_id: Int!
     student_id: Int!
