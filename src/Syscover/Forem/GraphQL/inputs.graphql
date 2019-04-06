@@ -123,78 +123,99 @@ input ForemGroupInput {
 }
 
 input ForemInscriptionInput {
+    # inscription
     id: Int
     group_id: Int!
     student_id: Int
     exported: Boolean!
-    approved_user: Int
-    approved_date: DateTime
-    approved: Boolean
-    name: String
-    surname: String
-    surname2: String
-    gender_id: Int
-    birth_date: Date
-    id_card: String
-    ssn: String
-    email: String
-    phone: String
-    mobile: String
+    reason_request_id: Int
+    other_reason_request: String
+    observations: String
+
+    # FOCO
     code: String
     has_registry: Boolean
     registry_number: String
     registry_date: DateTime
     document_type_id: Int
     document_number: String
-    road_type_id: Int
-    zip: String
+
+    # inscription process
+    approved_user: Int
+    approved_date: DateTime
+    approved: Boolean
+
+    # data student
+    name: String
+    surname: String
+    surname2: String
+    gender_id: Int
+    birth_date: Date
+    tin: String
+    ssn: String
+    email: String
+    phone: String
+    mobile: String
+    address_type_id: Int
     address: String
     province_id: Int
+    zip: String
     locality_id: Int
-    has_driving_license: Boolean
-    driving_licenses: Object
-    employment_situation_id: Int
-    unemployed_registration_date: DateTime
-    unemployed_situation_id: Int
-    employment_office_id: Int
-    professional_category_id: Int
-    functional_area_id: Int
-    worker_code: String
-    company: String
-    tin: String
-    workplace_sector: String
-    workplace_province_id: Int
-    workplace_locality_id: Int
-    is_big_company: Boolean
-    workplace_address: String
-    workplace_zip: String
-    academic_level_id: Int
-    academic_level_specialty: String
-    has_other_course: Boolean
-    other_course: String
-    reason_request_id: Int
-    other_reason_request: String
-    ssn_authorization: Boolean
-    certification_authorization: Boolean
-    data_authorization: Boolean
-    marketing_authorization: Boolean
+
+    # agent
     has_agent: Boolean
-    agent_tin: String
     agent_name: String
     agent_surname: String
     agent_surname2: String
+    agent_tin: String
     agent_address: String
     agent_province_id: Int
-    agent_locality_id: Int
     agent_zip: String
+    agent_locality_id: Int
     agent_email: String
     agent_phone: String
     agent_mobile: String
     agent_contact_schedule: String
+
+    # knowledge
+    academic_level_id: Int
+    academic_level_specialty: String
+    has_other_course: Boolean
+    other_course: String
     languages: Object
     professional_certificates: Object
     professional_experiences: Object
-    observations: String
+    has_driving_license: Boolean
+    driving_licenses: Object
+
+    # employment situation
+    employment_situation_id: Int
+
+    # unemployment data
+    unemployed_registration_date: DateTime
+    unemployed_situation_id: Int
+    employment_office_id: Int
+
+    # employment data
+    professional_category_id: Int
+    functional_area_id: Int
+    worker_code: String
+
+    # company
+    company_name: String
+    company_tin: String
+    company_sector: String
+    company_province_id: Int
+    company_locality_id: Int
+    company_address: String
+    company_zip: String
+    big_company: Boolean
+
+    # authorizations
+    ssn_authorization: Boolean
+    certification_authorization: Boolean
+    data_authorization: Boolean
+    marketing_authorization: Boolean
 }
 
 input ForemLocalityInput{
