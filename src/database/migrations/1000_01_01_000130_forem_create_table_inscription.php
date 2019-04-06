@@ -47,8 +47,8 @@ class ForemCreateTableInscription extends Migration
                 $table->tinyInteger('document_type_id')->unsigned()->nullable();                    // <id_tipo_documento_alumno></id_tipo_documento_alumno> :: pulsar-forem.document_types
                 $table->string('document_number')->nullable();                                      // <numero_documento_alumno></numero_documento_alumno>
                 $table->tinyInteger('road_type_id')->unsigned()->nullable();                        // <id_tipo_via></id_tipo_via> :: pulsar-forem.type_roads
-                $table->string('zip')->nullable();                                                  // <cod_postal></cod_postal>
                 $table->string('address')->nullable();                                              // <direccion></direccion>
+                $table->string('zip')->nullable();                                                  // <cod_postal></cod_postal>
                 $table->integer('province_id')->unsigned()->nullable();                             // <id_provincia></id_provincia>
                 $table->integer('locality_id')->unsigned()->nullable();                             // <id_localidad></id_localidad>
 
