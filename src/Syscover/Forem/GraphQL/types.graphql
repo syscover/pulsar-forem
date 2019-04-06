@@ -128,7 +128,7 @@ type ForemGroup {
 type ForemInscription {
     id: Int!
     group_id: Int!
-    student_id: Int!
+    student_id: Int
     exported: Boolean!
     approved_user: Int
     approved_date: DateTime

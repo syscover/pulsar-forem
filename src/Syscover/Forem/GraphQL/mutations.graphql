@@ -24,7 +24,7 @@ foremUpdateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscov
 foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@delete")
 
 # Inscription
-foremCreateInscription(payload: ForemInscriptionInput!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@create")
+foremCreateInscription(payload: ForemInscriptionInput!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@store")
 foremUpdateInscription(payload: ForemInscriptionInput!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@update")
 foremDeleteInscription(id:Int!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@delete")
 
