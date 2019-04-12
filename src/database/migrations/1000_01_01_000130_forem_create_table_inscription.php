@@ -86,7 +86,7 @@ class ForemCreateTableInscription extends Migration
                 $table->smallInteger('employment_situation_id')->unsigned()->nullable();            // <id_situacion_laboral></id_situacion_laboral> :: pulsar-forem.employment_situations
 
                 // unemployment data
-                $table->timestamp('unemployed_registration_date')->nullable();                      // <fecha_inscripcion></fecha_inscripcion>
+                $table->date('unemployed_registration_date')->nullable();                           // <fecha_inscripcion></fecha_inscripcion>
                 $table->tinyInteger('unemployed_situation_id')->unsigned()->nullable();             // <id_situacion_desempleo></id_situacion_desempleo> :: pulsar-forem.unemployed_situations
                 $table->integer('employment_office_id')->unsigned()->nullable();                    // <id_oficina_empleo></id_oficina_empleo> :: forem_employment_office
 

@@ -192,7 +192,7 @@ input ForemInscriptionInput {
     employment_situation_id: Int
 
     # unemployment data
-    unemployed_registration_date: DateTime
+    unemployed_registration_date: Date
     unemployed_situation_id: Int
     employment_office_id: Int
 
