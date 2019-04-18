@@ -103,7 +103,7 @@ class ForemCreateTableInscription extends Migration
                 $table->integer('company_locality_id')->unsigned()->nullable();                     // <id_localidad_centro_trabajo></id_localidad_centro_trabajo>
                 $table->string('company_address')->nullable();                                      // <domicilio_centro_trabajo></domicilio_centro_trabajo>
                 $table->string('company_zip')->nullable();                                          // <codigo_postal_centro_trabajo></codigo_postal_centro_trabajo>
-                $table->boolean('big_company')->default(false);                               // <chk_empresa_mas_250_trabajadores></chk_empresa_mas_250_trabajadores>
+                $table->boolean('is_big_company')->default(false);                            // <chk_empresa_mas_250_trabajadores></chk_empresa_mas_250_trabajadores>
 
                 // authorizations
                 $table->boolean('ssn_authorization')->default(false);                         // <autorizacion_seg_social></autorizacion_seg_social>

@@ -97,7 +97,7 @@ class Inscription extends CoreModel
         'company_locality_id',
         'company_address',
         'company_zip',
-        'big_company',
+        'is_big_company',
 
         // authorizations
         'ssn_authorization',

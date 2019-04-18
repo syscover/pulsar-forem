@@ -212,7 +212,7 @@ type ForemInscription {
     company_locality_id: Int
     company_address: String
     company_zip: String
-    big_company: Boolean
+    is_big_company: Boolean
 
     # authorizations
     ssn_authorization: Boolean

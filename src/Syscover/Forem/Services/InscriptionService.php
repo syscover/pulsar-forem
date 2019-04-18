@@ -9,8 +9,11 @@ class InscriptionService extends Service
     public function store(array $data)
     {
         $this->validate($data, [
-            'group_id'      => 'required|integer',
-            'name'          => 'required|between:2,255'
+            'group_id'          => 'required|integer',
+            'name'              => 'required|between:2,255',
+
+            // company
+            'company_sector'    => 'nullable|between:0,50'
         ]);
 
         return Inscription::create($data);
@@ -19,9 +22,12 @@ class InscriptionService extends Service
     public function update(array $data, int $id)
     {
         $this->validate($data, [
-            'id'            => 'required|integer',
-            'group_id'      => 'required|integer',
-            'name'          => 'required|between:2,255'
+            'id'                => 'required|integer',
+            'group_id'          => 'required|integer',
+            'name'              => 'required|between:2,255',
+
+            // company
+            'company_sector'    => 'nullable|between:0,50'
         ]);
 
         $object = Inscription::findOrFail($id);
