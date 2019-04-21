@@ -106,7 +106,7 @@ input ForemGroupInput {
     enable_to: String
     ends_at: String
     fixed_cost: Float
-    lang_id: Int
+    lang_id: String
     limited_capacity: Int
     name: String
     parent_id: Int
