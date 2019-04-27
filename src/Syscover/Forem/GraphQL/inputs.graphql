@@ -212,10 +212,10 @@ input ForemInscriptionInput {
     is_big_company: Boolean
 
     # authorizations
-    ssn_authorization: Boolean
-    certification_authorization: Boolean
-    data_authorization: Boolean
-    marketing_authorization: Boolean
+    has_ssn_authorization: Boolean
+    has_certification_authorization: Boolean
+    has_data_authorization: Boolean
+    has_marketing_authorization: Boolean
 }
 
 input ForemLocalityInput{

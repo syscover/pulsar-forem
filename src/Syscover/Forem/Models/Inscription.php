@@ -100,9 +100,9 @@ class Inscription extends CoreModel
         'is_big_company',
 
         // authorizations
-        'ssn_authorization',
-        'certification_authorization',
-        'data_authorization',
-        'marketing_authorization'
+        'has_ssn_authorization',
+        'has_certification_authorization',
+        'has_data_authorization',
+        'has_marketing_authorization'
     ];
 }
