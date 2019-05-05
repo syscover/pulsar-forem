@@ -37,7 +37,7 @@ class InscriptionService extends Service
                 }
             }
         }
-        
+
         return Inscription::create($data);
     }
 
