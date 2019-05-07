@@ -9,7 +9,7 @@ class ForemProvinceSeeder extends Seeder
     {
         Province::insert([
             ['name' => 'Álava',                     'code' => 1],
-            ['name' => 'Alvacete',                  'code' => 2],
+            ['name' => 'Albacete',                  'code' => 2],
             ['name' => 'Alicante',                  'code' => 3],
             ['name' => 'Almería',                   'code' => 4],
             ['name' => 'Asturias',                  'code' => 33],
