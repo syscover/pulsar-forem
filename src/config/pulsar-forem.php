@@ -36,10 +36,10 @@ return [
     // - forem_inscription.languages :: <titulacion_idioma></titulacion_idioma>
     'language_certificate' => [
         (object)['id' => 1, 'name' => 'A1'],
-        (object)['id' => 2, 'name' => 'B1'],
-        (object)['id' => 3, 'name' => 'C1'],
         (object)['id' => 4, 'name' => 'A2'],
+        (object)['id' => 2, 'name' => 'B1'],
         (object)['id' => 5, 'name' => 'B2'],
+        (object)['id' => 3, 'name' => 'C1'],
         (object)['id' => 6, 'name' => 'C2'],
     ],
 
@@ -212,6 +212,12 @@ return [
         (object)['id' => 6, 'name' => 'Construccion'],
     ],
 
+    'durations' => [
+        (object)['id' => 338, 'name' => 'Menos de 6 meses'],
+        (object)['id' => 339, 'name' => 'De 6 meses a 1 año'],
+        (object)['id' => 340, 'name' => 'De 1 año a 2 años'],
+        (object)['id' => 408, 'name' => 'Mas de 2 años'],
+    ],
 
     //******************************************************************************************************************
     //***   FOREM
