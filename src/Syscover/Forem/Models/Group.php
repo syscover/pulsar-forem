@@ -23,7 +23,9 @@ class Group extends CoreModel
     public $with            = [
         'category',
         'profile',
-        'territorial_area_2'
+        'territorial_area_2',
+        'action',
+        'expedient'
     ];
     protected $casts        = [
         'price' => 'float'
@@ -54,6 +56,16 @@ class Group extends CoreModel
             'id'
         )
             ->orderBy('sort', 'asc');
+    }
+
+    public function expedient()
+    {
+        return $this->belongsTo(Expedient::class, 'expedient_id');
+    }
+
+    public function action()
+    {
+        return $this->belongsTo(Action::class, 'action_id');
     }
 
     public function category()
