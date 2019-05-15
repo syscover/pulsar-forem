@@ -11,7 +11,8 @@ class Inscription extends CoreModel
 {
     protected $table        = 'forem_inscription';
     protected $casts        = [
-        'driving_licenses'  => 'array'
+        'driving_licenses'  => 'array',
+        'languages'         => 'array'
     ];
     protected $fillable     = [
         // inscription
