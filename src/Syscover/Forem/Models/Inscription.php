@@ -10,6 +10,9 @@ use Syscover\Core\Models\CoreModel;
 class Inscription extends CoreModel
 {
     protected $table        = 'forem_inscription';
+    protected $casts        = [
+        'driving_licenses'  => 'array'
+    ];
     protected $fillable     = [
         // inscription
         'id',
