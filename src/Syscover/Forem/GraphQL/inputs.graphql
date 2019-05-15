@@ -183,8 +183,8 @@ input ForemInscriptionInput {
     has_other_course: Boolean
     other_course: String
     languages: Object
-    professional_certificates: Object
-    professional_experiences: Object
+    educations: Object
+    experiences: Object
     has_driving_license: Boolean
     driving_licenses: Object
 

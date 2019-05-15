@@ -77,9 +77,9 @@ class ForemCreateTableInscription extends Migration
                 $table->boolean('has_other_course')->default(false);                                // <seleccionado_otro_curso></seleccionado_otro_curso>
                 $table->string('other_course')->nullable();                                         // <otro_curso></otro_curso>
                 $table->json('languages')->nullable();                                              // <lista_idiomas>
-                $table->json('professional_certificates')->nullable();                              // <lista_formaciones_profesionales>
-                $table->json('professional_experiences')->nullable();                               // <lista_experiencias_profesionales>
-                $table->boolean('has_driving_license')->default(false);                             // <tiene_carnet_conducir></tiene_carnet_conducir>
+                $table->json('educations')->nullable();                                             // <lista_formaciones_profesionales>
+                $table->json('experiences')->nullable();                                            // <lista_experiencias_profesionales>
+                $table->boolean('has_driving_license')->default(false);                       // <tiene_carnet_conducir></tiene_carnet_conducir>
                 $table->json('driving_licenses')->nullable();                                       // <lista_carnets_conducir></lista_carnets_conducir> :: pulsar-forem.driving_licenses
 
                 // employment situation
