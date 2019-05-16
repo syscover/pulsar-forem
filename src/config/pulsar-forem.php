@@ -23,6 +23,52 @@ return [
     ],
 
     // Tables:
+    // - forem_inscription.employment_office_id :: <id_oficina_empleo></id_oficina_empleo>
+    'employment_offices' => [
+        (object)['id' => 1, 'code' => 'OA02008910',   'name' => 'Alcaraz'],
+        (object)['id' => 2, 'code' => 'OA02009910',   'name' => 'Almansa'],
+        (object)['id' => 3, 'code' => 'OA02024910',   'name' => 'Casas Ibañez'],
+        (object)['id' => 4, 'code' => 'OA02025910',   'name' => 'Caudete'],
+        (object)['id' => 5, 'code' => 'OA02030910',   'name' => 'Elche de la Sierra'],
+        (object)['id' => 6, 'code' => 'OA02037910',   'name' => 'Hellin'],
+        (object)['id' => 7, 'code' => 'OA02069910',   'name' => 'La Roda'],
+        (object)['id' => 8, 'code' => 'OA02003910',   'name' => 'Albacete-Cid'],
+        (object)['id' => 9, 'code' => 'OA13005910',   'name' => 'Alcazar de San Juan'],
+        (object)['id' => 10, 'code' => 'OA13011910',   'name' => 'Almaden'],
+        (object)['id' => 11, 'code' => 'OA13013910',   'name' => 'Almagro'],
+        (object)['id' => 12, 'code' => 'OA13034910',   'name' => 'Ciudad Real'],
+        (object)['id' => 13, 'code' => 'OA13039910',   'name' => 'Daimiel'],
+        (object)['id' => 14, 'code' => 'OA13079910',   'name' => 'La Solana'],
+        (object)['id' => 15, 'code' => 'OA13053910',   'name' => 'Manzanares'],
+        (object)['id' => 16, 'code' => 'OA13063910',   'name' => 'Piedrabuena'],
+        (object)['id' => 17, 'code' => 'OA13071910',   'name' => 'Puertollano'],
+        (object)['id' => 18, 'code' => 'OA13082910',   'name' => 'Tomelloso'],
+        (object)['id' => 19, 'code' => 'OA13087910',   'name' => 'Valdepeñas'],
+        (object)['id' => 20, 'code' => 'OA13093910',   'name' => 'Villanueva de los Infantes'],
+        (object)['id' => 21, 'code' => 'OA16033910',   'name' => 'Belmonte'],
+        (object)['id' => 22, 'code' => 'OA16052910',   'name' => 'Cañete'],
+        (object)['id' => 23, 'code' => 'OA16078910',   'name' => 'Cuenca'],
+        (object)['id' => 24, 'code' => 'OA16134910',   'name' => 'Montilla del Palancar'],
+        (object)['id' => 25, 'code' => 'OA16203910',   'name' => 'Tarancón'],
+        (object)['id' => 26, 'code' => 'OA19086910',   'name' => 'Cifuentes'],
+        (object)['id' => 27, 'code' => 'OA19130910',   'name' => 'Guadalajara'],
+        (object)['id' => 28, 'code' => 'OA19190910',   'name' => 'Molina de Aragón'],
+        (object)['id' => 29, 'code' => 'OA19212910',   'name' => 'Pastrana'],
+        (object)['id' => 30, 'code' => 'OA19257910',   'name' => 'Sigüenza'],
+        (object)['id' => 31, 'code' => 'OA45106910',   'name' => 'Mora'],
+        (object)['id' => 32, 'code' => 'OA45121910',   'name' => 'Ocaña'],
+        (object)['id' => 33, 'code' => 'OA45142910',   'name' => 'Quitanar de la Orden'],
+        (object)['id' => 34, 'code' => 'OA45165910',   'name' => 'Talavera de la Reina'],
+        (object)['id' => 35, 'code' => 'OA45168910',   'name' => 'Toledo'],
+        (object)['id' => 36, 'code' => 'OA45173910',   'name' => 'Torrijos'],
+        (object)['id' => 37, 'code' => 'OA45185910',   'name' => 'Villacañas'],
+        (object)['id' => 38, 'code' => 'OA02081910',   'name' => 'Villarrobledo'],
+        (object)['id' => 39, 'code' => 'OA45081910',   'name' => 'Illescas'],
+        (object)['id' => 40, 'code' => 'OA02003915',   'name' => 'Albacete-Cubas'],
+        (object)['id' => 41, 'code' => 'OA19046910',   'name' => 'Azuqueca de Henares'],
+    ],
+
+    // Tables:
     // - forem_inscription.languages :: <id_idioma></id_idioma>
     'languages' => [
         (object)['id' => 1, 'name' => 'Inglés'],
@@ -158,7 +204,7 @@ return [
     // - forem_inscription.employment_situation_id :: <id_situacion_laboral></id_situacion_laboral>
     'employment_situations' => [
         (object)['id' => 0, 'name' => 'Desempleado'],
-        (object)['id' => 1, 'name' => 'Ocupado']
+        (object)['id' => 1, 'name' => 'Ocupado'],
     ],
 
     // Tables:
