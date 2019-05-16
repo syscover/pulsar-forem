@@ -158,8 +158,7 @@ return [
     // - forem_inscription.employment_situation_id :: <id_situacion_laboral></id_situacion_laboral>
     'employment_situations' => [
         (object)['id' => 0, 'name' => 'Desempleado'],
-        (object)['id' => 1, 'name' => 'Ocupado'],
-        (object)['id' => 2, 'name' => 'Otra']
+        (object)['id' => 1, 'name' => 'Ocupado']
     ],
 
     // Tables:

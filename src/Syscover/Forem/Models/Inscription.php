@@ -42,7 +42,7 @@ class Inscription extends CoreModel
         'email',
         'phone',
         'mobile',
-        'road_type_id',
+        'address_type_id',
         'address',
         'province_id',
         'zip',
