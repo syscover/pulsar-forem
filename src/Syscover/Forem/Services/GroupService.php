@@ -37,6 +37,8 @@ class GroupService
 
     public static function update($object)
     {
+        if(! empty($object['steps'])) $object['steps'] = json_encode($object['steps']);
+
         self::checkUpdate($object);
         Group::where('id', $object['id'])->update(self::builder($object));
 
@@ -85,6 +87,7 @@ class GroupService
                 'type_id',
                 'certificate',
                 'certificate_code',
+                'steps',
                 'hours',
                 'subsidized_amount',
                 'price',
