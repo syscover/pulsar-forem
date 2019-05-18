@@ -54,6 +54,7 @@ input ForemExpedientInput {
 input ForemGroupInput {
     id: Int
     profile_id: Int!
+    steps: [Int]
     prefix_id: String
     code: String!
     name: String!

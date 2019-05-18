@@ -55,6 +55,7 @@ type ForemGroup {
     id: Int!
     profile_id: Int!
     profile: AdminProfile!
+    steps: [Int]
     prefix_id: String
     code: String!
     name: String!
