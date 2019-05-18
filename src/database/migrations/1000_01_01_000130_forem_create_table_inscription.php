@@ -144,7 +144,7 @@ class ForemCreateTableInscription extends Migration
                     ->onDelete('restrict')
                     ->onUpdate('cascade');
                 $table->foreign('company_locality_id', 'fk05_forem_inscription')
-                    ->references('id')
+                    ->references('code')
                     ->on('forem_locality')
                     ->onDelete('restrict')
                     ->onUpdate('cascade');

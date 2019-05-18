@@ -25,6 +25,7 @@ class ForemCreateTableLocality extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
+                $table->unique('code', 'forem_locality_code_uq');
                 $table->foreign('province_id', 'fk01_forem_locality')
                     ->references('id')
                     ->on('forem_province')
