@@ -28,6 +28,7 @@ class Group extends CoreModel
         'expedient'
     ];
     protected $casts        = [
+        'steps' => 'array',
         'price' => 'float'
     ];
 
