@@ -19,7 +19,7 @@ class Group extends CoreModel
     use Geolocalizable;
 
     protected $table        = 'forem_group';
-    protected $fillable     = ['id', 'profile_id', 'prefix_id', 'code', 'name', 'slug', 'category_id', 'target_id', 'assistance_id', 'type_id', 'certificate', 'certificate_code', 'hours', 'subsidized_amount', 'price', 'price_hour', 'contents_excerpt', 'contents', 'requirements', 'observations', 'action_id', 'expedient_id', 'starts_at', 'ends_at', 'selection_date', 'open', 'featured', 'schedule', 'publish', 'is_product', 'product_id', 'country_id', 'territorial_area_1_id', 'territorial_area_2_id', 'territorial_area_3_id', 'zip', 'locality', 'address', 'latitude', 'longitude'];
+    protected $fillable     = ['id', 'profile_id', 'prefix_id', 'code', 'name', 'slug', 'category_id', 'target_id', 'assistance_id', 'type_id', 'certificate', 'certificate_code', 'steps', 'hours', 'subsidized_amount', 'price', 'price_hour', 'contents_excerpt', 'contents', 'requirements', 'observations', 'action_id', 'expedient_id', 'starts_at', 'ends_at', 'selection_date', 'open', 'featured', 'schedule', 'publish', 'is_product', 'product_id', 'country_id', 'territorial_area_1_id', 'territorial_area_2_id', 'territorial_area_3_id', 'zip', 'locality', 'address', 'latitude', 'longitude'];
     public $with            = [
         'category',
         'profile',

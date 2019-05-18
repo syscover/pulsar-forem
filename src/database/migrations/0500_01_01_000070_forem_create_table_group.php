@@ -30,6 +30,9 @@ class ForemCreateTableGroup extends Migration
                 $table->boolean('certificate')->default(false);
                 $table->string('certificate_code')->nullable();
 
+                // steps in inscription form
+                $table->json('steps')->nullable();
+
                 $table->smallInteger('hours');
 
                 $table->decimal('subsidized_amount', 10, 2)->nullable();
