@@ -10,12 +10,6 @@ use Syscover\Core\Models\CoreModel;
 class Inscription extends CoreModel
 {
     protected $table        = 'forem_inscription';
-    protected $casts        = [
-        'driving_licenses'  => 'array',
-        'languages'         => 'array',
-        'experiences'       => 'array',
-        'educations'        => 'array'
-    ];
     protected $fillable     = [
         // inscription
         'id',
@@ -114,6 +108,19 @@ class Inscription extends CoreModel
     public $with = [
         'group'
     ];
+    protected $casts        = [
+        'driving_licenses'  => 'array',
+        'languages'         => 'array',
+        'experiences'       => 'array',
+        'educations'        => 'array'
+    ];
+
+    public function scopeBuilder($query)
+    {
+        return $query
+            ->join('forem_group', 'forem_inscription.group_id', '=', 'forem_group.id')
+            ->addSelect('forem_group.*', 'forem_inscription.*', 'forem_group.name as forem_group_name', 'forem_inscription.name as forem_inscription_name');
+    }
 
     public function group()
     {
