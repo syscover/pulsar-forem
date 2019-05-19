@@ -37,7 +37,7 @@ class GroupService
 
     public static function update($object)
     {
-        if(! empty($object['steps'])) $object['steps'] = json_encode($object['steps']);
+        if(! empty($object['steps'])) $object['steps'] = json_encode($object['steps']); else $object['steps'] = json_encode([]);
 
         self::checkUpdate($object);
         Group::where('id', $object['id'])->update(self::builder($object));
