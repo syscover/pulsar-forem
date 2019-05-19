@@ -23,11 +23,11 @@ return [
     ],
 
     'steps' => [
-        (object)['id' => 1, 'name' => 'Paso 1 - Información de contacto',   'active' => false],
-        (object)['id' => 2, 'name' => 'Paso 2 - Información personal',      'active' => true],
-        (object)['id' => 3, 'name' => 'Paso 3 - Información profesional',   'active' => true],
-        (object)['id' => 4, 'name' => 'Paso 4 - Información académica',     'active' => true],
-        (object)['id' => 5, 'name' => 'Paso 5 - Otros datos',               'active' => true]
+        (object)['id' => 0, 'name' => 'Paso 1 - Información de contacto',   'active' => false],
+        (object)['id' => 1, 'name' => 'Paso 2 - Información personal',      'active' => true],
+        (object)['id' => 2, 'name' => 'Paso 3 - Información profesional',   'active' => true],
+        (object)['id' => 3, 'name' => 'Paso 4 - Información académica',     'active' => true],
+        (object)['id' => 4, 'name' => 'Paso 5 - Otros datos',               'active' => true]
     ],
 
     // Tables:
