@@ -111,4 +111,12 @@ class Inscription extends CoreModel
         'has_data_authorization',
         'has_marketing_authorization'
     ];
+    public $with = [
+        'group'
+    ];
+
+    public function group()
+    {
+        return $this->belongsTo(Group::class, 'group_id');
+    }
 }
