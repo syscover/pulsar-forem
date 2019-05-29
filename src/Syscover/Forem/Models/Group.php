@@ -1,7 +1,6 @@
 <?php namespace Syscover\Forem\Models;
 
 use Laravel\Scout\Searchable;
-use Carbon\Carbon;
 use Syscover\Admin\Models\Attachment;
 use Syscover\Admin\Models\Profile;
 use Syscover\Admin\Traits\Geolocalizable;
@@ -77,21 +76,6 @@ class Group extends CoreModel
     public function profile()
     {
         return $this->belongsTo(Profile::class, 'profile_id');
-    }
-
-    // Accessors
-    public function getStartsAtAttribute($value)
-    {
-        // https://es.wikipedia.org/wiki/ISO_8601
-        // return (new Carbon($value))->toW3cString();
-        return $value ? (new Carbon($value))->format('Y-m-d\TH:i:s') : null;
-    }
-
-    public function getEndsAtAttribute($value)
-    {
-        // https://es.wikipedia.org/wiki/ISO_8601
-        // return (new Carbon($value))->toW3cString();
-        return $value ? (new Carbon($value))->format('Y-m-d\TH:i:s') : null;
     }
 
     /**
