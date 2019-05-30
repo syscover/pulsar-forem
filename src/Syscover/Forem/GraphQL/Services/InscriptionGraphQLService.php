@@ -20,14 +20,14 @@ class InscriptionGraphQLService extends CoreGraphQLService
     public function export($root, array $args)
     {
         $group          = Group::find($args['id']);
-        $incriptions    = Inscription::where('group_id', $args['id'])
+        $inscriptions    = Inscription::where('group_id', $args['id'])
             ->where('exported', false)
             ->get();
 
         // group inscriptions each 10
-        $n = (int)($incriptions->count() / 10);
-        if (($incriptions->count() % 10) > 0) $n++;
-        $inscriptionGroups = $incriptions->split($n);
+        $n = (int)($inscriptions->count() / 10);
+        if (($inscriptions->count() % 10) > 0) $n++;
+        $inscriptionGroups = $inscriptions->split($n);
 
         $files = [];
         foreach ($inscriptionGroups as $inscriptionGroup)
@@ -208,8 +208,14 @@ class InscriptionGraphQLService extends CoreGraphQLService
         }
 
         // set like exported
+        Inscription::whereIn('id', $inscriptions->pluck('id'))->update([
+            'exported' => true
+        ]);
 
-        // delete xml
+        // delete xml files
+        foreach ($files as $file) {
+            Storage::disk('local')->delete('public/forem/export/' . $file);
+        }
 
         return $zipFile;
     }
