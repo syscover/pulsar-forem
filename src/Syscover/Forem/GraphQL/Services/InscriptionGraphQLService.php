@@ -21,8 +21,11 @@ class InscriptionGraphQLService extends CoreGraphQLService
     {
         $group          = Group::find($args['id']);
         $inscriptions    = Inscription::where('group_id', $args['id'])
-            ->where('exported', false)
+            ->where('is_exported', false)
+            ->where('is_completed', true)
             ->get();
+
+        if ($inscriptions->count() === 0) return null;
 
         // group inscriptions each 10
         $n = (int)($inscriptions->count() / 10);
@@ -209,7 +212,7 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
         // set like exported
         Inscription::whereIn('id', $inscriptions->pluck('id'))->update([
-            'exported' => true
+            'is_exported' => true
         ]);
 
         // delete xml files

@@ -128,7 +128,8 @@ input ForemInscriptionInput {
     id: Int
     group_id: Int!
     student_id: Int
-    exported: Boolean!
+    is_completed: Boolean!
+    is_exported: Boolean!
     reason_request_id: Int
     other_reason_request: String
     observations: String

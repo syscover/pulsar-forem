@@ -21,7 +21,8 @@ class ForemCreateTableInscription extends Migration
 				$table->increments('id');
                 $table->integer('group_id')->unsigned();                                            // group that belong this inscription
                 $table->integer('student_id')->unsigned()->nullable();                              // if is student registered
-                $table->boolean('exported')->default(false);                                        // check if this inscription have been exported to FOCO
+                $table->boolean('is_completed')->default(false);                             // check if this inscription has completed to be exported to FOCO
+                $table->boolean('is_exported')->default(false);                              // check if this inscription have been exported to FOCO
                 $table->tinyInteger('reason_request_id')->unsigned()->nullable();                   // <id_motivo_solicitud></id_motivo_solicitud> :: pulsar-forem.reason_requests
                 $table->string('other_reason_request')->nullable();                                 // <motivo_otros></motivo_otros>
                 $table->text('observations')->nullable();
