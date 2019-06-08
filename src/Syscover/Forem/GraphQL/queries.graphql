@@ -36,7 +36,7 @@ foremGroups(sql:[CoreSQLInput]): [ForemGroup!]! @field(resolver: "Syscover\\Fore
 """ Query to get groups """
 foremGroup(sql:[CoreSQLInput]): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@find")
 """ Query to get inscriptions paginated """
-foremGroupsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@paginate")
+foremGroupsPagination(filters:[CoreSQLInput] sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@paginate")
 
 # Inscription
 """ Query to get inscription list """
