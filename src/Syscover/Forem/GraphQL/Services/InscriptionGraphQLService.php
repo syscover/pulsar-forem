@@ -89,19 +89,22 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
                 $dataInscription['alumno']['id_nivel_academico'] = $inscription->academic_level_id;
 
-                if (collect(config('pulsar-forem.academic_levels'))->where('id', $inscription->academic_level_id)->first()->specialty) {
+                if ($inscription->academic_level_id && collect(config('pulsar-forem.academic_levels'))->where('id', $inscription->academic_level_id)->first()->specialty)
+                {
                     $dataInscription['alumno']['especialidad_nivel_academico'] = $inscription->academic_level_specialty;
                 }
 
                 $dataInscription['alumno']['seleccionado_otro_curso'] = $inscription->has_other_course ? 1 : 0;
 
-                if ($inscription->has_other_course) {
+                if ($inscription->has_other_course)
+                {
                     $dataInscription['alumno']['otro_curso'] = $inscription->other_course;
                 }
 
                 $dataInscription['alumno']['id_motivo_solicitud'] = $inscription->reason_request_id;
 
-                if ($inscription->reason_request_id === 6) {
+                if ($inscription->reason_request_id === 6)
+                {
                     $dataInscription['alumno']['motivo_otros'] = $inscription->other_reason_request;
                 }
 
@@ -111,7 +114,8 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
                 $dataInscription['actua_representante'] = $inscription->has_agent ? 1 : 0;
 
-                if ($inscription->has_agent) {
+                if ($inscription->has_agent)
+                {
                     $dataInscription['representante']['num_documento_representante'] = $inscription->agent_tin;
                     $dataInscription['representante']['nombre_representante'] = $inscription->agent_name;
                     $dataInscription['representante']['primer_apellido_representante'] = $inscription->agent_surname;
@@ -128,8 +132,10 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
                 // languages
                 $languagesData = [];
-                if (is_array($inscription->languages)) {
-                    foreach ($inscription->languages as $language) {
+                if (is_array($inscription->languages))
+                {
+                    foreach ($inscription->languages as $language)
+                    {
                         $languageData = [];
                         $languageData['idioma']['id_idioma'] = $language['lang']['id'];
                         $languageData['idioma']['titulacion_idioma'] = $language['certificate']['id'];
@@ -147,8 +153,10 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
                 // educations
                 $educationsData = [];
-                if (is_array($inscription->educations)) {
-                    foreach ($inscription->educations as $education) {
+                if (is_array($inscription->educations))
+                {
+                    foreach ($inscription->educations as $education)
+                    {
                         $educationData = [];
                         $educationData['formacion_profesional']['denominacion_curso'] = $education['name'];
                         $educationData['formacion_profesional']['centro'] = $education['academic'];
@@ -162,8 +170,10 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
                 // experiences
                 $experiencesData = [];
-                if (is_array($inscription->experiences)) {
-                    foreach ($inscription->experiences as $experience) {
+                if (is_array($inscription->experiences))
+                {
+                    foreach ($inscription->experiences as $experience)
+                    {
                         $experienceData = [];
                         $experienceData['experiencia_profesional']['id_categoria_profesional'] = $experience['professional_category']['id'];
                         $experienceData['experiencia_profesional']['cod_duracion'] = $experience['duration']['id'];
