@@ -201,12 +201,13 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
 
         // Create zip file
-        $zipFile = $group->id . '--' . Str::uuid() . '.zip';
-        $pathZipFile = storage_path('app/public/forem/export/' . $zipFile);
+        $filename = $group->id . '--' . Str::uuid() . '.zip';
+        $pathname = 'app/public/forem/export/' . $filename;
+        $absoluteRoute = storage_path($pathname);
 
         $zip = new \ZipArchive();
 
-        if ($zip->open($pathZipFile, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) === true)
+        if ($zip->open($absoluteRoute, \ZipArchive::CREATE | \ZipArchive::OVERWRITE) === true)
         {
             foreach ($files as $file)
             {
@@ -230,6 +231,12 @@ class InscriptionGraphQLService extends CoreGraphQLService
             Storage::disk('local')->delete('public/forem/export/' . $file);
         }
 
-        return $zipFile;
+        return [
+            'url'       => asset('storage/forem/export/' . $filename),
+            'filename'  => $filename,
+            'pathname'  => $pathname,
+            'mime'      => mime_content_type($absoluteRoute),
+            'size'      => filesize($absoluteRoute)
+        ];
     }
 }

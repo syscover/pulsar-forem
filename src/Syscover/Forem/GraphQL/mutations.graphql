@@ -27,7 +27,7 @@ foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL
 foremCreateInscription(payload: ForemInscriptionInput!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@store")
 foremUpdateInscription(payload: ForemInscriptionInput!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@update")
 foremDeleteInscription(id:Int!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@delete")
-foremExportInscription(id:Int!): String @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@export")
+foremExportInscription(id:Int!): CoreFile @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@export")
 
 # Locality
 foremCreateLocality(payload: ForemLocalityInput!): ForemLocality @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@store")
