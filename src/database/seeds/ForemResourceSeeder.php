@@ -14,7 +14,7 @@ class ForemResourceSeeder extends Seeder
             ['id' => 'forem-expedient',         'name' => 'Expedients',         'package_id' => 500],
             ['id' => 'forem-action',            'name' => 'Actions',            'package_id' => 500],
             ['id' => 'forem-group',             'name' => 'Groups',             'package_id' => 500],
-            ['id' => 'forem-group-office',      'name' => 'Groups Office',      'package_id' => 500],
+            ['id' => 'forem-group-office',      'name' => 'Groups',             'package_id' => 500],
             ['id' => 'forem-student',           'name' => 'Students',           'package_id' => 500],
             ['id' => 'forem-inscription',       'name' => 'Inscriptions',       'package_id' => 500],
             ['id' => 'forem-database',          'name' => 'Database',           'package_id' => 500],
