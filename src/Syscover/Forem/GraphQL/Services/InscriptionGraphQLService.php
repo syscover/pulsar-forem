@@ -20,7 +20,7 @@ class InscriptionGraphQLService extends CoreGraphQLService
     public function export($root, array $args)
     {
         $group          = Group::find($args['id']);
-        $inscriptions    = Inscription::where('group_id', $args['id'])
+        $inscriptions   = Inscription::where('group_id', $args['id'])
             ->where('is_exported', false)
             ->where('is_completed', true)
             ->get();
