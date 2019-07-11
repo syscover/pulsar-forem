@@ -1,146 +1,146 @@
 <?php namespace Syscover\Forem\Services;
 
+use Syscover\Core\Exceptions\ModelNotChangeException;
+use Syscover\Core\Services\Service;
 use Syscover\Admin\Traits\Attachable;
 use Syscover\Forem\Models\Group;
 
-class GroupService
+class GroupService extends Service
 {
     use Attachable;
 
-    public static function create($object)
+    public function store(array $data)
     {
-        self::checkCreate($object);
+        $this->validate($data, [
+            'profile_id'        => 'required|integer',
+            'code'              => 'required|between:2,255',
+            'slug'              => 'required|between:2,255',
+            'category_id'       => 'required|integer',
+            'target_id'         => 'required|integer',
+            'assistance_id'     => 'required|integer',
+            'type_id'           => 'required|integer',
+            'hours'             => 'required|integer'        
+        ]);
 
-        $group = Group::create(self::builder($object));
+        $object = Group::create($data);
+
+        // create composite code
+        $object->composite_code = $this->getCompositeCode($object);
+        $object->save();
 
         // set attachments
         self::createAttachments(
-            $object['attachments'],
+            $data['attachments'],
             'storage/app/public/forem/groups',
             'storage/forem/groups',
             Group::class,
-            $group->id,
-            $group->lang_id
+            $object->id,
+            $object->lang_id
         );
 
-        // we update record if has scout search engine, for register relations
-        if (has_scout())
-        {
-            if($group->publish)
-                $group->searchable();
-            else
-                $group->unsearchable();
-        }
+        // check if is searchable
+        $this->isSearchable($object);
 
-        return $group;
+        return $object;
     }
 
-    public static function update($object)
+    public function update(array $data, int $id)
     {
-        if(! empty($object['steps'])) $object['steps'] = json_encode($object['steps']); else $object['steps'] = json_encode([]);
+        $this->validate($data, [
+            'id'                => 'required|integer',
+            'profile_id'        => 'required|integer',
+            'code'              => 'required|between:2,255',
+            'slug'              => 'required|between:2,255',
+            'category_id'       => 'required|integer',
+            'target_id'         => 'required|integer',
+            'assistance_id'     => 'required|integer',
+            'type_id'           => 'required|integer',
+            'hours'             => 'required|integer',
+        ]);
 
-        self::checkUpdate($object);
-        Group::where('id', $object['id'])->update(self::builder($object));
-
-        $group = Group::builder()->find($object['id']);
+        $object = Group::findOrFail($id);
 
         // update attachments
         self::updateAttachments(
-            $object['attachments'],
+            $data['attachments'],
             'storage/app/public/forem/groups',
             'storage/forem/groups',
             Group::class,
-            $group->id,
-            $group->lang_id
+            $object->id,
+            $object->lang_id
         );
 
+        $object->fill($data);
+
+        // check is model
+        if ($object->isClean()) throw new ModelNotChangeException('At least one value must change');
+
+        // create composite code
+        $object->composite_code = $this->getCompositeCode($object);
+
+        // save changes
+        $object->save();
+
+        // check if is searchable
+        $this->isSearchable($object);
+
+        return $object;
+    }
+
+    private function isSearchable(Group $object)
+    {
+        // we update record if has scout search engine, for register relations
         if (has_scout())
         {
-            if($group->publish)
-                $group->searchable();
+            if($object->publish)
+            {
+                $object->searchable();
+            }
             else
-                $group->unsearchable();
+            {
+                $object->unsearchable();
+            }
+        }
+    }
+
+    private function getCompositeCode(Group $object)
+    {
+        $code           = '';
+        $modality       = collect(config('pulsar-forem.modalities'))->where('id', $object->expedient->modality_id)->first();
+
+        switch ($modality->id)
+        {
+            case 1:
+                $code = $modality->code . '/' . $object->expedient->year . '/' . $object->expedient->code . '/' . $object->action->code . '/' . $object->code;
+                break;
+            case 2:
+                $code = $modality->code . '/' . $object->expedient->year . '/' . $object->prefix_id . '/' . $object->code;
+                break;
+            case 3:
+                $code = $modality->code . '/' . $object->expedient->year . '/' . $object->prefix_id . '/' . $object->action->code;
+                break;
+            case 4:
+                $code = $modality->code . '/' . $object->expedient->year . '/' . $object->prefix_id . '/' . $object->action->code;
+                break;
+            case 5:
+                $code = $modality->code . '/' . $object->expedient->year . '/' . $object->prefix_id . '/' . $object->action->code;
+                break;
+            case 6:
+                $code = $modality->code . '/' . $object->expedient->ambit . '/' . $object->expedient->year . '/' . $object->prefix_id . '/' . $object->action->code;
+                break;
         }
 
-        return  $group;
+        if(! $object) throw new \Exception('Composite code is nor available');
+
+        return $code;
     }
+
+
 
     private static function builder($object, $filterKeys = null)
     {
-        $object = collect($object);
-
-        if($filterKeys)
-        {
-            $object = $object->only($filterKeys);
-        }
-        else
-        {
-            $object = $object->only([
-                'profile_id',
-                'prefix_id',
-                'code',
-                'name',
-                'slug',
-                'category_id',
-                'target_id',
-                'assistance_id',
-                'type_id',
-                'certificate',
-                'certificate_code',
-                'steps',
-                'hours',
-                'subsidized_amount',
-                'price',
-                'price_hour',
-                'contents_excerpt',
-                'contents',
-                'requirements',
-                'observations',
-                'action_id',
-                'expedient_id',
-                'starts_at',
-                'ends_at',
-                'selection_date',
-                'open',
-                'featured',
-                'schedule',
-                'publish',
-                'is_product',
-                'product_id',
-                'country_id',
-                'territorial_area_1_id',
-                'territorial_area_2_id',
-                'territorial_area_3_id',
-                'zip',
-                'locality',
-                'address',
-                'latitude',
-                'longitude'
-            ]);
-        }
-
         if($object->has('starts_at'))       $object['starts_at']        = date_time_string($object->get('starts_at'));
         if($object->has('ends_at'))         $object['ends_at']          = date_time_string($object->get('ends_at'));
         if($object->has('selection_date'))  $object['selection_date']   = date_time_string($object->get('selection_date'));
-
-        return $object->toArray();
-    }
-
-    private static function checkCreate($object)
-    {
-        if(empty($object['profile_id']))    throw new \Exception('You have to define a profile_id field to create a group');
-        if(empty($object['code']))          throw new \Exception('You have to define a code field to create a group');
-        if(empty($object['name']))          throw new \Exception('You have to define a name field to create a group');
-        if(empty($object['slug']))          throw new \Exception('You have to define a slug field to create a group');
-        if(empty($object['category_id']))   throw new \Exception('You have to define a category_id field to create a group');
-        if(empty($object['target_id']))     throw new \Exception('You have to define a target_id field to create a group');
-        if(empty($object['assistance_id'])) throw new \Exception('You have to define a assistance_id field to create a group');
-        if(empty($object['type_id']))       throw new \Exception('You have to define a type_id field to create a group');
-        if(empty($object['hours']))         throw new \Exception('You have to define a hours field to create a group');
-    }
-
-    private static function checkUpdate($object)
-    {
-        if(empty($object['id']))    throw new \Exception('You have to define a id field to update a group');
     }
 }

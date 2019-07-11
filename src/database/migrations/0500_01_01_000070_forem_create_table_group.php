@@ -20,7 +20,8 @@ class ForemCreateTableGroup extends Migration
 				$table->increments('id');
                 $table->integer('profile_id')->unsigned();
                 $table->string('prefix_id')->nullable();                    // pulsar-forem.group_prefix :: ID de centro desde el que controla el grupo
-				$table->string('code');                                     //
+                $table->string('code');                                     //
+                $table->string('composite_code');                           // código compuesto por expediente, acción, etc.
                 $table->string('name');
                 $table->string('slug');
                 $table->integer('category_id')->unsigned();                 // forem_category :: Categoría del curso
@@ -47,7 +48,6 @@ class ForemCreateTableGroup extends Migration
                 // course fields
                 $table->integer('action_id')->unsigned();                     // forem_action
                 $table->integer('expedient_id')->unsigned();
-
 
                 // data to create web course sheet
                 $table->timestamp('starts_at')->nullable();

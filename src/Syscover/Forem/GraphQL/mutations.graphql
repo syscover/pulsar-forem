@@ -19,7 +19,7 @@ foremUpdateExpedient(payload: ForemExpedientInput!): ForemExpedient @field(resol
 foremDeleteExpedient(id:Int!): ForemExpedient @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@delete")
 
 # Group
-foremCreateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@create")
+foremCreateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@store")
 foremUpdateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@update")
 foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@delete")
 

@@ -17,9 +17,9 @@ class GroupGraphQLService extends CoreGraphQLService
         $this->service = $service;
     }
 
-    public function create($root, array $args)
+    public function store($root, array $args)
     {
-        $group = $this->service->create($args['payload']);
+        $group = $this->service->store($args['payload']);
 
         if($args['payload']['is_product'])
         {
@@ -34,7 +34,7 @@ class GroupGraphQLService extends CoreGraphQLService
 
     public function update($root, array $args)
     {
-        $group = $this->service->update($args['payload']);
+        $group = $this->service->update($args['payload'], $args['payload']['id']);
 
         if($args['payload']['is_product'])
         {
