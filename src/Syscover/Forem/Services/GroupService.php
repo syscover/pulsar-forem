@@ -134,13 +134,4 @@ class GroupService extends Service
 
         return $code;
     }
-
-
-
-    private static function builder($object, $filterKeys = null)
-    {
-        if($object->has('starts_at'))       $object['starts_at']        = date_time_string($object->get('starts_at'));
-        if($object->has('ends_at'))         $object['ends_at']          = date_time_string($object->get('ends_at'));
-        if($object->has('selection_date'))  $object['selection_date']   = date_time_string($object->get('selection_date'));
-    }
 }
