@@ -69,6 +69,14 @@ class ForemCreateTableGroup extends Migration
                 $table->decimal('latitude', 17, 14)->nullable();
                 $table->decimal('longitude', 17, 14)->nullable();
 
+                // trainers data
+                $table->string('trainer_name_1')->nullable();
+                $table->string('trainer_hours_1')->nullable();
+                $table->string('trainer_name_2')->nullable();
+                $table->string('trainer_hours_2')->nullable();
+                $table->string('trainer_name_3')->nullable();
+                $table->string('trainer_hours_3')->nullable();
+
                 // marketable
                 $table->boolean('is_product')->default(false);
                 $table->integer('product_id')->unsigned()->nullable();

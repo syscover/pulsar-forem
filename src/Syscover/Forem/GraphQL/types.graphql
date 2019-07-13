@@ -98,6 +98,14 @@ type ForemGroup {
     latitude: String
     longitude: String
 
+    # Trainers data
+    trainer_name_1: String
+    trainer_hours_1: String
+    trainer_name_2: String
+    trainer_hours_2: String
+    trainer_name_3: String
+    trainer_hours_3: String
+
     attachments: [AdminAttachment]
 
     # Marketable columns
