@@ -47,7 +47,7 @@ class ForemCreateTableTrainer extends Migration
                 $table->string('specialty')->nullable();
                 $table->boolean('is_register_jccm')->nullable()->default(false);
                 $table->json('categories')->nullable();
-                $table->tinyInteger('teacher_training')->nullable();
+                $table->tinyInteger('teacher_training')->nullable();                    // pulsar-forem.teacher_trainings
                 $table->smallInteger('teaching_months')->unsigned()->nullable();
                 $table->smallInteger('occupation_months')->unsigned()->nullable();
 
