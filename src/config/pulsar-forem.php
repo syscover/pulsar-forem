@@ -434,4 +434,11 @@ return [
         (object)['id' => 6, 'name' => 'Guadalajara'],
         (object)['id' => 7, 'name' => 'Toledo'],
     ],
+    'teacher_trainings' => [
+        (object)['id' => 1, 'name' => 'Ninguna'],
+        (object)['id' => 2, 'name' => 'CAP'],
+        (object)['id' => 3, 'name' => 'Formador de formadores'],
+        (object)['id' => 4, 'name' => 'Formador ocupacional'],
+        (object)['id' => 5, 'name' => 'Docencia de la Formación Profesional para el empleo'],
+    ],
 ];

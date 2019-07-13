@@ -80,7 +80,7 @@ class ForemCreateTableInscription extends Migration
                 $table->json('languages')->nullable();                                              // <lista_idiomas>
                 $table->json('educations')->nullable();                                             // <lista_formaciones_profesionales>
                 $table->json('experiences')->nullable();                                            // <lista_experiencias_profesionales>
-                $table->boolean('has_driving_license')->default(false);                       // <tiene_carnet_conducir></tiene_carnet_conducir>
+                $table->boolean('has_driving_license')->default(false);                             // <tiene_carnet_conducir></tiene_carnet_conducir>
                 $table->json('driving_licenses')->nullable();                                       // <lista_carnets_conducir></lista_carnets_conducir> :: pulsar-forem.driving_licenses
 
                 // employment situation
