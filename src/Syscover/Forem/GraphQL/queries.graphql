@@ -62,10 +62,10 @@ foremProvince(sql:[CoreSQLInput]): ForemProvince @field(resolver: "Syscover\\For
 """ Query to get provinces paginated """
 foremProvincesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@paginate")
 
-# Expedient
-""" Query to get expedient list """
-foremExpedients(sql:[CoreSQLInput]): [ForemExpedient!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@get")
-""" Query to get expedients """
-foremExpedient(sql:[CoreSQLInput]): ForemExpedient @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@find")
-""" Query to get expedients paginated """
-foremExpedientsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@paginate")
+# Trainer
+""" Query to get trainer list """
+foremTrainers(sql:[CoreSQLInput]): [ForemTrainer!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\TrainerGraphQLService@get")
+""" Query to get trainers """
+foremTrainer(sql:[CoreSQLInput]): ForemTrainer @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\TrainerGraphQLService@find")
+""" Query to get trainers paginated """
+foremTrainersPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\TrainerGraphQLService@paginate")

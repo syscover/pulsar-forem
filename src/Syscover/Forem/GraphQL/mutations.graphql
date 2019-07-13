@@ -38,3 +38,8 @@ foremDeleteLocality(id:Int!): ForemLocality @field(resolver: "Syscover\\Forem\\G
 foremCreateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@store")
 foremUpdateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@update")
 foremDeleteProvince(id:Int!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@delete")
+
+# Trainer
+foremCreateTrainer(payload: ForemTrainerInput!): ForemTrainer @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\TrainerGraphQLService@store")
+foremUpdateTrainer(payload: ForemTrainerInput!): ForemTrainer @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\TrainerGraphQLService@update")
+foremDeleteTrainer(id:Int!): ForemTrainer @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\TrainerGraphQLService@delete")
