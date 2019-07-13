@@ -61,3 +61,11 @@ foremProvinces(sql:[CoreSQLInput]): [ForemProvince!]! @field(resolver: "Syscover
 foremProvince(sql:[CoreSQLInput]): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@find")
 """ Query to get provinces paginated """
 foremProvincesPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@paginate")
+
+# Expedient
+""" Query to get expedient list """
+foremExpedients(sql:[CoreSQLInput]): [ForemExpedient!]! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@get")
+""" Query to get expedients """
+foremExpedient(sql:[CoreSQLInput]): ForemExpedient @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@find")
+""" Query to get expedients paginated """
+foremExpedientsPagination(sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ExpedientGraphQLService@paginate")
