@@ -20,7 +20,7 @@ class LocalityService extends Service
     public function update(array $data, int $id)
     {
         $this->validate($data, [
-            'id'             => 'integer',
+            'id'            => 'integer',
             'province_id'   => 'required|integer',
             'code'          => 'required|integer',
             'name'          => 'required|between:2,255'
