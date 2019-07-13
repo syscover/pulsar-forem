@@ -46,7 +46,7 @@ class ForemCreateTableTrainer extends Migration
                 // special fields
                 $table->string('specialty')->nullable();
                 $table->boolean('is_register_jccm')->nullable()->default(false);
-                $table->json('categories')->nullable();
+                $table->json('categories')->nullable();                                 // forem_category table
                 $table->tinyInteger('teacher_training')->nullable();                    // pulsar-forem.teacher_trainings
                 $table->smallInteger('teaching_months')->unsigned()->nullable();
                 $table->smallInteger('occupation_months')->unsigned()->nullable();
@@ -55,12 +55,6 @@ class ForemCreateTableTrainer extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
-
-                $table->foreign('certification_id', 'fk01_forem_trainer')
-                    ->references('id')
-                    ->on('forem_certification')
-                    ->onDelete('restrict')
-                    ->onUpdate('cascade');
 			});
 		}
 	}
