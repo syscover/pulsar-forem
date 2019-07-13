@@ -6,12 +6,16 @@ return [
     //***   FOCO
     //******************************************************************************************************************
     'modalities' => [
-        (object)['id' => 1, 'name' => 'Modalidad I',    'code' => 'FPTO',   'inscription_type' => 3],
-        (object)['id' => 2, 'name' => 'Modalidad II',   'code' => 'FPTD',   'inscription_type' => 4],
-        (object)['id' => 3, 'name' => 'Modalidad III',  'code' => 'FPCI',   'inscription_type' => 5],
-        (object)['id' => 4, 'name' => 'Modalidad IV',   'code' => 'FPDR',   'inscription_type' => 6],
-        (object)['id' => 5, 'name' => 'Modalidad V',    'code' => 'FPFP',   'inscription_type' => null],
-        (object)['id' => 6, 'name' => 'Modalidad VI',   'code' => 'FPPE',   'inscription_type' => null],
+        (object)['id' => 1,     'name' => 'Modalidad I',                    'code' => 'FPTO',   'inscription_type' => 3],
+        (object)['id' => 2,     'name' => 'Modalidad II',                   'code' => 'FPTD',   'inscription_type' => 4],
+        (object)['id' => 3,     'name' => 'Modalidad III',                  'code' => 'FPCI',   'inscription_type' => 5],
+        (object)['id' => 4,     'name' => 'Modalidad IV',                   'code' => 'FPDR',   'inscription_type' => 6],
+        (object)['id' => 5,     'name' => 'Modalidad V',                    'code' => 'FPFP',   'inscription_type' => null],
+        (object)['id' => 6,     'name' => 'Modalidad VI',                   'code' => 'FPPE',   'inscription_type' => null],
+        (object)['id' => 7,     'name' => 'Formación No Subvencionada',     'code' => 'NOSV',   'inscription_type' => null],
+        (object)['id' => 8,     'name' => 'Oposiciones',                    'code' => 'OPOS',   'inscription_type' => null],
+        (object)['id' => 9,     'name' => 'Formación Sindical',             'code' => 'CCOO',   'inscription_type' => null],
+        (object)['id' => 10,    'name' => 'Otra Formación',                 'code' => 'OTRA',   'inscription_type' => null],
     ],
 
     'group_prefixes' => [
@@ -390,6 +394,8 @@ return [
         (object)['id' => 1, 'name' => 'Formacion no subvencionada',         'slug' => 'formacion-no-subvencionada'],
         (object)['id' => 2, 'name' => 'Formacion subvencionada',            'slug' => 'formacion-subvencionada'],
         (object)['id' => 3, 'name' => 'Oposiciones',                        'slug' => 'oposiciones'],
+        (object)['id' => 4, 'name' => 'Formación Sindical',                 'slug' => 'formacion-sindical'],
+        (object)['id' => 5, 'name' => 'Otra Formación',                     'slug' => 'otra-formacion'],
     ],
 
     'work_situations' => [
