@@ -240,3 +240,40 @@ input ForemProvinceInput {
     code: Int!
     name: String!
 }
+
+type ForemTrainerInput {
+    id: Int
+    profile_id: Int!
+    academic_level_id: Int
+    name: String!
+    surname: String
+    surname2: String
+    gender_id: Int
+    email: String
+    phone: String
+    mobile: String
+    birth_date: Date
+    tin: String
+    availability: [Int]
+    authorization: Boolean
+
+    # geolocation data
+    country_id: String
+    territorial_area_1_id: String
+    territorial_area_2_id: String
+    territorial_area_3_id: String
+    zip: String
+    locality: String
+    address: String
+    latitude: String
+    longitude: String
+    
+    # special fields
+    specialty:  String
+    is_register_jccm: Boolean
+    categories: [Int]
+    teacher_training: Int
+    teaching_months: Int 
+    occupation_months: Int
+    description: String
+}
