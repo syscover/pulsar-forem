@@ -241,7 +241,7 @@ input ForemProvinceInput {
     name: String!
 }
 
-type ForemTrainerInput {
+input ForemTrainerInput {
     id: Int
     profile_id: Int!
     academic_level_id: Int
