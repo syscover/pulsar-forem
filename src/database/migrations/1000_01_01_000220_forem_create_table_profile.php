@@ -14,7 +14,7 @@ class ForemCreateTableProfile extends Migration
 	{
 		if (! Schema::hasTable('forem_profile'))
 		{
-			Schema::create('forem_trainer', function (Blueprint $table) {
+			Schema::create('forem_profile', function (Blueprint $table) {
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');

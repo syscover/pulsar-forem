@@ -239,6 +239,12 @@ type ForemLocality {
     name: String!
 }
 
+type ForemProfile {
+    id: Int!
+    name: String!
+    publish: Boolean!
+}
+
 type ForemProvince {
     id: Int!
     code: Int!

@@ -22,6 +22,7 @@ class ForemResourceSeeder extends Seeder
             ['id' => 'forem-province',              'name' => 'Provinces',          'package_id' => 500],
             ['id' => 'forem-locality',              'name' => 'Localities',         'package_id' => 500],
             ['id' => 'forem-trainer',               'name' => 'Trainers',           'package_id' => 500],
+            ['id' => 'forem-profile',               'name' => 'Profiles',           'package_id' => 500],
         ]);
     }
 }

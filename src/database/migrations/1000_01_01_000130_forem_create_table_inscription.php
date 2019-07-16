@@ -115,15 +115,6 @@ class ForemCreateTableInscription extends Migration
                 $table->timestamps();
                 $table->softDeletes();
 
-
-                // inscription
-                //$table->integer('expertise_id')->unsigned();
-                //$table->integer('work_situation_id')->unsigned();
-
-                // sector_id poner también en los datos de la compañía no solo en experiencias??
-                //$table->integer('sector_id')->unsigned()->nullable();
-
-
                 $table->foreign('group_id', 'fk01_forem_inscription')
                     ->references('id')
                     ->on('forem_group')

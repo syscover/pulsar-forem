@@ -18,7 +18,7 @@ class ForemCreateTableTrainer extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
-                $table->tinyInteger('profile_id');                                      // pulsar-forem.profiles
+                $table->integer('profile_id')->unsigned();                              // pulsar-forem.profiles
                 $table->smallInteger('academic_level_id')->unsigned()->nullable();      // pulsar-forem.academic_levels
 			    $table->string('name');
                 $table->string('surname')->nullable();
@@ -55,6 +55,12 @@ class ForemCreateTableTrainer extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->foreign('profile_id', 'forem_trainer_profile_id_fk')
+                    ->references('id')
+                    ->on('forem_profile')
+                    ->onDelete('restrict')
+                    ->onUpdate('cascade');
 			});
 		}
 	}

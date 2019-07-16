@@ -235,6 +235,12 @@ input ForemLocalityInput{
     name: String!
 }
 
+input ForemProfileInput {
+    id: Int
+    name: String!
+    publish: Boolean!
+}
+
 input ForemProvinceInput {
     id: Int
     code: Int!

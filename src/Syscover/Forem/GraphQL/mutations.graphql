@@ -34,6 +34,11 @@ foremCreateLocality(payload: ForemLocalityInput!): ForemLocality @field(resolver
 foremUpdateLocality(payload: ForemLocalityInput!): ForemLocality @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@update")
 foremDeleteLocality(id:Int!): ForemLocality @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\LocalityGraphQLService@delete")
 
+# Profile
+foremCreateProfile(payload: ForemProfileInput!): ForemProfile @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProfileGraphQLService@store")
+foremUpdateProfile(payload: ForemProfileInput!): ForemProfile @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProfileGraphQLService@update")
+foremDeleteProfile(id:Int!): ForemProfile @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProfileGraphQLService@delete")
+
 # Province
 foremCreateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@store")
 foremUpdateProvince(payload: ForemProvinceInput!): ForemProvince @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\ProvinceGraphQLService@update")
