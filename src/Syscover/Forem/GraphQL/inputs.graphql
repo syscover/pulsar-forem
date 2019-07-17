@@ -228,7 +228,7 @@ input ForemInscriptionInput {
     has_marketing_authorization: Boolean
 }
 
-input ForemLocalityInput{
+input ForemLocalityInput {
     id: Int
     province_id: Int!
     code: Int!
