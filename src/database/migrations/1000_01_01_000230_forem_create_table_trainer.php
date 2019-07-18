@@ -24,11 +24,11 @@ class ForemCreateTableTrainer extends Migration
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
                 $table->tinyInteger('gender_id')->nullable();
+                $table->date('birth_date')->nullable();
+                $table->string('tin')->nullable();
                 $table->string('email')->nullable();
                 $table->string('phone')->nullable();
                 $table->string('mobile')->nullable();
-                $table->date('birth_date')->nullable();
-                $table->string('tin')->nullable();
                 $table->json('availability')->nullable();                               // related with pulsar-forem.availabilities
                 $table->boolean('authorization')->default(false);                       // authorization RGPD
 
