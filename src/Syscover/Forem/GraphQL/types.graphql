@@ -264,8 +264,8 @@ type ForemTrainer {
     mobile: String
     birth_date: Date
     tin: String
-    availability: [Int]
-    authorization: Boolean
+    availabilities: [Int]
+    has_authorization: Boolean
 
     # geolocation data
     country_id: String
