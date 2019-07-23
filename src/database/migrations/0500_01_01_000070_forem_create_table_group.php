@@ -21,7 +21,7 @@ class ForemCreateTableGroup extends Migration
                 $table->integer('profile_id')->unsigned();
                 $table->string('prefix_id')->nullable();                    // pulsar-forem.group_prefix :: ID de centro desde el que controla el grupo
                 $table->string('code');                                     //
-                $table->string('composite_code');                           // código compuesto por expediente, acción, etc.
+                $table->string('composite_code')->nullable();;              // código compuesto por expediente, acción, etc. Nullable solo para poder crear el grupo y posteriormente poder calcular el código
                 $table->string('name');
                 $table->string('slug');
                 $table->integer('category_id')->unsigned();                 // forem_category :: Categoría del curso
