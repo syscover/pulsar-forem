@@ -38,9 +38,6 @@ class GroupService extends Service
             $object->lang_id
         );
 
-        // check if is searchable
-        $this->isSearchable($object);
-
         return $object;
     }
 
@@ -81,26 +78,7 @@ class GroupService extends Service
         // save changes
         $object->save();
 
-        // check if is searchable
-        $this->isSearchable($object);
-
         return $object;
-    }
-
-    private function isSearchable(Group $object)
-    {
-        // we update record if has scout search engine, for register relations
-        if (has_scout())
-        {
-            if($object->publish)
-            {
-                $object->searchable();
-            }
-            else
-            {
-                $object->unsearchable();
-            }
-        }
     }
 
     private function getCompositeCode(Group $object)

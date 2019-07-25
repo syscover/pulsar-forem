@@ -78,6 +78,11 @@ class Group extends CoreModel
         return $this->belongsTo(Profile::class, 'profile_id');
     }
 
+    public function shouldBeSearchable()
+    {
+        return $this->publish;
+    }
+
     /**
      * Get the indexable data array for the model.
      *
