@@ -26,6 +26,8 @@ class GroupService extends Service
 
         // create composite code
         $object->composite_code = $this->getCompositeCode($object);
+
+        // save composite code and execute searchable methods from laravel scout
         $object->save();
 
         // set attachments
