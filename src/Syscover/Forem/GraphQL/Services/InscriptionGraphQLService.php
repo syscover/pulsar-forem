@@ -216,7 +216,6 @@ class InscriptionGraphQLService extends CoreGraphQLService
                     info(storage_path('app/public/forem/export/' . $file));
                     $zip->addFile(storage_path('app/public/forem/export/' . $file), $file);
                 }
-
             }
             $zip->close();
         }
