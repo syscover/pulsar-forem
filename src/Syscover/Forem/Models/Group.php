@@ -49,12 +49,12 @@ class Group extends CoreModel
     public function attachments()
     {
         return $this->morphMany(
-            Attachment::class,
-            'object',
-            'object_type',
-            'object_id',
-            'id'
-        )
+                Attachment::class,
+                'object',
+                'object_type',
+                'object_id',
+                'id'
+            )
             ->orderBy('sort', 'asc');
     }
 
@@ -76,6 +76,11 @@ class Group extends CoreModel
     public function profile()
     {
         return $this->belongsTo(Profile::class, 'profile_id');
+    }
+
+    public function inscriptions()
+    {
+        return $this->hasMany(Inscription::class, 'group_id');
     }
 
     public function shouldBeSearchable()

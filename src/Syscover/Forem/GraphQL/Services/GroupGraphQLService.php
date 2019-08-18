@@ -32,6 +32,13 @@ class GroupGraphQLService extends CoreGraphQLService
         return $group;
     }
 
+    public function find($root, array $args)
+    {
+        $query = SQLService::getQueryFiltered($this->model->builder(), $args['sql'], $args['filters'] ?? null);
+
+        return $query->first()->load('inscriptions');
+    }
+
     public function update($root, array $args)
     {
         $group = $this->service->update($args['payload'], $args['payload']['id']);

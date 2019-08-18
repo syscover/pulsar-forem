@@ -107,6 +107,7 @@ type ForemGroup {
     trainer_hours_3: String
 
     attachments: [AdminAttachment]
+    inscriptions: [ForemInscription]
 
     # Marketable columns
     # Marketable fields cann't to be required if is marketable is optional
