@@ -24,6 +24,28 @@ input ForemCategoryInput {
     slug: String!
 }
 
+input ForemCourseInput {
+    id: Int
+    group_id: Int!
+    group_name: String
+    group_starts_at: String
+    group_ends_at: String
+    name: String
+    surname: String
+    surname2: String
+    gender: String
+    birth_date: String
+    tin: String
+    ssn: String
+    email: String
+    phone: String
+    mobile: String
+    address: String
+    province: String
+    zip: String
+    locality: String
+}
+
 input ForemEmploymentOfficeInput {
     id: Int
     code: String!

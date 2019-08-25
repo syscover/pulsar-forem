@@ -8,6 +8,11 @@ foremCreateCategory(payload: ForemCategoryInput!): ForemCategory @field(resolver
 foremUpdateCategory(payload: ForemCategoryInput!): ForemCategory @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@update")
 foremDeleteCategory(id:Int!): ForemCategory @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CategoryGraphQLService@delete")
 
+# Course
+foremCreateCourse(payload: ForemCourseInput!): ForemCourse @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CourseGraphQLService@create")
+foremUpdateCourse(payload: ForemCourseInput!): ForemCourse @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CourseGraphQLService@update")
+foremDeleteCourse(id:Int!): ForemCourse @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\CourseGraphQLService@delete")
+
 # EmploymentOffice
 foremCreateEmploymentOffice(payload: ForemEmploymentOfficeInput!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@create")
 foremUpdateEmploymentOffice(payload: ForemEmploymentOfficeInput!): ForemEmploymentOffice @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\EmploymentOfficeGraphQLService@update")
@@ -22,6 +27,10 @@ foremDeleteExpedient(id:Int!): ForemExpedient @field(resolver: "Syscover\\Forem\
 foremCreateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@store")
 foremUpdateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@update")
 foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@delete")
+
+# Group subscribe / unsubscribe
+foremSubscribeGroup(id:Int!): Boolean @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@subscribe")
+foremUnsubscribeGroup(id:Int!): Boolean @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@unsubscribe")
 
 # Inscription
 foremCreateInscription(payload: ForemInscriptionInput!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@store")

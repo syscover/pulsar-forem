@@ -94,4 +94,17 @@ class GroupGraphQLService extends CoreGraphQLService
 
         return $group;
     }
+
+    public function subscribe($root, array $args)
+    {
+        $this->service->subscribeInscription($args['id']);
+        return true;
+    }
+
+    public function unsubscribe($root, array $args)
+    {
+        info($args);
+        $this->service->unsubscribeInscription($args['id']);
+        return true;
+    }
 }

@@ -107,7 +107,9 @@ class Inscription extends CoreModel
         'has_marketing_authorization'
     ];
     public $with = [
-        'group'
+        'group',
+        'province',
+        'locality'
     ];
     protected $casts        = [
         'driving_licenses'  => 'array',
@@ -126,5 +128,15 @@ class Inscription extends CoreModel
     public function group()
     {
         return $this->belongsTo(Group::class, 'group_id');
+    }
+
+    public function province()
+    {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
+
+    public function locality()
+    {
+        return $this->belongsTo(Locality::class, 'locality_id');
     }
 }

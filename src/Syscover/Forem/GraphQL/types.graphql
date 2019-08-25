@@ -24,6 +24,28 @@ type ForemCategory {
     slug: String!
 }
 
+type ForemCourse {
+    id: Int!
+    group_id: Int!
+    group_name: String
+    group_starts_at: String
+    group_ends_at: String
+    name: String
+    surname: String
+    surname2: String
+    gender: String
+    birth_date: String
+    tin: String
+    ssn: String
+    email: String
+    phone: String
+    mobile: String
+    address: String
+    province: String
+    zip: String
+    locality: String
+}
+
 type ForemEmploymentOffice {
     id: Int!
     code: String!
@@ -108,6 +130,7 @@ type ForemGroup {
 
     attachments: [AdminAttachment]
     inscriptions: [ForemInscription]
+    course: [ForemCourse]
 
     # Marketable columns
     # Marketable fields cann't to be required if is marketable is optional

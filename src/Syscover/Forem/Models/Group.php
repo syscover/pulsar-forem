@@ -83,6 +83,11 @@ class Group extends CoreModel
         return $this->hasMany(Inscription::class, 'group_id');
     }
 
+    public function course()
+    {
+        return $this->hasMany(Course::class, 'group_id');
+    }
+
     public function shouldBeSearchable()
     {
         return $this->publish;
