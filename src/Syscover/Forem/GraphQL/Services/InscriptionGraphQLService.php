@@ -17,6 +17,12 @@ class InscriptionGraphQLService extends CoreGraphQLService
         $this->service = $service;
     }
 
+    public function checkTin($root, array $args)
+    {
+        $inscription = Inscription::where('group_id', $args['groupId'])->where('tin', $args['tin'])->where('id_completed', true)->first();
+        return $inscription ? true : false;
+    }
+
     public function export($root, array $args)
     {
         $group          = Group::find($args['id']);

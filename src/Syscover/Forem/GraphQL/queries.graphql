@@ -53,6 +53,8 @@ foremInscriptions(sql:[CoreSQLInput]): [ForemInscription!]! @field(resolver: "Sy
 foremInscription(sql:[CoreSQLInput]): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@find")
 """ Query to get inscriptions paginated """
 foremInscriptionsPagination(filters:[CoreSQLInput] sql:[CoreSQLInput]): CorePagination! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@paginate")
+""" Query to get inscriptions paginated """
+foremInscriptionCheckTin(groupId:Int! tin:String): Boolean! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@checkTin")
 
 # Locality
 """ Query to get locality list """
