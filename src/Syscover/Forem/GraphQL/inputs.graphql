@@ -26,6 +26,7 @@ input ForemCategoryInput {
 
 input ForemCourseInput {
     id: Int
+    inscription_id: Int
     group_id: Int!
     group_name: String
     group_starts_at: String
@@ -159,8 +160,8 @@ input ForemInscriptionInput {
     id: Int
     group_id: Int!
     student_id: Int
-    is_completed: Boolean!
-    is_exported: Boolean!
+    is_completed: Boolean
+    is_exported: Boolean
     is_coursed: Boolean
     reason_request_id: Int
     other_reason_request: String

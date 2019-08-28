@@ -18,6 +18,7 @@ class ForemCreateTableCourse extends Migration
 				$table->engine = 'InnoDB';
 				
 				$table->increments('id');
+                $table->integer('inscription_id')->unsigned()->nullable();
                 $table->integer('group_id')->unsigned();
 
                 // group
@@ -46,6 +47,12 @@ class ForemCreateTableCourse extends Migration
 
                 $table->timestamps();
                 $table->softDeletes();
+
+                $table->foreign('inscription_id', 'forem_course_inscription_id_fk')
+                    ->references('id')
+                    ->on('forem_inscription')
+                    ->onDelete('set null')
+                    ->onUpdate('cascade');
 
                 $table->foreign('group_id', 'forem_course_group_id_fk')
                     ->references('id')

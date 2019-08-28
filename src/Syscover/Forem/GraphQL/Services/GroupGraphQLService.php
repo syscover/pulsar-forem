@@ -103,7 +103,6 @@ class GroupGraphQLService extends CoreGraphQLService
 
     public function unsubscribe($root, array $args)
     {
-        info($args);
         $this->service->unsubscribeInscription($args['id']);
         return true;
     }

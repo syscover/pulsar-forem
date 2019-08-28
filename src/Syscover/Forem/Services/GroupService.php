@@ -91,6 +91,9 @@ class GroupService extends Service
         $genders        = collect(config('pulsar-forem.genders'));
         $course         = new Course();
 
+        // inscription
+        $course->inscription_id = $inscription->id;
+        
         // group
         $course->group_id = $inscription->group_id;
         $course->group_name = $inscription->group->name;
@@ -119,12 +122,24 @@ class GroupService extends Service
         $course->locality = $locality ? $locality->name : null;
 
         $course->save();
+
+        // update inscription
+        $inscription->is_coursed = true;
+        $inscription->save();
     }
 
     public function unsubscribeInscription(int $courseId)
     {
-        $inscription = Course::find($courseId);
-        $inscription->delete();
+        $course = Course::find($courseId);
+        $course->delete();
+
+        if ($course->inscription_id)
+        {
+            // update inscription
+            $inscription = Inscription::find($course->inscription_id);
+            $inscription->is_coursed = false;
+            $inscription->save();
+        }
     }
 
     private function getCompositeCode(Group $object)

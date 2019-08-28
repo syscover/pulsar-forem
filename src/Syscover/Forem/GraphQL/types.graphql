@@ -26,6 +26,7 @@ type ForemCategory {
 
 type ForemCourse {
     id: Int!
+    inscription_id: Int
     group_id: Int!
     group_name: String
     group_starts_at: String

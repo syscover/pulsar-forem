@@ -12,6 +12,9 @@ class Course extends CoreModel
     protected $table        = 'forem_course';
     protected $fillable     = [
         'id',
+
+        // inscription
+        'inscription_id',
         
         // group
         'group_id',
@@ -42,5 +45,10 @@ class Course extends CoreModel
     public function group()
     {
         return $this->belongsTo(Group::class, 'group_id');
+    }
+
+    public function inscription()
+    {
+        return $this->belongsTo(Inscription::class, 'inscription_id');
     }
 }
