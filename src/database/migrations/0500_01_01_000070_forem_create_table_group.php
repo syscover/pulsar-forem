@@ -31,6 +31,9 @@ class ForemCreateTableGroup extends Migration
                 $table->boolean('certificate')->default(false);
                 $table->string('certificate_code')->nullable();
 
+                // marketing
+                $table->boolean('is_countdown')->default(false);            // is publish in home countdown
+
                 // steps in inscription form
                 $table->json('steps')->nullable();
 

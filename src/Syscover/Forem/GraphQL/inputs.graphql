@@ -87,6 +87,7 @@ input ForemGroupInput {
     type_id: Int!
     certificate: Boolean!
     certificate_code: String
+    is_countdown: Boolean!
     hours: Int!
     subsidized_amount: Float
     price: Float
