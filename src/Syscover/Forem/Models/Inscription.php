@@ -17,6 +17,7 @@ class Inscription extends CoreModel
         'student_id',
         'is_completed',
         'is_exported',
+        'is_coursed',
         'reason_request_id',
         'other_reason_request',
         'observations',

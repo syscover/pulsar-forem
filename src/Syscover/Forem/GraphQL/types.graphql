@@ -166,6 +166,7 @@ type ForemInscription {
     student_id: Int
     is_completed: Boolean!
     is_exported: Boolean!
+    is_coursed: Boolean!
     reason_request_id: Int
     other_reason_request: String
     observations: String
