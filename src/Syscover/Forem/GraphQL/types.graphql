@@ -289,6 +289,7 @@ type ForemTrainer {
     birth_date: Date
     tin: String
     availabilities: [Int]
+    has_communication: Boolean
     has_authorization: Boolean
 
     # geolocation data

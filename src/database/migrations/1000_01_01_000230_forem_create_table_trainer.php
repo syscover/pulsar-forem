@@ -30,7 +30,8 @@ class ForemCreateTableTrainer extends Migration
                 $table->string('phone')->nullable();
                 $table->string('mobile')->nullable();
                 $table->json('availabilities')->nullable();                             // related with pulsar-forem.availabilities
-                $table->boolean('has_authorization')->default(false);                   // authorization RGPD
+                $table->boolean('has_communication')->default(false);                   // authorization RGPD
+                $table->boolean('has_authorization')->default(false);
 
                 // geolocation data
                 $table->string('country_id', 2)->nullable();
