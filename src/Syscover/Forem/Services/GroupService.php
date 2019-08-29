@@ -87,9 +87,14 @@ class GroupService extends Service
 
     public function subscribeInscription(int $inscriptionId)
     {
-        $inscription    = Inscription::find($inscriptionId);
-        $genders        = collect(config('pulsar-forem.genders'));
-        $course         = new Course();
+        $inscription            = Inscription::find($inscriptionId);
+        $genders                = collect(config('pulsar-forem.genders'));
+        $employmentSituations   = collect(config('pulsar-forem.employment_situations'));
+        $province               = $inscription->province;
+        $locality               = $inscription->locality;
+        $gender                 = $genders->first(function($value) use ($inscription) { return $value->id === $inscription->gender_id; });
+        $employmentSituation    = $employmentSituations->first(function($value) use ($inscription) { return $value->id === $inscription->employment_situation_id; });
+        $course                 = new Course();
 
         // inscription
         $course->inscription_id = $inscription->id;
@@ -97,13 +102,6 @@ class GroupService extends Service
         // group
         $course->group_id = $inscription->group_id;
         $course->group_name = $inscription->group->name;
-        $course->group_starts_at = $inscription->group->starts_at;
-        $course->group_ends_at = $inscription->group->ends_at;
-
-        // aux
-        $gender = $genders->first(function($value) use ($inscription) { return $value->id === $inscription->gender; });
-        $province = $inscription->province;
-        $locality = $inscription->locality;
 
         // date student
         $course->name = $inscription->name;
@@ -120,6 +118,29 @@ class GroupService extends Service
         $course->province = $province ? $province->name : null;
         $course->zip = $inscription->zip;
         $course->locality = $locality ? $locality->name : null;
+        
+
+        // job
+        // -- priority_collective --
+        // -- collective --
+        $course->employment_situation = $employmentSituation ? $employmentSituation->name : null;
+
+
+        // course
+        // -- student_status --
+        // -- evaluation --
+        // -- practices --
+        // -- practical_evaluation --
+        // -- practical_hours --
+        $course->starts_at = $inscription->group->starts_at;
+        $course->ends_at = $inscription->group->ends_at;
+        $course->hours = $inscription->group->hours;
+
+        // aux
+        
+        
+
+        
 
         $course->save();
 
