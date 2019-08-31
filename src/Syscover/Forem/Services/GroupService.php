@@ -90,10 +90,18 @@ class GroupService extends Service
         $inscription            = Inscription::find($inscriptionId);
         $genders                = collect(config('pulsar-forem.genders'));
         $employmentSituations   = collect(config('pulsar-forem.employment_situations'));
+        $academicLevels         = collect(config('pulsar-forem.academic_levels'));
+        $professionalCategories = collect(config('pulsar-forem.professional_categories'));
+        $functionalAreas        = collect(config('pulsar-forem.functional_areas'));
         $province               = $inscription->province;
         $locality               = $inscription->locality;
+        $companyProvince        = $inscription->companyProvince;
+        $companyLocality        = $inscription->companyLocality;
         $gender                 = $genders->first(function($value) use ($inscription) { return $value->id === $inscription->gender_id; });
         $employmentSituation    = $employmentSituations->first(function($value) use ($inscription) { return $value->id === $inscription->employment_situation_id; });
+        $academicLevel          = $academicLevels->first(function($value) use ($inscription) { return $value->id === $inscription->academic_level_id; });
+        $professionalCategory   = $professionalCategories->first(function($value) use ($inscription) { return $value->id === $inscription->professional_category_id; });
+        $functionalArea         = $functionalAreas->first(function($value) use ($inscription) { return $value->id === $inscription->functional_area_id; });
         $course                 = new Course();
 
         // inscription
@@ -119,12 +127,13 @@ class GroupService extends Service
         $course->zip = $inscription->zip;
         $course->locality = $locality ? $locality->name : null;
         
-
         // job
         // -- priority_collective --
         // -- collective --
         $course->employment_situation = $employmentSituation ? $employmentSituation->name : null;
-
+        $course->academic_level = $academicLevel ? $academicLevel->name : null;
+        $course->professional_category = $professionalCategory ? $professionalCategory->name : null;
+        $course->functional_area = $functionalArea ? $functionalArea->name : null;
 
         // course
         // -- student_status --
@@ -136,17 +145,27 @@ class GroupService extends Service
         $course->ends_at = $inscription->group->ends_at;
         $course->hours = $inscription->group->hours;
 
-        // aux
+        // company
+        $course->company_name = $inscription->company_name;
+        $course->company_tin = $inscription->company_tin;
+        // -- company_kind_society --
+        $course->company_pyme = $inscription->is_big_company ? 'NO' : 'SI';
+        // -- company_legal_holder --
+        // -- company_person_holder --
+        // -- company_sector --
+        // -- company_trademark --
+        // -- company_document_type --
+        // -- company_ssn --
+        $course->company_province = $companyProvince ? $companyProvince->name : null;
+        $course->company_locality = $companyLocality ? $companyLocality->name : null;
         
-        
-
-        
-
         $course->save();
 
         // update inscription
         $inscription->is_coursed = true;
         $inscription->save();
+
+        return $course->id;
     }
 
     public function unsubscribeInscription(int $courseId)

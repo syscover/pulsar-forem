@@ -71,10 +71,6 @@ class ForemCreateTableCourse extends Migration
                 $table->string('company_ssn')->nullable();
                 $table->string('company_province')->nullable();
                 $table->string('company_locality')->nullable();
-                
-
-                // unemployment data
-                // $table->string('unemployed_state')->nullable();
 
                 $table->timestamps();
                 $table->softDeletes();

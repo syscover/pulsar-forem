@@ -29,8 +29,8 @@ foremUpdateGroup(payload: ForemGroupInput!): ForemGroup @field(resolver: "Syscov
 foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@delete")
 
 # Group subscribe / unsubscribe
-foremSubscribeGroup(id:Int!): Boolean @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@subscribe")
-foremUnsubscribeGroup(id:Int!): Boolean @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@unsubscribe")
+foremSubscribeGroup(id:Int!): Int! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@subscribe")
+foremUnsubscribeGroup(id:Int!): Boolean! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@unsubscribe")
 
 # Inscription
 foremCreateInscription(payload: ForemInscriptionInput!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@store")
