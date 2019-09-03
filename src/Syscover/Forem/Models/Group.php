@@ -35,7 +35,24 @@ class Group extends CoreModel
     {
         return $query
             ->join('admin_profile', 'forem_group.profile_id', '=', 'admin_profile.id')
-            ->addSelect('admin_profile.*', 'forem_group.*', 'admin_profile.name as admin_profile_name', 'forem_group.name as forem_group_name');
+            ->leftJoin('market_product', function ($join) {
+                $join->on('forem_group.id', '=', 'market_product.object_id')
+                    ->where('market_product.object_type', '=', 'Syscover\Forem\Models\Group');
+            })
+            ->leftJoin('market_product_lang',  function ($join) {
+                $join->on('market_product.id', '=', 'market_product_lang.id')
+                    ->where('market_product_lang.lang_id', '=', config('pulsar-admin.base_lang'));
+            })
+            ->addSelect(
+                'market_product.*',
+                'market_product_lang.*',
+                'market_product_lang.data as market_product_lang_data',
+                'market_product.data as market_product_data',
+                'admin_profile.*', 
+                'forem_group.*', 
+                'admin_profile.name as admin_profile_name', 
+                'forem_group.name as forem_group_name'
+            );
     }
 
     /**
