@@ -8,6 +8,8 @@ use Syscover\Forem\Services\GroupService;
 use Syscover\Market\Models\Product;
 use Syscover\Market\Models\ProductLang;
 use Syscover\Market\Services\MarketableService;
+use Syscover\Forem\Imports\CoursesImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GroupGraphQLService extends CoreGraphQLService
 {
@@ -103,6 +105,13 @@ class GroupGraphQLService extends CoreGraphQLService
     public function unsubscribe($root, array $args)
     {
         $this->service->unsubscribeInscription($args['id']);
+        return true;
+    }
+
+    public function import($root, array $args)
+    {
+        Excel::import(new CoursesImport($args['groupId']), storage_path('app/public/tmp/' . $args['fileName']));
+        
         return true;
     }
 }

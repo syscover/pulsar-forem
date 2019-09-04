@@ -31,6 +31,7 @@ foremDeleteGroup(id:Int!): ForemGroup @field(resolver: "Syscover\\Forem\\GraphQL
 # Group subscribe / unsubscribe
 foremSubscribeGroup(id:Int!): Int! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@subscribe")
 foremUnsubscribeGroup(id:Int!): Boolean! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@unsubscribe")
+foremImportCourseGroup(fileName:String! groupId:String!): Boolean! @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\GroupGraphQLService@import")
 
 # Inscription
 foremCreateInscription(payload: ForemInscriptionInput!): ForemInscription @field(resolver: "Syscover\\Forem\\GraphQL\\Services\\InscriptionGraphQLService@store")
