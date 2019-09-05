@@ -10,7 +10,7 @@ type ForemAction {
     certificate: Boolean!
     certificate_code: String
     hours: Int!
-    price: Float
+    price_total: Float
     price_hour: Float
     contents_excerpt: String
     contents: String
@@ -92,7 +92,7 @@ type ForemGroup {
     is_countdown: Boolean!
     hours: Int!
     subsidized_amount: Float
-    price: Float
+    price_total: Float
     price_hour: Float
     contents_excerpt: String
     contents: String

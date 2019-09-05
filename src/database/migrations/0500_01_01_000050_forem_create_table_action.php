@@ -30,7 +30,7 @@ class ForemCreateTableAction extends Migration
 
                 $table->smallInteger('hours');
 
-                $table->decimal('price',10, 2)->nullable();
+                $table->decimal('price_total',10, 2)->nullable();
                 $table->decimal('price_hour',10, 2)->nullable();
 
                 $table->text('contents_excerpt')->nullable();
