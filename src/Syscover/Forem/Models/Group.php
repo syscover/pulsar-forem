@@ -47,11 +47,13 @@ class Group extends CoreModel
                 'market_product.*',
                 'market_product_lang.*',
                 'market_product_lang.data as market_product_lang_data',
+                'market_product_lang.slug as market_product_lang_slug',
                 'market_product.data as market_product_data',
                 'admin_profile.*', 
                 'forem_group.*', 
                 'admin_profile.name as admin_profile_name', 
-                'forem_group.name as forem_group_name'
+                'forem_group.name as forem_group_name',
+                'forem_group.slug as forem_group_slug'
             );
     }
 
