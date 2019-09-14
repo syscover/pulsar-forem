@@ -314,4 +314,6 @@ type ForemTrainer {
     teaching_months: Int 
     occupation_months: Int
     description: String
+
+    attachments: [AdminAttachment]
 }
