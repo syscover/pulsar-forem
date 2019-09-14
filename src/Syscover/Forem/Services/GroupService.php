@@ -39,7 +39,7 @@ class GroupService extends Service
             'storage/forem/groups',
             Group::class,
             $object->id,
-            $object->lang_id
+            base_lang()
         );
 
         return $object;
@@ -68,7 +68,7 @@ class GroupService extends Service
             'storage/forem/groups',
             Group::class,
             $object->id,
-            $object->lang_id
+            base_lang()
         );
 
         $object->fill($data);
