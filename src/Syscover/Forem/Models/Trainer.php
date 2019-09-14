@@ -1,6 +1,7 @@
 <?php namespace Syscover\Forem\Models;
 
 use Syscover\Core\Models\CoreModel;
+use Syscover\Admin\Models\Attachment;
 
 /**
  * Class Student
