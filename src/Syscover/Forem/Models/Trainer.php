@@ -24,6 +24,26 @@ class Trainer extends CoreModel
             ->addSelect('forem_profile.*', 'forem_trainer.*', 'forem_profile.name as forem_profile_name', 'forem_trainer.name as forem_trainer_name');
     }
 
+    /**
+     * Is not possible add 'attachments' to $with parameter, it need to be instantiated to get lang parameter
+     * It's possible pass lang parameter with this method
+     *
+     * Product::with(['attachments' => function ($q) use ($langId) {
+     *   $q->where('admin_attachment.lang_id', $langId);
+     * }])->get();
+     */
+    public function attachments()
+    {
+        return $this->morphMany(
+                Attachment::class,
+                'object',
+                'object_type',
+                'object_id',
+                'id'
+            )
+            ->orderBy('sort', 'asc');
+    }
+
     public function profile()
     {
         return $this->belongsTo(Profile::class, 'profile_id');
