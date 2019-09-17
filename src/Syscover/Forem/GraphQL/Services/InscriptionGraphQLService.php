@@ -81,7 +81,7 @@ class InscriptionGraphQLService extends CoreGraphQLService
                 if ($inscription->employment_situation_id === 0) {
                     $dataInscription['alumno']['datos_desempleado']['fecha_inscripcion'] = Carbon::parse($inscription->unemployed_registration_date)->format('d/m/Y');
                     $dataInscription['alumno']['datos_desempleado']['id_oficina_empleo'] = $inscription->employment_office_id;
-                    $dataInscription['alumno']['datos_desempleado']['unemployed_situation_id'] = $inscription->id_situacion_desempleo;
+                    $dataInscription['alumno']['datos_desempleado']['id_situacion_desempleo'] = $inscription->unemployed_situation_id;
                 }
                 else {
                     $dataInscription['alumno']['datos_ocupado']['id_categoria_profesional'] = $inscription->professional_category_id;
@@ -194,6 +194,18 @@ class InscriptionGraphQLService extends CoreGraphQLService
                     }
                 }
                 $dataInscription['lista_experiencias_profesionales'] = $experiencesData;
+
+                $driveLicensesData = [];
+                if (is_array($inscription->driving_licenses))
+                {
+                    foreach ($inscription->driving_licenses as $drivingLicense)
+                    {
+                        $driveLicenseData = [];
+                        $driveLicenseData['carnet_conducir']['id_carnet_conducir'] = $drivingLicense;
+                    }
+
+                }
+                $dataInscription['lista_carnets_conducir'] = $driveLicensesData;
 
 
                 // export data
