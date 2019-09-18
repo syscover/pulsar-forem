@@ -38,16 +38,13 @@ class InscriptionGraphQLService extends CoreGraphQLService
         if ($inscriptions->count() === 0) return null;
 
         // group inscriptions each 10
-        $n = (int)($inscriptions->count() / 10);
-        if (($inscriptions->count() % 10) > 0) $n++;
-        $inscriptionGroups = $inscriptions->split($n);
+        $inscriptionGroups = $inscriptions->chunk(10);
 
         $files = [];
         foreach ($inscriptionGroups as $inscriptionGroup)
         {
-            $export = [
-                'lista_solicitudes_inscripcion' => []
-            ];
+            // init array
+            $inscriptionsList = [];
             foreach ($inscriptionGroup as $inscription)
             {
                 $dataInscription = [];
@@ -207,12 +204,12 @@ class InscriptionGraphQLService extends CoreGraphQLService
                 }
                 $dataInscription['lista_carnets_conducir'] = $driveLicensesData;
 
-
                 // export data
-                $export['lista_solicitudes_inscripcion'][] = [
-                    'solicitud_inscripcion' => $dataInscription
-                ];
+                $inscriptionsList[] = $dataInscription;
             }
+            $export = [
+                'lista_solicitudes_inscripcion' => ['solicitud_inscripcion' => $inscriptionsList]
+            ];
 
             $xml = ArrayToXml::convert($export, ['rootElementName' => 'documento']);
 
