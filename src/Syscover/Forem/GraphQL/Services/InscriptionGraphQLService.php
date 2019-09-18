@@ -188,6 +188,7 @@ class InscriptionGraphQLService extends CoreGraphQLService
                         $experienceData['experiencia_profesional']['funciones'] = $experience['role'];
                         $experienceData['experiencia_profesional']['id_sector'] = $experience['sector']['id'];
 
+                        $experiencesData[] = $experienceData;
                     }
                 }
                 $dataInscription['lista_experiencias_profesionales'] = $experiencesData;
@@ -199,6 +200,8 @@ class InscriptionGraphQLService extends CoreGraphQLService
                     {
                         $driveLicenseData = [];
                         $driveLicenseData['carnet_conducir']['id_carnet_conducir'] = $drivingLicense;
+
+                        $driveLicensesData[] = $driveLicenseData;
                     }
 
                 }
