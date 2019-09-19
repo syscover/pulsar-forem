@@ -145,11 +145,17 @@ class InscriptionGraphQLService extends CoreGraphQLService
                     {
                         $languageData = [];
                         $languageData['idioma']['id_idioma'] = $language['lang']['id'];
-                        $languageData['idioma']['titulacion_idioma'] = $language['certificate']['id'];
-                        $languageData['idioma']['destreza_hablar_idioma'] = $language['speaking_skill']['id'];
-                        $languageData['idioma']['destreza_escribir_idioma'] = $language['writing_skill']['id'];
-                        $languageData['idioma']['destreza_comprender_idioma'] = $language['listening_skill']['id'];
-
+                        if ($languageData['idioma']['titulacion_idioma'] = $language['certificate']['id'])
+                        {
+                            $languageData['idioma']['titulacion_idioma'] = $language['certificate']['id'];
+                        }
+                        else
+                        {
+                            $languageData['idioma']['destreza_hablar_idioma'] = $language['speaking_skill']['id'];
+                            $languageData['idioma']['destreza_escribir_idioma'] = $language['writing_skill']['id'];
+                            $languageData['idioma']['destreza_comprender_idioma'] = $language['listening_skill']['id'];
+                        }
+                        
                         if ($language['lang']['id'] === 6) $languageData['idioma']['descripcion_idioma'] = $language['other'];
 
                         $languagesData[] = $languageData;
@@ -172,8 +178,10 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
                         $educationsData[] = $educationData;
                     }
+
+                    if (count($educationsData) > 0) $dataInscription['lista_formaciones_profesionales'] = $educationsData;
                 }
-                $dataInscription['lista_formaciones_profesionales'] = $educationsData;
+                
 
                 // experiences
                 $experiencesData = [];
@@ -190,10 +198,12 @@ class InscriptionGraphQLService extends CoreGraphQLService
 
                         $experiencesData[] = $experienceData;
                     }
+
+                    if (count($experiencesData) > 0) $dataInscription['lista_experiencias_profesionales'] = $experiencesData;
                 }
-                $dataInscription['lista_experiencias_profesionales'] = $experiencesData;
 
                 $driveLicensesData = [];
+                info($inscription->driving_licenses);
                 if (is_array($inscription->driving_licenses))
                 {
                     foreach ($inscription->driving_licenses as $drivingLicense)
@@ -214,7 +224,7 @@ class InscriptionGraphQLService extends CoreGraphQLService
                 'lista_solicitudes_inscripcion' => ['solicitud_inscripcion' => $inscriptionsList]
             ];
 
-            $xml = ArrayToXml::convert($export, ['rootElementName' => 'documento']);
+            $xml = ArrayToXml::convert($export, ['rootElementName' => 'documento'], true, 'UTF-8');
 
             $filename = $group->id . '--' . Str::uuid() . '.xml';
             $files[] = $filename;

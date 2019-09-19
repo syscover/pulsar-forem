@@ -55,6 +55,9 @@ class InscriptionService extends Service
 
         $object = Inscription::findOrFail($id);
 
+        // all inscriptions set is_exported to false to be exported again
+        $data['is_exported'] = false;
+
         $object->fill($data);
 
         // check is model
