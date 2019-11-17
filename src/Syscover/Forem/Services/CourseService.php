@@ -2,8 +2,7 @@
 
 use Syscover\Core\Exceptions\ModelNotChangeException;
 use Syscover\Core\Services\Service;
-use Syscover\Forem\Models\Inscription;
-use Syscover\Forem\Models\Student;
+use Syscover\Forem\Models\Course;
 
 class CourseService extends Service
 {
@@ -13,7 +12,7 @@ class CourseService extends Service
             'group_id' => 'required|integer'
         ]);
 
-        return Inscription::create($data);
+        return Course::create($data);
     }
 
     public function update(array $data, int $id)
@@ -23,7 +22,7 @@ class CourseService extends Service
             'group_id'          => 'required|integer'
         ]);
 
-        $object = Inscription::findOrFail($id);
+        $object = Course::findOrFail($id);
 
         $object->fill($data);
 
