@@ -27,8 +27,9 @@ class Group extends CoreModel
         'expedient'
     ];
     protected $casts        = [
-        'steps' => 'array',
-        'price_total' => 'float'
+        'steps'         => 'array',
+        'price_total'   => 'float',
+        'publish'       => 'boolean'
     ];
 
     public function scopeBuilder($query)
@@ -107,6 +108,9 @@ class Group extends CoreModel
         return $this->hasMany(Course::class, 'group_id');
     }
 
+    /**
+     * Flag to set this model like searchable
+     */
     public function shouldBeSearchable()
     {
         return $this->publish;
