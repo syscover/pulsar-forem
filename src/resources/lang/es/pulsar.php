@@ -8,5 +8,6 @@ return [
     'expedient'                                             => 'Expediente',
     'group'                                                 => 'Grupo',
     'province'                                              => 'Provincia',
+    'teacher_profiles'                                      => 'Perfiles de formadores',
     'unemployed_situations'                                 => 'Situación de desempleo',
 ];

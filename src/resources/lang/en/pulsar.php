@@ -8,5 +8,6 @@ return [
     'expedient'                                             => 'Expedient',
     'group'                                                 => 'Group',
     'province'                                              => 'Province',
+    'teacher_profiles'                                      => 'Teacher profiles',
     'unemployed_situations'                                 => 'Unemployed situations',
 ];
