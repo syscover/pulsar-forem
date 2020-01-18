@@ -135,12 +135,12 @@ class Inscription extends CoreModel
 
     public function province()
     {
-        return $this->belongsTo(Province::class, 'province_id');
+        return $this->belongsTo(Province::class, 'province_id', 'code');
     }
 
     public function locality()
     {
-        return $this->belongsTo(Locality::class, 'locality_id');
+        return $this->belongsTo(Locality::class, 'locality_id', 'code');
     }
 
     public function companyProvince()
