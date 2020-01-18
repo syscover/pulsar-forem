@@ -4,6 +4,7 @@ return [
     'academic_levels'                                       => 'Academic levels',
     'action'                                                => 'Action',
     'availabilities'                                        => 'Availabilities',
+    'category'                                              => 'Category',
     'employment_office'                                     => 'Employment office',
     'expedient'                                             => 'Expedient',
     'group'                                                 => 'Group',

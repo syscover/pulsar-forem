@@ -4,6 +4,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Syscover\Core\GraphQL\Services\CoreGraphQLService;
+use Syscover\Core\Services\SQLService;
 use Syscover\Forem\Models\Group;
 use Syscover\Forem\Models\Inscription;
 use Syscover\Forem\Services\InscriptionService;
@@ -15,6 +16,17 @@ class InscriptionGraphQLService extends CoreGraphQLService
     {
         $this->model = $model;
         $this->service = $service;
+    }
+
+    /**
+     * sobreescribimos el método para pasar un $this->model->query() en vez de un $this->model->builder(), ya que el builder hace
+     * un join que sobreescribe la propiedad locality con el locality del grupp
+     */
+    public function find($root, array $args)
+    {
+        $query = SQLService::getQueryFiltered($this->model->query(), $args['sql'], $args['filters'] ?? null);
+        
+        return $query->first();
     }
 
     public function checkTin($root, array $args)

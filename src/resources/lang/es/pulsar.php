@@ -4,6 +4,7 @@ return [
     'academic_levels'                                       => 'Niveles académicos',
     'action'                                                => 'Acción',
     'availabilities'                                        => 'Disponibilidad',
+    'category'                                              => 'Categoría',
     'employment_office'                                     => 'Oficina de empleo',
     'expedient'                                             => 'Expediente',
     'group'                                                 => 'Grupo',

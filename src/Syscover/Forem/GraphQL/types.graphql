@@ -201,6 +201,7 @@ type ForemInscription {
     province_id: Int
     zip: String
     locality_id: Int
+    locality: ForemLocality
 
     # agent
     has_agent: Boolean
