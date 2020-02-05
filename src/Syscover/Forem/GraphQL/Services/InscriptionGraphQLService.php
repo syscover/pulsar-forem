@@ -96,7 +96,7 @@ class InscriptionGraphQLService extends CoreGraphQLService
                 else {
                     $dataInscription['alumno']['datos_ocupado']['id_categoria_profesional'] = $inscription->professional_category_id;
                     $dataInscription['alumno']['datos_ocupado']['id_area_funcional'] = $inscription->functional_area_id;
-                    $dataInscription['alumno']['datos_ocupado']['codigo_ocupado'] = $inscription->worker_code ?? 9999;
+                    $dataInscription['alumno']['datos_ocupado']['codigo_ocupado'] = $inscription->worker_code ?? 1;
                     $dataInscription['alumno']['datos_ocupado']['cif_empresa'] = $inscription->company_tin;
                     $dataInscription['alumno']['datos_ocupado']['razon_social'] = $inscription->company_name;
                     $dataInscription['alumno']['datos_ocupado']['sector_comercio_centro_trabajo'] = $inscription->company_sector;
