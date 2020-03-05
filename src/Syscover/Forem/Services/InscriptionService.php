@@ -38,6 +38,15 @@ class InscriptionService extends Service
             }
         }
 
+        // before create new inscription delete old inscriptions incomplete
+        if ($data['tin'] ?? null)
+        {
+            Inscription::where('tin', $data['tin'])
+                ->where('group_id', $data['group_id'])
+                ->where('is_completed', false)
+                ->delete();
+        }
+
         return Inscription::create($data);
     }
 
