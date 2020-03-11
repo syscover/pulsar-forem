@@ -442,4 +442,9 @@ return [
         (object)['id' => 4, 'name' => 'Formador ocupacional'],
         (object)['id' => 5, 'name' => 'Docencia de la Formación Profesional para el empleo'],
     ],
+    'ratings' => [
+        (object)['id' => 1, 'name' => 'Ninguna'],
+        (object)['id' => 2, 'name' => 'Recomendado/a'],
+        (object)['id' => 3, 'name' => 'No recomendado/a'],
+    ]
 ];

@@ -276,6 +276,7 @@ input ForemTrainerInput {
     id: Int
     profile_id: Int!
     academic_level_id: Int
+    rating_id: Int
     name: String!
     surname: String
     surname2: String

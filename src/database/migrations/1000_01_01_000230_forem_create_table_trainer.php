@@ -20,6 +20,7 @@ class ForemCreateTableTrainer extends Migration
 				$table->increments('id');
                 $table->integer('profile_id')->unsigned();                              // pulsar-forem.profiles
                 $table->smallInteger('academic_level_id')->unsigned()->nullable();      // pulsar-forem.academic_levels
+                $table->tinyInteger('rating_id')->unsigned()->nullable();                  // pulsar-forem.rating
 			    $table->string('name');
                 $table->string('surname')->nullable();
                 $table->string('surname2')->nullable();
