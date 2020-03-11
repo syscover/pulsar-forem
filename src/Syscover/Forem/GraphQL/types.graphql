@@ -125,10 +125,19 @@ type ForemGroup {
     # Trainers data
     trainer_name_1: String
     trainer_hours_1: String
+    trainer_contract_1: String
+    trainer_starts_at_1: String
+    trainer_ends_at_1: String
     trainer_name_2: String
     trainer_hours_2: String
+    trainer_contract_2: String
+    trainer_starts_at_2: String
+    trainer_ends_at_2: String
     trainer_name_3: String
     trainer_hours_3: String
+    trainer_contract_3: String
+    trainer_starts_at_3: String
+    trainer_ends_at_3: String
 
     attachments: [AdminAttachment]
     inscriptions: [ForemInscription]

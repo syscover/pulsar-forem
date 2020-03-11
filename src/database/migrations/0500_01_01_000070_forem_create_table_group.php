@@ -75,10 +75,19 @@ class ForemCreateTableGroup extends Migration
                 // trainers data
                 $table->string('trainer_name_1')->nullable();
                 $table->string('trainer_hours_1')->nullable();
+                $table->string('trainer_contract_1')->nullable();
+                $table->timestamp('trainer_starts_at_1')->nullable();
+                $table->timestamp('trainer_ends_at_1')->nullable();
                 $table->string('trainer_name_2')->nullable();
                 $table->string('trainer_hours_2')->nullable();
+                $table->string('trainer_contract_2')->nullable();
+                $table->timestamp('trainer_starts_at_2')->nullable();
+                $table->timestamp('trainer_ends_at_2')->nullable();
                 $table->string('trainer_name_3')->nullable();
                 $table->string('trainer_hours_3')->nullable();
+                $table->string('trainer_contract_3')->nullable();
+                $table->timestamp('trainer_starts_at_3')->nullable();
+                $table->timestamp('trainer_ends_at_3')->nullable();
 
                 // marketable
                 $table->boolean('is_product')->default(false);
